@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>舆情监控报告</title>
+<style>
+  :root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --border: #334155;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --accent: #3b82f6;
+    --accent2: #10b981;
+    --accent3: #f59e0b;
+    --accent4: #ef4444;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 40px 24px; }
+
+  header {
+    text-align: center;
+    padding: 48px 0 36px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 40px;
+  }
+  header .icon { font-size: 48px; margin-bottom: 12px; }
+  header h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; }
+  header p { color: var(--muted); font-size: 15px; }
+  header .update-time { margin-top: 12px; font-size: 12px; color: #64748b; }
+
+  .section-title {
+    font-size: 16px; font-weight: 600;
+    color: var(--muted); text-transform: uppercase;
+    letter-spacing: 1px; margin-bottom: 16px;
+  }
+
+  .latest-report {
+    background: linear-gradient(135deg, #1e3a5f 0%, #1e293b 100%);
+    border: 1px solid var(--accent);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 40px;
+    transition: border-color .2s;
+  }
+  .latest-report:hover { border-color: #60a5fa; }
+  .latest-report .badge {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+  .latest-report h2 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+  .latest-report .meta { color: var(--muted); font-size: 13px; margin-bottom: 16px; }
+  .latest-report .desc { color: var(--muted); font-size: 14px; line-height: 1.7; margin-bottom: 20px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--accent);
+    color: #fff; text-decoration: none;
+    padding: 10px 24px; border-radius: 8px;
+    font-size: 14px; font-weight: 600;
+    transition: background .2s, transform .1s;
+  }
+  .btn:hover { background: #2563eb; }
+  .btn:active { transform: scale(0.98); }
+
+  .report-list { margin-bottom: 48px; }
+  .report-item {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 8px;
+    transition: border-color .2s;
+  }
+  .report-item:hover { border-color: #475569; }
+  .report-item .date { font-weight: 600; font-size: 15px; }
+  .report-item .day { color: var(--muted); font-size: 12px; margin-left: 8px; }
+  .report-item .tag {
+    font-size: 11px; padding: 2px 8px; border-radius: 12px;
+    background: #064e3b; color: #34d399;
+  }
+  .report-item a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 14px; font-weight: 500;
+    transition: color .2s;
+  }
+  .report-item a:hover { color: #60a5fa; }
+
+  .info-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 40px;
+  }
+  .info-box h3 { font-size: 16px; margin-bottom: 12px; }
+  .info-box ul { list-style: none; }
+  .info-box li {
+    padding: 6px 0; color: var(--muted); font-size: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .info-box li::before {
+    content: '';
+    display: inline-block;
+    width: 6px; height: 6px;
+    background: var(--accent2);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  footer {
+    text-align: center;
+    padding: 24px 0;
+    border-top: 1px solid var(--border);
+    color: #64748b;
+    font-size: 12px;
+  }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="icon">📊</div>
+    <h1>舆情监控报告</h1>
+    <p>品牌/产品网络舆情周报 · 多平台监测 · 自动更新</p>
+    <div class="update-time">最后更新：2026-08-20 09:00</div>
+  </header>
+
+  <div class="latest-report">
+    <span class="badge">最新报告</span>
+    <h2>Huawei MateBook Pro S — 周舆情报告</h2>
+    <div class="meta">📅 监测周期：2026.08.13 — 2026.08.20 · 来源覆盖 8 个平台</div>
+    <div class="desc">
+      本周华为 MateBook Pro S 整体舆情呈中性偏正面态势。知乎、酷安等技术社区讨论活跃度上升，
+      主要集中在性能释放和屏幕素质话题；微博端出现少量充电兼容性吐槽，但整体声量可控。
+      共监测到 28 条有效信息源，正面评价占比约 42%，中性 38%，负面 20%。
+    </div>
+    <a class="btn" href="reports/2026-08-20.html">📖 查看完整报告 →</a>
+  </div>
+
+  <div class="section-title">📁 历史报告</div>
+  <div class="report-list">
+    <div class="report-item">
+      <div>
+        <span class="date">2026-08-20</span>
+        <span class="day">周三</span>
+        <span class="tag">最新</span>
+      </div>
+      <a href="reports/2026-08-20.html">查看报告 →</a>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <h3>📋 监测说明</h3>
+    <ul>
+      <li>社交媒体：知乎、微博、小红书、酷安</li>
+      <li>技术社区：Hacker News、V2EX、Product Hunt</li>
+      <li>媒体报道和博客文章</li>
+      <li>报告每日自动更新（工作日 9:00）</li>
+      <li>分析维度：提及量趋势、情绪分布、高热度话题、风险预警</li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>Powered by TraeWork · 自动生成于 2026-08-20</p>
+  </footer>
+
+</div>
+</body>
+</html>
