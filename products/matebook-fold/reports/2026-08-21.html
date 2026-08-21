@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>华为 MateBook Fold 非凡大师 网络舆情监测报告（2026.8.14–8.21）</title>
+<style>
+  @font-face {
+    font-family: 'HarmonyOS Sans';
+    src: url('../../../_shared/fonts/HarmonyOS_Sans_Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'HarmonyOS Sans';
+    src: url('../../../_shared/fonts/HarmonyOS_Sans_Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'HarmonyOS Sans';
+    src: url('../../../_shared/fonts/HarmonyOS_Sans_Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #F8F9FB;
+    --surface: #FFFFFF;
+    --border: #E5E7EB;
+    --text: #1F2937;
+    --text-secondary: #6B7280;
+    --text-tertiary: #9CA3AF;
+    --pos: #22C55E;
+    --pos-bg: #F0FDF4;
+    --neu: #F59E0B;
+    --neu-bg: #FFFBEB;
+    --neg: #EF4444;
+    --neg-bg: #FEF2F2;
+    --brand: #1E40AF;
+    --brand-light: #DBEAFE;
+    --radius: 12px;
+    --radius-sm: 8px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.04);
+  }
+
+  body {
+    font-family: 'HarmonyOS Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .masthead {
+    background: linear-gradient(135deg, var(--brand) 0%, #1E3A8A 100%);
+    color: #FFFFFF;
+    padding: 48px 0 40px;
+    text-align: center;
+  }
+  .masthead .kicker {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-bottom: 12px;
+  }
+  .masthead h1 {
+    font-size: 28px;
+    font-weight: 700;
+    max-width: 780px;
+    margin: 0 auto 16px;
+    padding: 0 24px;
+    line-height: 1.35;
+  }
+  .masthead .meta {
+    font-size: 13px;
+    opacity: 0.7;
+    font-weight: 400;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+    line-height: 1.7;
+  }
+
+  .container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  section { padding: 32px 0; }
+  section + section { border-top: 1px solid var(--border); }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  h2::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 22px;
+    background: var(--brand);
+    border-radius: 2px;
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+
+  .exec-summary {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+  .card .value {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .card .label {
+    font-size: 13px;
+    color: var(--text-tertiary);
+    margin-top: 6px;
+  }
+  .card.pos .value { color: var(--pos); }
+  .card.neu .value { color: var(--neu); }
+  .card.neg .value { color: var(--neg); }
+  .card.hot .value { color: var(--brand); }
+
+  .charts-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .chart-figure {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+  }
+  .chart-figure h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+  .chart-figure .chart-box {
+    width: 100%;
+    height: 320px;
+  }
+
+  .sentiment-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .sentiment-col {
+    border-radius: var(--radius);
+    padding: 20px;
+    border: 1px solid var(--border);
+  }
+  .sentiment-col.pos { background: var(--pos-bg); border-color: #BBF7D0; }
+  .sentiment-col.neu { background: var(--neu-bg); border-color: #FDE68A; }
+  .sentiment-col.neg { background: var(--neg-bg); border-color: #FECACA; }
+  .sentiment-col h4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .sentiment-col.pos h4 { color: #15803D; }
+  .sentiment-col.neu h4 { color: #B45309; }
+  .sentiment-col.neg h4 { color: #B91C1C; }
+  .sentiment-col ul {
+    list-style: none;
+    padding: 0;
+  }
+  .sentiment-col li {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    padding: 4px 0;
+    border-bottom: 1px dashed rgba(0,0,0,0.06);
+  }
+  .sentiment-col li:last-child { border-bottom: none; }
+
+  .table-wrap {
+    overflow-x: auto;
+    margin-bottom: 24px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    background: var(--surface);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+  }
+  thead { background: #F9FAFB; }
+  th {
+    text-align: left;
+    padding: 12px 16px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  td { padding: 12px 16px; border-top: 1px solid var(--border); color: var(--text-secondary); }
+  tr:first-child td { border-top: none; }
+
+  .tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .tag.pos { background: var(--pos-bg); color: #15803D; }
+  .tag.neu { background: var(--neu-bg); color: #B45309; }
+  .tag.neg { background: var(--neg-bg); color: #B91C1C; }
+  .tag.risk-high { background: #FEF2F2; color: #B91C1C; }
+  .tag.risk-mid { background: #FFFBEB; color: #B45309; }
+  .tag.risk-low { background: #F0FDF4; color: #15803D; }
+
+  .topic {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    margin-bottom: 12px;
+    box-shadow: var(--shadow);
+  }
+  .topic-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .topic-header .name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .topic p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  .callout {
+    border-left: 4px solid var(--brand);
+    background: var(--brand-light);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 18px 20px;
+    margin: 24px 0;
+  }
+  .callout p {
+    font-size: 14px;
+    color: #1E3A8A;
+    line-height: 1.7;
+    font-weight: 500;
+  }
+
+  .suggestions {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    box-shadow: var(--shadow);
+  }
+  .suggestions ol {
+    padding-left: 20px;
+  }
+  .suggestions li {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 8px;
+  }
+  .suggestions li strong { color: var(--text); }
+
+  .sources {
+    list-style: none;
+    padding: 0;
+  }
+  .sources li {
+    font-size: 13px;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .sources li:last-child { border-bottom: none; }
+  .sources li a {
+    color: var(--brand);
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .sources li a:hover { text-decoration: underline; }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 32px 0;
+  }
+
+  footer {
+    text-align: center;
+    padding: 32px 0;
+    font-size: 12px;
+    color: var(--text-tertiary);
+  }
+
+  @media (max-width: 768px) {
+    .card-grid { grid-template-columns: repeat(2, 1fr); }
+    .charts-row { grid-template-columns: 1fr; }
+    .sentiment-grid { grid-template-columns: 1fr; }
+    .masthead h1 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ====== MASTHEAD ====== -->
+<header class="masthead">
+  <div class="kicker">Brand Sentiment Monitoring · 舆情监测</div>
+  <h1>华为 MateBook Fold 非凡大师 网络舆情监测报告（2026.8.14–8.21）</h1>
+  <div class="meta">
+    监测周期：2026年8月14日 – 8月21日 &nbsp;|&nbsp; 产品状态：8月5日发布 · 8月14日首销 &nbsp;|&nbsp; 监测渠道：社交媒体 / 技术社区 / 媒体报道
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- ====== SECTION 1: Executive Summary ====== -->
+  <section>
+    <h2>执行摘要</h2>
+    <div class="exec-summary">
+      华为 MateBook Fold 非凡大师本周（8/14–21）是绝对焦点产品。8月14日首销日形成本周最高声量峰值，IT之家、快科技、中关村在线等多家科技媒体同步报道。正面声量约45%——18英寸折叠大屏+手写笔交互被赞为"移动办公天花板"，UTG玻璃支持手写笔是交互里程碑；但价格争议（24999元起）和品控担忧是两大核心负面，负面声量约25%。整体舆情呈"创新获认可但价格门槛过高"的格局，价格争议在多个平台持续发酵。
+    </div>
+  </section>
+
+  <!-- ====== SECTION 2: Sentiment Cards + Charts ====== -->
+  <section>
+    <h2>舆情概览</h2>
+
+    <!-- Sentiment Cards -->
+    <div class="card-grid">
+      <div class="card pos">
+        <div class="value">45%</div>
+        <div class="label">正面</div>
+      </div>
+      <div class="card neu">
+        <div class="value">30%</div>
+        <div class="label">中性</div>
+      </div>
+      <div class="card neg">
+        <div class="value">25%</div>
+        <div class="label">负面</div>
+      </div>
+      <div class="card hot">
+        <div class="value">3</div>
+        <div class="label">高热话题</div>
+      </div>
+    </div>
+
+    <!-- Charts -->
+    <div style="margin-top: 28px;">
+      <div class="charts-row">
+        <!-- Mention Trend -->
+        <div class="chart-figure">
+          <h3>提及趋势</h3>
+          <div class="chart-box" id="chart-mention-trend"></div>
+        </div>
+        <!-- Sentiment Pie -->
+        <div class="chart-figure">
+          <h3>情感分布</h3>
+          <div class="chart-box" id="chart-sentiment"></div>
+        </div>
+      </div>
+      <!-- Risk Bar -->
+      <div class="chart-figure">
+        <h3>风险矩阵</h3>
+        <div class="chart-box" id="chart-risk" style="height: 350px;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SECTION 3: Sentiment Analysis ====== -->
+  <section>
+    <h2>情感分析</h2>
+    <div class="sentiment-grid">
+      <div class="sentiment-col pos">
+        <h4>正面（45%）</h4>
+        <ul>
+          <li>18英寸折叠大屏+手写笔，移动办公天花板；UTG玻璃让折叠屏终于敢落笔，抗冲击提升90%；1.16kg轻巧便携，折叠形态是真正创新</li>
+        </ul>
+      </div>
+      <div class="sentiment-col neu">
+        <h4>中性（30%）</h4>
+        <ul>
+          <li>创新形态值得肯定，但只适合特定人群；预算充足+华为生态用户可考虑；手写交互是亮点但需时间验证长期可靠性</li>
+        </ul>
+      </div>
+      <div class="sentiment-col neg">
+        <h4>负面（25%）</h4>
+        <ul>
+          <li>24999元起定价过高，同等预算可买顶配台式+轻薄本；不能原生运行exe程序，CAD等需虚拟机体验打折扣；折叠屏长期折痕和高昂维修成本是隐忧</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Sentiment Table -->
+    <h3>典型舆情条目</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>情感</th><th>典型内容</th><th>来源</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="tag pos">正面</span></td><td>"18英寸折叠大屏+手写笔，移动办公天花板"</td><td>中国日报/新华网</td></tr>
+          <tr><td><span class="tag pos">正面</span></td><td>"UTG玻璃让折叠屏终于敢落笔，抗冲击提升90%"</td><td>Android Authority</td></tr>
+          <tr><td><span class="tag neu">中性</span></td><td>"创新形态值得肯定，但只适合特定人群"</td><td>什么值得买</td></tr>
+          <tr><td><span class="tag neg">负面</span></td><td>"24999元起定价过高，同等预算可买顶配台式+轻薄本"</td><td>什么值得买评测</td></tr>
+          <tr><td><span class="tag neg">负面</span></td><td>"不能原生运行exe程序，CAD等需虚拟机体验打折扣"</td><td>今日头条评测</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== SECTION 4: TOP 3 Topics ====== -->
+  <section>
+    <h2>本周热门话题 TOP 3</h2>
+    <div class="topic">
+      <div class="topic-header">
+        <span class="tag risk-high">极高</span>
+        <span class="name">8月14日首销：24999元起折叠屏笔记本正式开售</span>
+        <span style="font-size:12px;color:var(--text-tertiary);">多平台同步报道</span>
+      </div>
+      <p>三档配置（24+512/24999、24+1TB/26999、32+2TB/29999）引发价格讨论，IT之家、快科技等媒体同步报道首销情况，是本周声量峰值。</p>
+    </div>
+    <div class="topic">
+      <div class="topic-header">
+        <span class="tag risk-high">高</span>
+        <span class="name">"24999元值不值"：折叠屏PC是创新还是噱头</span>
+        <span style="font-size:12px;color:var(--text-tertiary);">多平台讨论</span>
+      </div>
+      <p>正方认为18英寸大屏+手写+便携是独一份体验，反方认为同预算买传统旗舰更务实。价格争议在什么值得买、知乎、今日头条等平台持续发酵。</p>
+    </div>
+    <div class="topic">
+      <div class="topic-header">
+        <span class="tag risk-mid">中高</span>
+        <span class="name">UTG玻璃+手写笔：折叠屏PC交互的里程碑</span>
+        <span style="font-size:12px;color:var(--text-tertiary);">技术媒体</span>
+      </div>
+      <p>40微米UTG超薄玻璃首次量产用于折叠PC，50万次笔触耐久，被称为"从形态创新走向交互升级的关键闭环"，技术媒体评价积极。</p>
+    </div>
+  </section>
+
+  <!-- ====== SECTION 5: Risk Table ====== -->
+  <section>
+    <h2>风险监测</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>等级</th><th>风险项</th><th>风险描述</th><th>监测信号</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="tag risk-high">高</span></td><td>价格争议持续发酵</td><td>24999元起售在多个平台成为争议焦点，"太贵了""割韭菜"负面声音较多</td><td>多个评测文章标题直接以"值不值"为切入点</td></tr>
+          <tr><td><span class="tag risk-high">高</span></td><td>品控隐患浮现</td><td>有用户反馈屏幕触控失灵故障，维修成本高昂，售后网点配件储备不足</td><td>今日头条评测中被提及，2.5万元级产品品控问题极易引爆舆论</td></tr>
+          <tr><td><span class="tag risk-mid">中</span></td><td>折叠屏折痕/铰链长期可靠性</td><td>长期使用后折痕变化、铰链松动尚无验证数据</td><td>多家评测明确指出"需长期观察"</td></tr>
+          <tr><td><span class="tag risk-mid">中</span></td><td>鸿蒙PC生态制约</td><td>无法原生运行Windows exe，专业软件依赖虚拟机</td><td>用户反馈AutoCAD移动端在并行模式下闪退</td></tr>
+          <tr><td><span class="tag risk-mid">中</span></td><td>虚拟键盘长时间打字体验差</td><td>18英寸折叠屏虚拟键盘布局宽大，但缺少物理反馈</td><td>评测中提及，需搭配实体键盘使用</td></tr>
+          <tr><td><span class="tag risk-mid">中</span></td><td>维修成本高昂</td><td>折叠屏组件维修费用高，且备件供应周期长</td><td>售后相关讨论中出现担忧</td></tr>
+          <tr><td><span class="tag risk-low">低</span></td><td>强光可视性不足</td><td>18英寸大屏无抗反光涂层，户外强光下画面发白</td><td>评测中提及，暂未引发集中讨论</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Risk Assessment Callout -->
+    <div class="callout">
+      <p><strong>风险评估：</strong>本周最大风险是价格争议和品控担忧的双重叠加。作为24999元起的旗舰产品，任何品控问题都可能被放大为品牌信任危机。建议密切关注首销用户反馈中的质量相关问题，及时响应和修复，避免"高价低质"的负面标签形成。</p>
+    </div>
+  </section>
+
+  <!-- ====== SECTION 6: Operations Suggestions ====== -->
+  <section>
+    <h2>运营建议</h2>
+    <div class="suggestions">
+      <ol>
+        <li><strong>主动管理价格预期，强化"独一份体验"的价值叙事：</strong>以"18英寸折叠大屏+手写笔+1.16kg便携"三位一体的独特性作为定价锚点，减少与竞品的直接价格对比。</li>
+        <li><strong>建立首销用户专属服务通道，快速响应品控反馈：</strong>为首销用户提供优先售后通道，对品控类反馈做到48小时内响应，避免负面口碑扩散。</li>
+        <li><strong>制作折叠屏耐久性实证内容：</strong>通过第三方实验室或KOL长期使用记录，展示折叠屏铰链和UTG玻璃的耐久性数据，回应"可靠性担忧"。</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ====== SECTION 7: Sources ====== -->
+  <section>
+    <h2>信息来源</h2>
+    <ol class="sources">
+      <li>华为官网 · 产品页 — <a href="https://consumer.huawei.com/cn/harmonyos-computer/matebook-fold-ultimate-design/" target="_blank" rel="noopener">https://consumer.huawei.com/cn/harmonyos-computer/matebook-fold-ultimate-design/</a></li>
+      <li>IT之家 · 首销报道 — <a href="https://m.toutiao.com/group/7673686322170626595/" target="_blank" rel="noopener">https://m.toutiao.com/group/7673686322170626595/</a></li>
+      <li>今日头条 · 8月14日开售 — <a href="https://m.toutiao.com/group/7673065392297820718/" target="_blank" rel="noopener">https://m.toutiao.com/group/7673065392297820718/</a></li>
+      <li>今日头条 · 24999元起值不值 — <a href="https://m.toutiao.com/group/7675561038359609899/" target="_blank" rel="noopener">https://m.toutiao.com/group/7675561038359609899/</a></li>
+      <li>什么值得买 · 折叠屏终于能写笔了 — <a href="https://post.m.smzdm.com/p/a3mgw7nr/" target="_blank" rel="noopener">https://post.m.smzdm.com/p/a3mgw7nr/</a></li>
+      <li>什么值得买 · 两万元折叠屏深度评测 — <a href="https://post.m.smzdm.com/p/a823g8wn/" target="_blank" rel="noopener">https://post.m.smzdm.com/p/a823g8wn/</a></li>
+      <li>什么值得买 · 出差党的终极矛盾 — <a href="https://post.m.smzdm.com/p/ae6ke4kz/" target="_blank" rel="noopener">https://post.m.smzdm.com/p/ae6ke4kz/</a></li>
+      <li>今日头条 · 大屏能手写形态终极解 — <a href="https://m.toutiao.com/group/7667878525320069666/" target="_blank" rel="noopener">https://m.toutiao.com/group/7667878525320069666/</a></li>
+      <li>中国日报 · 重塑折叠PC交互体验 — <a href="https://ex.chinadaily.com.cn/exchange/partners/82/rss/channel/cn/columns/sz8srm/stories/WS6a73f295a310d709c2fc1cbd.html" target="_blank" rel="noopener">https://ex.chinadaily.com.cn/exchange/partners/82/rss/channel/cn/columns/sz8srm/stories/WS6a73f295a310d709c2fc1cbd.html</a></li>
+      <li>Android Authority · 国际报道 — <a href="https://www.androidauthority.com/huawei-matebook-fold-3694954/" target="_blank" rel="noopener">https://www.androidauthority.com/huawei-matebook-fold-3694954/</a></li>
+      <li>Digital Trends · 折叠笔是真正升级 — <a href="https://www.digitaltrends.com/computing/huawei-made-its-giant-folding-laptop-faster-and-tougher-but-the-pen-is-the-real-upgrade/" target="_blank" rel="noopener">https://www.digitaltrends.com/computing/huawei-made-its-giant-folding-laptop-faster-and-tougher-but-the-pen-is-the-real-upgrade/</a></li>
+      <li>Notebookcheck · 18英寸折叠OLED — <a href="https://www.notebookcheck.net/Huawei-launches-MateBook-Fold-2026-with-18-inch-foldable-OLED-display-and-Kirin-X90-Plus-chip.1360518.0.html" target="_blank" rel="noopener">https://www.notebookcheck.net/Huawei-launches-MateBook-Fold-2026-with-18-inch-foldable-OLED-display-and-Kirin-X90-Plus-chip.1360518.0.html</a></li>
+    </ol>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2026 Brand Sentiment Monitoring · 自动生成舆情报告 · 仅供内部参考
+</footer>
+
+<!-- ECharts -->
+<script src="../../../_shared/js/echarts.min.js"></script>
+<script>
+(function() {
+  // ---- Mention Trend Chart ----
+  (function() {
+    var el = document.getElementById('chart-mention-trend');
+    if (!el) return;
+    var chart = echarts.init(el, null, { renderer: 'svg' });
+    var option = {
+      tooltip: { trigger: 'axis' },
+      grid: { left: 50, right: 30, top: 30, bottom: 40 },
+      xAxis: {
+        type: 'category',
+        data: ['8/14', '8/15', '8/16', '8/17', '8/18', '8/19', '8/21'],
+        axisLabel: { fontSize: 11, color: '#6B7280' },
+        axisLine: { lineStyle: { color: '#E5E7EB' } },
+        axisTick: { show: false }
+      },
+      yAxis: {
+        type: 'value',
+        name: '提及量（相对值）',
+        nameTextStyle: { fontSize: 11, color: '#9CA3AF' },
+        axisLabel: { fontSize: 11, color: '#6B7280' },
+        splitLine: { lineStyle: { color: '#F3F4F6', type: 'dashed' } }
+      },
+      series: [{
+        data: [100, 85, 60, 45, 35, 40, 28],
+        type: 'line',
+        smooth: true,
+        lineStyle: { color: '#1E40AF', width: 2.5 },
+        itemStyle: { color: '#1E40AF' },
+        areaStyle: { color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1,
+          colorStops: [{ offset: 0, color: 'rgba(30,64,175,0.15)' }, { offset: 1, color: 'rgba(30,64,175,0.01)' }] } },
+        markLine: {
+          silent: true,
+          symbol: 'none',
+          lineStyle: { color: '#EF4444', type: 'dashed', width: 1.5 },
+          label: { fontSize: 11, color: '#EF4444', formatter: '首销日' },
+          data: [{ xAxis: '8/14' }]
+        }
+      }]
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+  })();
+
+  // ---- Sentiment Pie Chart ----
+  (function() {
+    var el = document.getElementById('chart-sentiment');
+    if (!el) return;
+    var chart = echarts.init(el, null, { renderer: 'svg' });
+    var option = {
+      tooltip: { trigger: 'item', formatter: '{b}: {c}条 ({d}%)' },
+      legend: { bottom: 0, textStyle: { fontSize: 11, color: '#6B7280' } },
+      series: [{
+        type: 'pie',
+        radius: ['52%', '78%'],
+        center: ['50%', '48%'],
+        avoidLabelOverlap: false,
+        itemStyle: { borderRadius: 4, borderColor: '#fff', borderWidth: 2 },
+        label: { show: true, position: 'outside', fontSize: 11, color: '#6B7280', formatter: '{b}\n{d}%' },
+        emphasis: { label: { fontSize: 14, fontWeight: 'bold' } },
+        data: [
+          { value: 9, name: '正面', itemStyle: { color: '#22C55E' } },
+          { value: 6, name: '中性', itemStyle: { color: '#F59E0B' } },
+          { value: 5, name: '负面', itemStyle: { color: '#EF4444' } }
+        ]
+      }]
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+  })();
+
+  // ---- Risk Bar Chart ----
+  (function() {
+    var el = document.getElementById('chart-risk');
+    if (!el) return;
+    var chart = echarts.init(el, null, { renderer: 'svg' });
+    var riskItems = [
+      { name: '价格争议持续发酵', value: 9, level: '高' },
+      { name: '品控隐患浮现', value: 8, level: '高' },
+      { name: '折叠屏折痕/铰链长期可靠性', value: 7, level: '中' },
+      { name: '鸿蒙PC生态制约', value: 7, level: '中' },
+      { name: '强光可视性不足', value: 4, level: '低' },
+      { name: '虚拟键盘长时间打字体验差', value: 5, level: '中' },
+      { name: '维修成本高昂', value: 6, level: '中' }
+    ];
+    var levelColors = { '高': '#EF4444', '中': '#F59E0B', '低': '#22C55E' };
+    var option = {
+      tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' },
+        formatter: function(params) {
+          var p = params[0];
+          var item = riskItems[p.dataIndex];
+          return item.name + '<br/>风险评分：' + item.value + '分 · ' + item.level;
+        }
+      },
+      grid: { left: 160, right: 60, top: 20, bottom: 20 },
+      xAxis: {
+        type: 'value',
+        max: 10,
+        axisLabel: { fontSize: 11, color: '#6B7280', formatter: '{value}分' },
+        splitLine: { lineStyle: { color: '#F3F4F6', type: 'dashed' } }
+      },
+      yAxis: {
+        type: 'category',
+        inverse: true,
+        data: riskItems.map(function(r) { return r.name; }),
+        axisLabel: { fontSize: 12, color: '#374151', width: 140, overflow: 'truncate' },
+        axisLine: { show: false },
+        axisTick: { show: false }
+      },
+      series: [{
+        type: 'bar',
+        data: riskItems.map(function(r) {
+          return { value: r.value, itemStyle: { color: levelColors[r.level], borderRadius: [0, 4, 4, 0] } };
+        }),
+        barWidth: 18,
+        label: {
+          show: true,
+          position: 'right',
+          fontSize: 11,
+          color: '#6B7280',
+          formatter: function(params) { return riskItems[params.dataIndex].level; }
+        }
+      }]
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+  })();
+})();
+</script>
+
+</body>
+</html>
