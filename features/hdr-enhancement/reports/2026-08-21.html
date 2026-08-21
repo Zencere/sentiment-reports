@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>华为 HDR视频增强 网络舆情监测报告（2026.8.14–8.21）</title>
+<style>
+  @font-face {
+    font-family: 'HarmonyOS Sans';
+    src: url('../../../_shared/fonts/HarmonyOS_Sans_Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'HarmonyOS Sans';
+    src: url('../../../_shared/fonts/HarmonyOS_Sans_Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+  }
+  :root {
+    --positive: #22C55E;
+    --neutral: #F59E0B;
+    --negative: #EF4444;
+    --risk-high: #EF4444;
+    --risk-medium: #F59E0B;
+    --risk-low: #22C55E;
+    --bg: #F3F4F6;
+    --card-bg: #FFFFFF;
+    --text: #111827;
+    --text-secondary: #6B7280;
+    --border: #E5E7EB;
+    --accent: #1D4ED8;
+    --accent-light: #DBEAFE;
+    --header-bg: linear-gradient(135deg, #0F172A 0%, #1E3A5F 50%, #1D4ED8 100%);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'HarmonyOS Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  .report-header {
+    background: var(--header-bg);
+    color: #FFFFFF;
+    padding: 48px 32px 40px;
+    text-align: center;
+  }
+  .report-header .kicker {
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 12px;
+  }
+  .report-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.35;
+  }
+  .report-header .meta {
+    font-size: 13px;
+    opacity: 0.65;
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 32px 24px 64px;
+  }
+  .section {
+    margin-bottom: 36px;
+  }
+  .section-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background: var(--accent);
+    color: #FFF;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    margin-bottom: 20px;
+  }
+  .exec-summary {
+    font-size: 15px;
+    color: var(--text);
+    line-height: 1.8;
+  }
+  .sentiment-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .sentiment-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px 16px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    border-top: 3px solid transparent;
+  }
+  .sentiment-card.pos { border-top-color: var(--positive); }
+  .sentiment-card.neu { border-top-color: var(--neutral); }
+  .sentiment-card.neg { border-top-color: var(--negative); }
+  .sentiment-card.hot { border-top-color: var(--accent); }
+  .sentiment-card .val {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .sentiment-card.pos .val { color: var(--positive); }
+  .sentiment-card.neu .val { color: var(--neutral); }
+  .sentiment-card.neg .val { color: var(--negative); }
+  .sentiment-card.hot .val { color: var(--accent); }
+  .sentiment-card .lbl {
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+  .charts-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  .charts-row-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  .chart-box {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .chart-box h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text);
+  }
+  .chart-inner {
+    width: 100%;
+    height: 320px;
+  }
+  .chart-inner-tall {
+    width: 100%;
+    height: 380px;
+  }
+  .sentiment-breakdown h4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .sentiment-breakdown h4.pos { color: var(--positive); }
+  .sentiment-breakdown h4.neu { color: var(--neutral); }
+  .sentiment-breakdown h4.neg { color: var(--negative); }
+  .sentiment-breakdown p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+    line-height: 1.7;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .data-table th {
+    background: #F9FAFB;
+    padding: 11px 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--text-secondary);
+    border-bottom: 2px solid var(--border);
+  }
+  .data-table td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .data-table .badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .badge-pos { background: #DCFCE7; color: #166534; }
+  .badge-neu { background: #FEF3C7; color: #92400E; }
+  .badge-neg { background: #FEE2E2; color: #991B1B; }
+  .badge-high { background: #FEE2E2; color: #991B1B; }
+  .badge-medium { background: #FEF3C7; color: #92400E; }
+  .badge-low { background: #DCFCE7; color: #166534; }
+  .topic-item {
+    padding: 16px;
+    border-left: 4px solid var(--accent);
+    background: var(--accent-light);
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 14px;
+  }
+  .topic-item h4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .topic-item .topic-meta {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+  }
+  .topic-item p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .callout {
+    background: #FEF2F2;
+    border: 1px solid #FECACA;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 20px;
+  }
+  .callout h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #991B1B;
+    margin-bottom: 8px;
+  }
+  .callout p {
+    font-size: 14px;
+    color: #7F1D1D;
+    line-height: 1.7;
+  }
+  .suggestion-list {
+    list-style: none;
+    padding: 0;
+  }
+  .suggestion-list li {
+    padding: 12px 16px;
+    background: #F0FDF4;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    border-left: 3px solid var(--positive);
+  }
+  .suggestion-list li strong {
+    color: var(--text);
+  }
+  .source-list {
+    list-style: none;
+    padding: 0;
+  }
+  .source-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+  .source-list li a {
+    color: var(--accent);
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .source-list li a:hover {
+    text-decoration: underline;
+  }
+  .source-list li .src-tag {
+    display: inline-block;
+    background: #F3F4F6;
+    padding: 1px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    margin-right: 8px;
+    color: var(--text-secondary);
+  }
+  @media (max-width: 768px) {
+    .sentiment-cards { grid-template-columns: repeat(2, 1fr); }
+    .charts-row { grid-template-columns: 1fr; }
+    .charts-row-3 { grid-template-columns: 1fr; }
+    .report-header { padding: 32px 20px 28px; }
+    .report-header h1 { font-size: 22px; }
+    .container { padding: 20px 16px 48px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="report-header">
+  <div class="kicker">Brand Sentiment Monitoring · 舆情监测</div>
+  <h1>华为 HDR视频增强 网络舆情监测报告（2026.8.14–8.21）</h1>
+  <div class="meta">监测周期：2026年8月14日 – 8月21日 | 技术状态：HDR Vivid全链路 · 鸿蒙6发布 | 监测渠道：社交媒体 / 技术社区 / 媒体报道</div>
+</header>
+
+<div class="container">
+
+  <!-- Section 1: Executive Summary -->
+  <div class="section">
+    <div class="section-title"><span class="num">1</span> 执行摘要</div>
+    <div class="card">
+      <p class="exec-summary">华为HDR视频增强相关技术本周迎来重大利好。8月20日鸿蒙6操作系统正式发布，B站成为首个支持HDR Vivid直播的平台，直播画质首次超越录播视频；8月21日Pura 80 Ultra升级鸿蒙6.0尝鲜版后正式支持4K 60帧HDR Vivid视频录制。两大重磅新闻将HDR Vivid推至本周科技圈焦点，正面声量高达65%。负面声音集中在64HDRi为私有标准不开放、HDR Vivid与Dolby Vision相比内容生态差距大。整体舆情呈"技术突破获认可但生态封闭性存疑"的格局。</p>
+    </div>
+  </div>
+
+  <!-- Section 2: Sentiment Overview & Charts -->
+  <div class="section">
+    <div class="section-title"><span class="num">2</span> 舆情概览</div>
+    <div class="sentiment-cards">
+      <div class="sentiment-card pos"><div class="val">65%</div><div class="lbl">正面</div></div>
+      <div class="sentiment-card neu"><div class="val">25%</div><div class="lbl">中性</div></div>
+      <div class="sentiment-card neg"><div class="val">10%</div><div class="lbl">负面</div></div>
+      <div class="sentiment-card hot"><div class="val">3</div><div class="lbl">高热话题</div></div>
+    </div>
+
+    <div class="charts-row-3">
+      <div class="chart-box">
+        <h3>提及量趋势</h3>
+        <div class="chart-inner" id="chart-mention-trend"></div>
+      </div>
+      <div class="chart-box">
+        <h3>情感分布</h3>
+        <div class="chart-inner" id="chart-sentiment"></div>
+      </div>
+      <div class="chart-box">
+        <h3>风险指数</h3>
+        <div class="chart-inner-tall" id="chart-risk"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 3: Sentiment Analysis -->
+  <div class="section">
+    <div class="section-title"><span class="num">3</span> 情感分析</div>
+    <div class="card">
+      <div class="sentiment-breakdown">
+        <h4 class="pos">正面（65%）</h4>
+        <p>中国自主HDR标准终于端到端落地；直播画质超越录播是历史性突破；4K60帧HDR Vivid让手机变专业摄影工具</p>
+        <h4 class="neu">中性（25%）</h4>
+        <p>HDR Vivid是好技术，但需要更多平台和内容支持；目前只有鸿蒙设备能体验，覆盖有限</p>
+        <h4 class="neg">负面（10%）</h4>
+        <p>64HDRi是私有标准不开放；HDR Vivid与Dolby Vision相比内容生态差距大；非鸿蒙设备无法体验</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 4: Sentiment Table -->
+  <div class="section">
+    <div class="section-title"><span class="num">4</span> 代表性言论</div>
+    <div class="card" style="overflow-x:auto;">
+      <table class="data-table">
+        <thead>
+          <tr><th>情感</th><th>代表性言论</th><th>来源</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="badge badge-pos">正面</span></td><td>"中国自主HDR标准终于端到端落地，直播画质超越录播"</td><td>快科技</td></tr>
+          <tr><td><span class="badge badge-pos">正面</span></td><td>"4K60帧HDR Vivid让手机变专业摄影工具"</td><td>快科技</td></tr>
+          <tr><td><span class="badge badge-neu">中性</span></td><td>"HDR Vivid是好技术，但需要更多平台和内容支持"</td><td>CSDN</td></tr>
+          <tr><td><span class="badge badge-neg">负面</span></td><td>"64HDRi是私有标准不开放，跨平台兼容性差"</td><td>CSDN技术社区</td></tr>
+          <tr><td><span class="badge badge-neg">负面</span></td><td>"HDR Vivid与Dolby Vision相比内容生态差距大"</td><td>科技媒体评论</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Section 5: TOP 3 Topics -->
+  <div class="section">
+    <div class="section-title"><span class="num">5</span> TOP 3 热门话题</div>
+    <div class="topic-item">
+      <h4>华为鸿蒙6发布！B站首发支持HDR Vivid直播：画质首次超越录播</h4>
+      <div class="topic-meta">热度：极高 · 8月20日</div>
+      <p>鸿蒙6将HDR Vivid深度集成至系统底层，B站成为首个支持HDR Vivid直播的平台，实现拍摄端-传输端-显示端全链路国产标准覆盖</p>
+    </div>
+    <div class="topic-item">
+      <h4>华为Pura 80 Ultra升级鸿蒙6.0尝鲜版：支持4K 60帧HDR Vivid视频录制</h4>
+      <div class="topic-meta">热度：极高 · 8月21日</div>
+      <p>推送7.24GB大版本更新，覆盖43款设备</p>
+    </div>
+    <div class="topic-item">
+      <h4>64HDRi与48HDR技术差异解读</h4>
+      <div class="topic-meta">热度：中 · 持续</div>
+      <p>技术社区讨论华为自研64阶局部动态映射与传统HDR的区别</p>
+    </div>
+  </div>
+
+  <!-- Section 6: Risk Table -->
+  <div class="section">
+    <div class="section-title"><span class="num">6</span> 风险监测</div>
+    <div class="card" style="overflow-x:auto;">
+      <table class="data-table">
+        <thead>
+          <tr><th>等级</th><th>风险项</th><th>描述</th><th>来源</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="badge badge-high">高</span></td><td>64HDRi生态封闭性争议</td><td>华为私有技术，未提交标准化组织，跨平台兼容性差</td><td>CSDN技术社区有讨论，被批评为"重复造轮子"</td></tr>
+          <tr><td><span class="badge badge-medium">中</span></td><td>内容生态不足</td><td>HDR Vivid直播仅B站一家支持，抖音/快手/小红书仅接入高清直播</td><td>科技媒体评论中提及</td></tr>
+          <tr><td><span class="badge badge-medium">中</span></td><td>非鸿蒙设备无法体验</td><td>HDR Vivid直播等新功能依赖鸿蒙系统底层支持</td><td>目前讨论量小</td></tr>
+          <tr><td><span class="badge badge-medium">中</span></td><td>老款智慧屏HDR兼容性问题</td><td>早期华为智慧屏型号HDR支持不佳，画面灰暗</td><td>ZOL问答板块有零星反馈</td></tr>
+          <tr><td><span class="badge badge-low">低</span></td><td>技术命名体系复杂</td><td>HDR Vivid、AI-HDR、64HDRi多种概念并存</td><td>普通用户难以区分</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Section 7: Risk Assessment Callout -->
+  <div class="section">
+    <div class="section-title"><span class="num">7</span> 风险评估</div>
+    <div class="callout">
+      <h4>核心风险洞察</h4>
+      <p>本周鸿蒙6发布和HDR Vivid直播是重大利好，但64HDRi的私有标准属性是中长期风险。在"自主标准"与"开放生态"之间，若不能推动更多平台和厂商接入HDR Vivid标准，华为HDR技术可能陷入"技术领先但生态孤立"的困境。</p>
+    </div>
+  </div>
+
+  <!-- Section 8: Operations Suggestions -->
+  <div class="section">
+    <div class="section-title"><span class="num">8</span> 运营建议</div>
+    <ul class="suggestion-list">
+      <li><strong>推动HDR Vivid标准向更多平台开放：</strong>积极与抖音、快手、小红书等头部平台沟通，推动HDR Vivid直播和内容标准接入</li>
+      <li><strong>简化技术命名，统一消费者沟通语言：</strong>面向消费者端统一使用"华为HDR增强"作为主品牌，降低用户认知负担</li>
+      <li><strong>制作"HDR Vivid全链路体验"专题内容：</strong>串联从拍摄（Pura 80 Ultra）、编辑（AI-HDR）、传输（B站直播）到显示的完整链路，可视化展示标准建设成果</li>
+    </ul>
+  </div>
+
+  <!-- Section 9: Sources -->
+  <div class="section">
+    <div class="section-title"><span class="num">9</span> 信息来源</div>
+    <div class="card">
+      <ol class="source-list">
+        <li><span class="src-tag">快科技</span> 鸿蒙6发布+B站HDR Vivid直播 &mdash; <a href="https://soft.china.com/article/1883917.html" target="_blank" rel="noopener">soft.china.com/article/1883917.html</a></li>
+        <li><span class="src-tag">快科技</span> Pura 80 Ultra升级4K60帧HDR Vivid &mdash; <a href="https://soft.china.com/article/2108487.html" target="_blank" rel="noopener">soft.china.com/article/2108487.html</a></li>
+        <li><span class="src-tag">CSDN</span> 48HDR与64HDRi关键差异 &mdash; <a href="https://ask.csdn.net/questions/9415664" target="_blank" rel="noopener">ask.csdn.net/questions/9415664</a></li>
+        <li><span class="src-tag">海思官网</span> HDR Vivid超高清解决方案 &mdash; <a href="https://www.hisilicon.com/cn/techtalk/hdr-vivid" target="_blank" rel="noopener">hisilicon.com/cn/techtalk/hdr-vivid</a></li>
+        <li><span class="src-tag">华为消费者官网</span> 智慧屏S7 Pro &mdash; <a href="https://consumer.huawei.com/cn/visions/" target="_blank" rel="noopener">consumer.huawei.com/cn/visions/</a></li>
+        <li><span class="src-tag">华为消费者官网</span> Vision智慧屏4 Pro &mdash; <a href="https://consumer.huawei.com/cn/visions/huawei-vision/4-pro/" target="_blank" rel="noopener">consumer.huawei.com/cn/visions/huawei-vision/4-pro/</a></li>
+        <li><span class="src-tag">CSDN</span> B站直播HDR Vivid鸿蒙 &mdash; <a href="https://harmonyosdev.csdn.net/6a3d3cd9662f9a54cb846445.html" target="_blank" rel="noopener">harmonyosdev.csdn.net</a></li>
+        <li><span class="src-tag">新浪科技</span> 华为电视值得买吗15款热门型号拆解 &mdash; <a href="https://www.sina.cn/news/article/comos_ninwiei6974225.html" target="_blank" rel="noopener">sina.cn</a></li>
+        <li><span class="src-tag">IT之家</span> 鸿蒙版微博支持HDR Vivid &mdash; <a href="https://it.ithome.com/archiver/878/893.htm" target="_blank" rel="noopener">it.ithome.com/archiver/878/893.htm</a></li>
+        <li><span class="src-tag">中关村在线</span> Pura 80 Ultra HDR Vivid分析 &mdash; <a href="https://m.zol.com.cn/article/11576701.html" target="_blank" rel="noopener">m.zol.com.cn/article/11576701.html</a></li>
+      </ol>
+    </div>
+  </div>
+
+</div>
+
+<script src="../../../_shared/js/echarts.min.js"></script>
+<script>
+(function() {
+  var chart1 = echarts.init(document.getElementById('chart-mention-trend'), null, { renderer: 'svg' });
+  chart1.setOption({
+    tooltip: { trigger: 'axis' },
+    grid: { left: 50, right: 30, top: 30, bottom: 40 },
+    xAxis: {
+      type: 'category',
+      data: ['8/14','8/15','8/16','8/17','8/18','8/19','8/21'],
+      axisLine: { lineStyle: { color: '#D1D5DB' } },
+      axisTick: { show: false }
+    },
+    yAxis: {
+      type: 'value',
+      name: '提及量（条）',
+      nameTextStyle: { fontSize: 11, color: '#6B7280' },
+      axisLabel: { fontSize: 11, color: '#6B7280' },
+      splitLine: { lineStyle: { color: '#F3F4F6' } }
+    },
+    series: [{
+      data: [320, 280, 250, 230, 360, 1500, 2100],
+      type: 'line',
+      smooth: true,
+      symbol: 'circle',
+      symbolSize: 6,
+      lineStyle: { color: '#1D4ED8', width: 2.5 },
+      itemStyle: { color: '#1D4ED8' },
+      areaStyle: { color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(29,78,216,0.15)' }, { offset: 1, color: 'rgba(29,78,216,0.01)' }] } },
+      markLine: {
+        silent: true,
+        symbol: 'none',
+        lineStyle: { color: '#EF4444', type: 'dashed', width: 1.5 },
+        label: { fontSize: 11, color: '#EF4444', formatter: '鸿蒙6发布' },
+        data: [{ xAxis: 5.5 }]
+      }
+    }]
+  });
+
+  var chart2 = echarts.init(document.getElementById('chart-sentiment'), null, { renderer: 'svg' });
+  chart2.setOption({
+    tooltip: { trigger: 'item', formatter: '{b}: {c}条 ({d}%)' },
+    legend: { bottom: 0, textStyle: { fontSize: 12 } },
+    series: [{
+      type: 'pie',
+      radius: ['50%', '75%'],
+      center: ['50%', '45%'],
+      avoidLabelOverlap: false,
+      label: { show: true, position: 'outside', formatter: '{b}\n{d}%', fontSize: 12 },
+      emphasis: { scale: false },
+      itemStyle: { borderRadius: 4, borderColor: '#fff', borderWidth: 2 },
+      data: [
+        { value: 13, name: '正面', itemStyle: { color: '#22C55E' } },
+        { value: 5, name: '中性', itemStyle: { color: '#F59E0B' } },
+        { value: 2, name: '负面', itemStyle: { color: '#EF4444' } }
+      ]
+    }]
+  });
+
+  var chart3 = echarts.init(document.getElementById('chart-risk'), null, { renderer: 'svg' });
+  chart3.setOption({
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+    grid: { left: 140, right: 50, top: 10, bottom: 20 },
+    xAxis: {
+      type: 'value',
+      max: 10,
+      axisLabel: { fontSize: 10, color: '#6B7280' },
+      splitLine: { lineStyle: { color: '#F3F4F6' } }
+    },
+    yAxis: {
+      type: 'category',
+      inverse: true,
+      axisLabel: { fontSize: 11, color: '#111827', width: 130, overflow: 'truncate' },
+      axisTick: { show: false },
+      axisLine: { show: false },
+      data: [
+        '64HDRi生态封闭性争议',
+        '内容生态不足（仅B站支持直播）',
+        '非鸿蒙设备无法体验HDR Vivid',
+        '老款智慧屏HDR兼容性问题',
+        'HDR功耗与发热',
+        '技术命名体系复杂'
+      ]
+    },
+    series: [{
+      type: 'bar',
+      data: [
+        { value: 8, itemStyle: { color: '#EF4444' } },
+        { value: 7, itemStyle: { color: '#F59E0B' } },
+        { value: 6, itemStyle: { color: '#F59E0B' } },
+        { value: 5, itemStyle: { color: '#F59E0B' } },
+        { value: 3, itemStyle: { color: '#22C55E' } },
+        { value: 4, itemStyle: { color: '#F59E0B' } }
+      ],
+      barWidth: 18,
+      label: {
+        show: true,
+        position: 'right',
+        fontSize: 11,
+        color: '#6B7280',
+        formatter: '{c}分'
+      }
+    }]
+  });
+
+  window.addEventListener('resize', function() { chart1.resize(); chart2.resize(); chart3.resize(); });
+})();
+</script>
+
+</body>
+</html>
