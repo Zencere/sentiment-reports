@@ -50,18 +50,76 @@
   .sentiment-bar.neu .num { color: var(--accent3); }
   .sentiment-bar.neg .num { color: var(--accent4); }
 
-  .reports-section { margin-bottom: 32px; }
-  .reports-section h2 { font-size: 18px; font-weight: 700; margin-bottom: 16px; }
-  .report-card {
-    display: block; background: var(--card); border: 1px solid var(--border);
-    border-radius: 10px; padding: 20px 24px; text-decoration: none; color: inherit;
+  /* Timeline */
+  .tl-section { margin-bottom: 32px; }
+  .tl-title {
+    font-size: 20px; font-weight: 700; margin-bottom: 28px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .tl-title::before {
+    content: ''; display: inline-block; width: 4px; height: 22px;
+    background: var(--accent); border-radius: 2px;
+  }
+  .tl-list {
+    position: relative;
+    padding-left: 32px;
+  }
+  .tl-list::before {
+    content: '';
+    position: absolute;
+    left: 9px; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--accent) 0%, var(--border) 100%);
+    border-radius: 1px;
+  }
+  .tl-item {
+    position: relative;
+    margin-bottom: 28px;
+    padding-bottom: 4px;
+  }
+  .tl-dot {
+    position: absolute;
+    left: -32px; top: 6px;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+    box-shadow: 0 0 0 4px rgba(59,130,246,0.25);
+    z-index: 1;
+  }
+  .tl-date {
+    font-size: 15px; font-weight: 700; color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .tl-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 18px 20px;
     transition: border-color .2s, transform .1s;
   }
-  .report-card:hover { border-color: #475569; transform: translateY(-1px); }
-  .report-card .date { font-size: 12px; color: var(--accent); font-weight: 600; margin-bottom: 6px; }
-  .report-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
-  .report-card .desc { font-size: 13px; color: var(--muted); }
-  .report-card .arrow { float: right; color: var(--accent); font-size: 18px; }
+  .tl-card:hover { border-color: #475569; transform: translateY(-1px); }
+  .tl-card h3 {
+    font-size: 16px; font-weight: 700; margin-bottom: 6px;
+  }
+  .tl-card h3 a { color: var(--text); text-decoration: none; }
+  .tl-card h3 a:hover { color: var(--accent); }
+  .tl-card .tl-summary {
+    font-size: 13px; color: var(--muted); line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  .tl-card .tl-tag {
+    display: inline-block; font-size: 11px; font-weight: 600;
+    padding: 2px 10px; border-radius: 10px;
+    background: rgba(59,130,246,0.15); color: var(--accent);
+  }
+  .tl-item.future .tl-dot {
+    background: transparent;
+    border: 3px solid var(--border);
+    box-shadow: none;
+  }
+  .tl-item.future .tl-card {
+    opacity: 0.5; border-style: dashed;
+  }
+  .tl-item.future .tl-date { color: var(--muted); }
 
   footer { text-align: center; padding: 24px 0; border-top: 1px solid var(--border); color: #64748b; font-size: 12px; margin-top: 40px; }
 </style>
@@ -97,14 +155,27 @@
     </div>
   </div>
 
-  <div class="reports-section">
-    <h2>舆情报告</h2>
-    <a class="report-card" href="reports/2026-08-20.html">
-      <span class="arrow">-></span>
-      <div class="date">2026-08-20</div>
-      <h3>周舆情报告</h3>
-      <p class="desc">监测周期 2026.8.13 - 8.20 · 硬件一边倒好评，软件生态两极分化</p>
-    </a>
+<div class="tl-section">
+    <div class="tl-title">舆情报告时间轴</div>
+    <div class="tl-list">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2026-08-20</div>
+        <div class="tl-card">
+          <h3><a href="reports/2026-08-20.html">周舆情报告</a></h3>
+          <div class="tl-summary">本周该产品在社交媒体引发广泛讨论，用户对798g极致轻薄机身和硬件设计给予高度评价，但软件生态的应用适配问题引发两极分化讨论。</div>
+          <span class="tl-tag">周报告</span>
+        </div>
+      </div>
+      <div class="tl-item future">
+        <div class="tl-dot"></div>
+        <div class="tl-date">即将更新...</div>
+        <div class="tl-card">
+          <h3>下周报告筹备中</h3>
+          <div class="tl-summary">持续监测中，新一期舆情报告将于下周发布。</div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <footer>Powered by TraeWork · 华为舆情监控中心</footer>
