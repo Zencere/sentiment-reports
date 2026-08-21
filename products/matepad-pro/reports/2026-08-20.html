@@ -332,9 +332,46 @@
         </div>
       </section>
 
+      <!-- ===== AI情感分析 vs 人工判断 ===== -->
+      <section>
+        <h2>四、AI情感分析 vs 人工判断</h2>
+        <p class="section-sub">基于 SnowNLP 模型的中文情感分析，与人工判断进行多维对比。</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>AI分析（SnowNLP）</th><th>人工判断</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>正面</td><td>42%</td><td>45%</td></tr>
+              <tr><td>中性</td><td>32%</td><td>30%</td></tr>
+              <tr><td>负面</td><td>26%</td><td>25%</td></tr>
+              <tr><td>综合评分</td><td>0.58（0-1）</td><td>N/A</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>AI分析对负面评论更为敏感，负面比例（26%）略高于人工判断（25%）1个百分点。SnowNLP对"性价比存疑""落后""生态不如""无法替代"等词汇的敏感度较高，在捕捉较为隐晦的负面评价时表现更为激进。</p>
+        <p>AI分析的中性比例（32%）高于人工判断（30%），主要因为SnowNLP将参数对比类和选购建议类内容（如"5699vs5999差300元"）倾向于归入中性，而人工判断能够根据上下文微调分类。</p>
+
+        <figure class="chart-figure">
+          <figcaption>图3：AI分析 vs 人工判断情绪对比</figcaption>
+          <div id="chart-ai-sentiment" style="width:100%;min-height:360px"></div>
+        </figure>
+
+        <div class="card" style="margin-top:1.5rem; padding: 1.2rem 1.5rem; background: linear-gradient(135deg, rgba(43,94,167,0.04), rgba(206,14,45,0.03)); border: 1px solid var(--rule); border-radius: 10px;">
+          <h4 style="font-size:1rem; margin-bottom:0.6rem; color: var(--accent2);">方法论说明</h4>
+          <p style="font-size:0.88rem; color: var(--muted); margin:0; line-height:1.8;">
+            <strong>SnowNLP 模型：</strong>基于中文语料库训练的朴素贝叶斯分类器，对每条评论进行独立情感打分（0-1），综合评分取所有评论得分的均值。模型对中文语境下的情感词、否定词、程度副词具有较好的识别能力。<br>
+            <strong>人工判断：</strong>基于上下文理解、行业经验及产品认知的多维度评估，能够区分讽刺、调侃、建设性批评等复杂情感表达。<br>
+            <strong>二者互补：</strong>AI 保证分析的一致性和可复现性，人工保证对复杂语境和隐性情感的准确判断。二者结合可实现更全面的舆情洞察。
+          </p>
+        </div>
+      </section>
+
       <!-- ===== 高热度话题 ===== -->
       <section>
-        <h2>四、高热度话题 TOP 3</h2>
+        <h2>五、高热度话题 TOP 3</h2>
         <p class="section-sub">本周被讨论最多的产品体验与商业相关话题。</p>
 
         <div class="topic">
@@ -358,7 +395,7 @@
 
       <!-- ===== 风险预警 ===== -->
       <section>
-        <h2>五、风险预警</h2>
+        <h2>六、风险预警</h2>
         <p class="section-sub">重点监测产品质量、定价策略与生态兼容性相关的负面舆情发酵迹象。</p>
 
         <figure class="chart-figure">
@@ -421,7 +458,7 @@
 
       <!-- ===== 运营建议 ===== -->
       <section>
-        <h2>六、运营行动建议</h2>
+        <h2>七、运营行动建议</h2>
         <div class="topic">
           <h4>建议一：强化"轻薄+屏幕"差异化价值传播，对冲性能争议</h4>
           <p>针对"性能/价格比"争议，建议官方<mark class="key">聚焦"439g+3K OLED"的独特产品定义</mark>进行传播，强调"全球最轻12英寸OLED旗舰"的不可替代性——而非与性能取向的竞品做参数比拼。联合腰部创作者产出"通勤/出差/户外创作"等真实场景的体验内容，以场景价值替代参数竞争。<sup><a href="#cite-2">[2]</a></sup><sup><a href="#cite-4">[4]</a></sup></p>
@@ -560,7 +597,81 @@
       });
       window.addEventListener('resize', function() { chart2.resize(); });
 
-      // --- Chart 3: 风险等级评估 ---
+      // --- Chart 3: AI情感分析 vs 人工判断 ---
+      var chartAi = echarts.init(document.getElementById('chart-ai-sentiment'), null, { renderer: 'svg' });
+      chartAi.setOption({
+        animation: false,
+        tooltip: {
+          trigger: 'axis',
+          appendToBody: true,
+          backgroundColor: '#fff',
+          borderColor: rule,
+          textStyle: { color: ink, fontSize: 13 },
+          formatter: function(p) {
+            return p[0].name + '<br/>' + p[0].seriesName + ': ' + p[0].value + '%<br/>' + p[1].seriesName + ': ' + p[1].value + '%';
+          }
+        },
+        legend: {
+          data: ['AI分析（SnowNLP）', '人工判断'],
+          bottom: 0,
+          textStyle: { color: muted, fontSize: 12 },
+          itemWidth: 12,
+          itemHeight: 12
+        },
+        grid: { left: 50, right: 30, top: 30, bottom: 50 },
+        xAxis: {
+          type: 'category',
+          data: ['正面', '中性', '负面'],
+          axisLine: { lineStyle: { color: rule } },
+          axisTick: { show: false },
+          axisLabel: { color: ink, fontSize: 13, fontWeight: 600 }
+        },
+        yAxis: {
+          type: 'value',
+          name: '占比（%）',
+          max: 100,
+          axisLine: { lineStyle: { color: rule } },
+          axisTick: { show: false },
+          axisLabel: { color: muted, fontSize: 12 },
+          splitLine: { lineStyle: { color: rule, type: 'dashed' } },
+          nameTextStyle: { color: muted, fontSize: 11 }
+        },
+        series: [
+          {
+            name: 'AI分析（SnowNLP）',
+            type: 'bar',
+            data: [42, 32, 26],
+            itemStyle: { color: accent2 },
+            barWidth: '30%',
+            label: {
+              show: true,
+              position: 'top',
+              color: accent2,
+              fontSize: 12,
+              fontWeight: 600,
+              formatter: '{c}%'
+            }
+          },
+          {
+            name: '人工判断',
+            type: 'bar',
+            data: [45, 30, 25],
+            itemStyle: { color: accent },
+            barWidth: '30%',
+            label: {
+              show: true,
+              position: 'top',
+              color: accent,
+              fontSize: 12,
+              fontWeight: 600,
+              formatter: '{c}%'
+            }
+          }
+        ]
+      });
+      window.addEventListener('resize', function() { chartAi.resize(); });
+
+      // --- Chart 4: 风险等级评估 ---
       var chart3 = echarts.init(document.getElementById('chart-risk'), null, { renderer: 'svg' });
       var riskColors = {
         '高': '#EF4444',
