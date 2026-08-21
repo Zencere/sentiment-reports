@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>华为 MatePad Pro Max 网络舆情监测报告（2026.8.14–8.21）</title>
+<style>
+  @font-face {
+    font-family: 'HarmonyOS Sans';
+    src: url('../../../_shared/fonts/HarmonyOS_Sans_Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'HarmonyOS Sans';
+    src: url('../../../_shared/fonts/HarmonyOS_Sans_Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'HarmonyOS Sans';
+    src: url('../../../_shared/fonts/HarmonyOS_Sans_Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #F8F9FB;
+    --surface: #FFFFFF;
+    --border: #E5E7EB;
+    --text: #1F2937;
+    --text-secondary: #6B7280;
+    --text-tertiary: #9CA3AF;
+    --pos: #22C55E;
+    --pos-bg: #F0FDF4;
+    --neu: #F59E0B;
+    --neu-bg: #FFFBEB;
+    --neg: #EF4444;
+    --neg-bg: #FEF2F2;
+    --brand: #1E40AF;
+    --brand-light: #DBEAFE;
+    --radius: 12px;
+    --radius-sm: 8px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.04);
+  }
+
+  body {
+    font-family: 'HarmonyOS Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .masthead {
+    background: linear-gradient(135deg, var(--brand) 0%, #1E3A8A 100%);
+    color: #FFFFFF;
+    padding: 48px 0 40px;
+    text-align: center;
+  }
+  .masthead .kicker {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-bottom: 12px;
+  }
+  .masthead h1 {
+    font-size: 28px;
+    font-weight: 700;
+    max-width: 780px;
+    margin: 0 auto 16px;
+    padding: 0 24px;
+    line-height: 1.35;
+  }
+  .masthead .meta {
+    font-size: 13px;
+    opacity: 0.7;
+    font-weight: 400;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+    line-height: 1.7;
+  }
+
+  .container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  section { padding: 32px 0; }
+  section + section { border-top: 1px solid var(--border); }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  h2::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 22px;
+    background: var(--brand);
+    border-radius: 2px;
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+
+  .exec-summary {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+  .card .value {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .card .label {
+    font-size: 13px;
+    color: var(--text-tertiary);
+    margin-top: 6px;
+  }
+  .card.pos .value { color: var(--pos); }
+  .card.neu .value { color: var(--neu); }
+  .card.neg .value { color: var(--neg); }
+  .card.hot .value { color: var(--brand); }
+
+  .charts-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .chart-figure {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+  }
+  .chart-figure h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+  .chart-figure .chart-box {
+    width: 100%;
+    height: 320px;
+  }
+
+  .sentiment-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .sentiment-col {
+    border-radius: var(--radius);
+    padding: 20px;
+    border: 1px solid var(--border);
+  }
+  .sentiment-col.pos { background: var(--pos-bg); border-color: #BBF7D0; }
+  .sentiment-col.neu { background: var(--neu-bg); border-color: #FDE68A; }
+  .sentiment-col.neg { background: var(--neg-bg); border-color: #FECACA; }
+  .sentiment-col h4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .sentiment-col.pos h4 { color: #15803D; }
+  .sentiment-col.neu h4 { color: #B45309; }
+  .sentiment-col.neg h4 { color: #B91C1C; }
+  .sentiment-col ul {
+    list-style: none;
+    padding: 0;
+  }
+  .sentiment-col li {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    padding: 4px 0;
+    border-bottom: 1px dashed rgba(0,0,0,0.06);
+  }
+  .sentiment-col li:last-child { border-bottom: none; }
+
+  .table-wrap {
+    overflow-x: auto;
+    margin-bottom: 24px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    background: var(--surface);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+  }
+  thead { background: #F9FAFB; }
+  th {
+    text-align: left;
+    padding: 12px 16px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  td { padding: 12px 16px; border-top: 1px solid var(--border); color: var(--text-secondary); }
+  tr:first-child td { border-top: none; }
+
+  .tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .tag.pos { background: var(--pos-bg); color: #15803D; }
+  .tag.neu { background: var(--neu-bg); color: #B45309; }
+  .tag.neg { background: var(--neg-bg); color: #B91C1C; }
+  .tag.risk-high { background: #FEF2F2; color: #B91C1C; }
+  .tag.risk-mid { background: #FFFBEB; color: #B45309; }
+  .tag.risk-low { background: #F0FDF4; color: #15803D; }
+
+  .topic {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    margin-bottom: 12px;
+    box-shadow: var(--shadow);
+  }
+  .topic-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .topic-header .name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .topic p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  .callout {
+    border-left: 4px solid var(--brand);
+    background: var(--brand-light);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 18px 20px;
+    margin: 24px 0;
+  }
+  .callout p {
+    font-size: 14px;
+    color: #1E3A8A;
+    line-height: 1.7;
+    font-weight: 500;
+  }
+
+  .suggestions {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    box-shadow: var(--shadow);
+  }
+  .suggestions ol {
+    padding-left: 20px;
+  }
+  .suggestions li {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 8px;
+  }
+  .suggestions li strong { color: var(--text); }
+
+  .sources {
+    list-style: none;
+    padding: 0;
+  }
+  .sources li {
+    font-size: 13px;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .sources li:last-child { border-bottom: none; }
+  .sources li a {
+    color: var(--brand);
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .sources li a:hover { text-decoration: underline; }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 32px 0;
+  }
+
+  footer {
+    text-align: center;
+    padding: 32px 0;
+    font-size: 12px;
+    color: var(--text-tertiary);
+  }
+
+  @media (max-width: 768px) {
+    .card-grid { grid-template-columns: repeat(2, 1fr); }
+    .charts-row { grid-template-columns: 1fr; }
+    .sentiment-grid { grid-template-columns: 1fr; }
+    .masthead h1 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ====== MASTHEAD ====== -->
+<header class="masthead">
+  <div class="kicker">Brand Sentiment Monitoring · 舆情监测</div>
+  <h1>华为 MatePad Pro Max 网络舆情监测报告（2026.8.14–8.21）</h1>
+  <div class="meta">
+    监测周期：2026年8月14日 – 8月21日 &nbsp;|&nbsp; 产品状态：6月发布 · 上市约2.5个月 &nbsp;|&nbsp; 监测渠道：社交媒体 / 技术社区 / 媒体报道
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- ====== SECTION 1: Executive Summary ====== -->
+  <section>
+    <h2>执行摘要</h2>
+    <div class="exec-summary">
+      华为 MatePad Pro Max 本周（8/14–21）处于上市成熟期，自发讨论热度明显下降，主要依赖政府补贴促销维持间歇性关注。8月15日江苏省"苏新消费·数码焕新"补贴政策将其纳入补贴名单，叠加天猫平台15%国补促销，带动一波购买讨论。正面声量约55%（屏幕素质、鸿蒙双桌面获好评），负面声量约15%（GPU性能偏弱、无Google服务）。整体舆情温和但缺乏话题性，核心风险在于产品进入成熟期后关注度持续走低。
+    </div>
+  </section>
+
+  <!-- ====== SECTION 2: Sentiment Cards + Charts ====== -->
+  <section>
+    <h2>舆情概览</h2>
+
+    <!-- Sentiment Cards -->
+    <div class="card-grid">
+      <div class="card pos">
+        <div class="value">55%</div>
+        <div class="label">正面</div>
+      </div>
+      <div class="card neu">
+        <div class="value">30%</div>
+        <div class="label">中性</div>
+      </div>
+      <div class="card neg">
+        <div class="value">15%</div>
+        <div class="label">负面</div>
+      </div>
+      <div class="card hot">
+        <div class="value">3</div>
+        <div class="label">高热话题</div>
+      </div>
+    </div>
+
+    <!-- Charts -->
+    <div style="margin-top: 28px;">
+      <div class="charts-row">
+        <!-- Mention Trend -->
+        <div class="chart-figure">
+          <h3>提及趋势</h3>
+          <div class="chart-box" id="chart-mention-trend"></div>
+        </div>
+        <!-- Sentiment Pie -->
+        <div class="chart-figure">
+          <h3>情感分布</h3>
+          <div class="chart-box" id="chart-sentiment"></div>
+        </div>
+      </div>
+      <!-- Risk Bar -->
+      <div class="chart-figure">
+        <h3>风险矩阵</h3>
+        <div class="chart-box" id="chart-risk" style="height: 350px;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SECTION 3: Sentiment Analysis ====== -->
+  <section>
+    <h2>情感分析</h2>
+    <div class="sentiment-grid">
+      <div class="sentiment-col pos">
+        <h4>正面（55%）</h4>
+        <ul>
+          <li>屏幕素质出色，3K OLED+144Hz体验极佳；鸿蒙双桌面是平板最优解，PC级WPS/CAD体验接近电脑；499g超轻设计，出差办公无负担</li>
+        </ul>
+      </div>
+      <div class="sentiment-col neu">
+        <h4>中性（30%）</h4>
+        <ul>
+          <li>适合华为生态用户，非华为用户谨慎考虑；办公够用但无法完全替代笔记本；音悦家App对音乐创作者有吸引力</li>
+        </ul>
+      </div>
+      <div class="sentiment-col neg">
+        <h4>负面（15%）</h4>
+        <ul>
+          <li>GPU性能偏弱，游戏体验不佳；无Google服务，海外使用受限；键盘需另购隐性成本高</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Sentiment Table -->
+    <h3>典型舆情条目</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>情感</th><th>典型内容</th><th>来源</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="tag pos">正面</span></td><td>"3K OLED+144Hz体验极佳，鸿蒙双桌面是平板最优解"</td><td>什么值得买深度体验</td></tr>
+          <tr><td><span class="tag pos">正面</span></td><td>"499g超轻设计，出差办公无负担"</td><td>太平洋电脑网</td></tr>
+          <tr><td><span class="tag neu">中性</span></td><td>"适合华为生态用户，但无法完全替代笔记本"</td><td>什么值得买</td></tr>
+          <tr><td><span class="tag neg">负面</span></td><td>"GPU性能偏弱，游戏体验不佳"</td><td>什么值得买对比评测</td></tr>
+          <tr><td><span class="tag neg">负面</span></td><td>"无Google服务，海外使用受限"</td><td>Notebookcheck</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== SECTION 4: TOP 3 Topics ====== -->
+  <section>
+    <h2>本周热门话题 TOP 3</h2>
+    <div class="topic">
+      <div class="topic-header">
+        <span class="tag risk-high">高</span>
+        <span class="name">江苏政府补贴清单纳入MatePad Pro Max</span>
+        <span style="font-size:12px;color:var(--text-tertiary);">8月15日</span>
+      </div>
+      <p>江苏启动"苏新消费·数码焕新"活动，6000元以上平板享10%补贴，MatePad Pro Max位列补贴名单，引发购买讨论。</p>
+    </div>
+    <div class="topic">
+      <div class="topic-header">
+        <span class="tag risk-mid">中高</span>
+        <span class="name">天猫平台政府补贴15%+分期免息</span>
+        <span style="font-size:12px;color:var(--text-tertiary);">8月20日前后</span>
+      </div>
+      <p>天猫华为专卖店推出国补15%+12期免息，券后价5999元，进一步降低购买门槛，带动关注度小幅回升。</p>
+    </div>
+    <div class="topic">
+      <div class="topic-header">
+        <span class="tag risk-mid">中</span>
+        <span class="name">"双桌面能否替代笔记本"争论再起</span>
+      </div>
+      <p>多名作者在什么值得买、知乎讨论双桌面模式是否真正能替代笔记本，结论分化明显，正面认为"WPS/CAD体验接近PC"，反面认为"生态不够完整"。</p>
+    </div>
+  </section>
+
+  <!-- ====== SECTION 5: Risk Table ====== -->
+  <section>
+    <h2>风险监测</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>等级</th><th>风险项</th><th>风险描述</th><th>监测信号</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="tag risk-high">高</span></td><td>关注度持续走低风险</td><td>产品已上市2.5个月，自发讨论热度明显下降</td><td>新发评测/讨论数量明显减少</td></tr>
+          <tr><td><span class="tag risk-mid">中</span></td><td>GPU性能被竞品拉开差距</td><td>相同价位可购买iPad Pro同类产品，GPU性能落后</td><td>对比测评类内容持续出现</td></tr>
+          <tr><td><span class="tag risk-mid">中</span></td><td>鸿蒙生态软件适配滞后</td><td>部分专业应用仍为移动端套壳，宽屏比例失调</td><td>用户反馈CAD等应用体验不如预期</td></tr>
+          <tr><td><span class="tag risk-mid">中</span></td><td>不支持优先通知功能</td><td>华为官方确认不支持，影响部分商务用户</td><td>华为官方支持页面已记录</td></tr>
+          <tr><td><span class="tag risk-mid">中</span></td><td>配置与价格竞争力争议</td><td>部分用户认为同价位竞品配置更高</td><td>论坛讨论中持续出现价格对比</td></tr>
+          <tr><td><span class="tag risk-low">低</span></td><td>键盘需另购隐性成本高</td><td>键盘需单独购买，全部配齐成本较高</td><td>评测中提及，未形成集中负面</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Risk Assessment Callout -->
+    <div class="callout">
+      <p><strong>风险评估：</strong>本周核心风险是产品进入成熟期后的关注度持续走低。仅靠补贴政策维持间歇性关注，缺乏自发话题性。如无重磅更新或新功能发布，舆情热度将逐步降温。GPU性能与同价位竞品的差距是中长期口碑隐患。</p>
+    </div>
+  </section>
+
+  <!-- ====== SECTION 6: Operations Suggestions ====== -->
+  <section>
+    <h2>运营建议</h2>
+    <div class="suggestions">
+      <ol>
+        <li><strong>策划新功能/新场景的传播内容：</strong>围绕鸿蒙双桌面、天生会画等差异化功能，制作"生产力场景"系列内容，维持产品讨论热度。</li>
+        <li><strong>借势补贴政策窗口期强化性价比传播：</strong>在江苏等补贴政策落地地区，加强"补贴后实际到手价"的传播，以价格优势吸引观望用户。</li>
+        <li><strong>推动平板端专业应用适配：</strong>与CAD、WPS等高频应用协作，提升平板端体验，缩小与笔记本的体验差距。</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ====== SECTION 7: Sources ====== -->
+  <section>
+    <h2>信息来源</h2>
+    <ol class="sources">
+      <li>华为官网 · 产品页 — <a href="https://consumer.huawei.com/cn/tablets/matepad-pro-max/" target="_blank" rel="noopener">https://consumer.huawei.com/cn/tablets/matepad-pro-max/</a></li>
+      <li>中关村在线 · 配置速览及评测 — <a href="https://mobile.zol.com.cn/1191/11915312.html" target="_blank" rel="noopener">https://mobile.zol.com.cn/1191/11915312.html</a></li>
+      <li>IT之家 · 国内官宣预售报道 — <a href="https://www.ithome.com/0/952/937.htm" target="_blank" rel="noopener">https://www.ithome.com/0/952/937.htm</a></li>
+      <li>什么值得买 · 深度体验双桌面 — <a href="https://post.m.smzdm.com/p/ak8402xr/" target="_blank" rel="noopener">https://post.m.smzdm.com/p/ak8402xr/</a></li>
+      <li>太平洋电脑网 · 使用体验 — <a href="https://g.pconline.com.cn/product/note/5290.html" target="_blank" rel="noopener">https://g.pconline.com.cn/product/note/5290.html</a></li>
+      <li>什么值得买 · 别指望完全替代笔记本 — <a href="https://post.m.smzdm.com/p/a82nzzzq/" target="_blank" rel="noopener">https://post.m.smzdm.com/p/a82nzzzq/</a></li>
+      <li>什么值得买 · 只适合这三类人 — <a href="https://post.m.smzdm.com/p/a5r78z3l/" target="_blank" rel="noopener">https://post.m.smzdm.com/p/a5r78z3l/</a></li>
+      <li>Notebookcheck · 评测汇总 — <a href="https://www.notebookcheck-cn.com/MatePad-Pro-Max.1318668.0.html" target="_blank" rel="noopener">https://www.notebookcheck-cn.com/MatePad-Pro-Max.1318668.0.html</a></li>
+      <li>华为官方支持 · 优先通知功能 — <a href="https://consumer.huawei.com/cn/support/content/zh-cn16085150/" target="_blank" rel="noopener">https://consumer.huawei.com/cn/support/content/zh-cn16085150/</a></li>
+      <li>今日头条 · 江苏政府补贴活动 — <a href="http://m.toutiao.com/group/7674072128215515699/" target="_blank" rel="noopener">http://m.toutiao.com/group/7674072128215515699/</a></li>
+    </ol>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2026 Brand Sentiment Monitoring · 自动生成舆情报告 · 仅供内部参考
+</footer>
+
+<!-- ECharts -->
+<script src="../../../_shared/js/echarts.min.js"></script>
+<script>
+(function() {
+  // ---- Mention Trend Chart ----
+  (function() {
+    var el = document.getElementById('chart-mention-trend');
+    if (!el) return;
+    var chart = echarts.init(el, null, { renderer: 'svg' });
+    var option = {
+      tooltip: { trigger: 'axis' },
+      grid: { left: 50, right: 30, top: 30, bottom: 40 },
+      xAxis: {
+        type: 'category',
+        data: ['8/14', '8/15', '8/16', '8/17', '8/18', '8/19', '8/21'],
+        axisLabel: { fontSize: 11, color: '#6B7280' },
+        axisLine: { lineStyle: { color: '#E5E7EB' } },
+        axisTick: { show: false }
+      },
+      yAxis: {
+        type: 'value',
+        name: '提及量（相对值）',
+        nameTextStyle: { fontSize: 11, color: '#9CA3AF' },
+        axisLabel: { fontSize: 11, color: '#6B7280' },
+        splitLine: { lineStyle: { color: '#F3F4F6', type: 'dashed' } }
+      },
+      series: [{
+        data: [15, 35, 22, 18, 12, 20, 16],
+        type: 'line',
+        smooth: true,
+        lineStyle: { color: '#1E40AF', width: 2.5 },
+        itemStyle: { color: '#1E40AF' },
+        areaStyle: { color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1,
+          colorStops: [{ offset: 0, color: 'rgba(30,64,175,0.15)' }, { offset: 1, color: 'rgba(30,64,175,0.01)' }] } },
+        markLine: {
+          silent: true,
+          symbol: 'none',
+          lineStyle: { color: '#EF4444', type: 'dashed', width: 1.5 },
+          label: { fontSize: 11, color: '#EF4444', formatter: '补贴高峰' },
+          data: [{ xAxis: '8/15' }]
+        }
+      }]
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+  })();
+
+  // ---- Sentiment Pie Chart ----
+  (function() {
+    var el = document.getElementById('chart-sentiment');
+    if (!el) return;
+    var chart = echarts.init(el, null, { renderer: 'svg' });
+    var option = {
+      tooltip: { trigger: 'item', formatter: '{b}: {c}条 ({d}%)' },
+      legend: { bottom: 0, textStyle: { fontSize: 11, color: '#6B7280' } },
+      series: [{
+        type: 'pie',
+        radius: ['52%', '78%'],
+        center: ['50%', '48%'],
+        avoidLabelOverlap: false,
+        itemStyle: { borderRadius: 4, borderColor: '#fff', borderWidth: 2 },
+        label: { show: true, position: 'outside', fontSize: 11, color: '#6B7280', formatter: '{b}\n{d}%' },
+        emphasis: { label: { fontSize: 14, fontWeight: 'bold' } },
+        data: [
+          { value: 11, name: '正面', itemStyle: { color: '#22C55E' } },
+          { value: 6, name: '中性', itemStyle: { color: '#F59E0B' } },
+          { value: 3, name: '负面', itemStyle: { color: '#EF4444' } }
+        ]
+      }]
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+  })();
+
+  // ---- Risk Bar Chart ----
+  (function() {
+    var el = document.getElementById('chart-risk');
+    if (!el) return;
+    var chart = echarts.init(el, null, { renderer: 'svg' });
+    var riskItems = [
+      { name: '关注度持续走低风险', value: 8, level: '高' },
+      { name: 'GPU性能被竞品拉开差距', value: 6, level: '中' },
+      { name: '鸿蒙生态软件适配滞后', value: 5, level: '中' },
+      { name: '不支持优先通知功能', value: 4, level: '中' },
+      { name: '无Google服务海外受限', value: 4, level: '中' },
+      { name: '键盘需另购隐性成本高', value: 3, level: '低' },
+      { name: '配置与价格竞争力争议', value: 5, level: '中' }
+    ];
+    var levelColors = { '高': '#EF4444', '中': '#F59E0B', '低': '#22C55E' };
+    var option = {
+      tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' },
+        formatter: function(params) {
+          var p = params[0];
+          var item = riskItems[p.dataIndex];
+          return item.name + '<br/>风险评分：' + item.value + '分 · ' + item.level;
+        }
+      },
+      grid: { left: 160, right: 60, top: 20, bottom: 20 },
+      xAxis: {
+        type: 'value',
+        max: 10,
+        axisLabel: { fontSize: 11, color: '#6B7280', formatter: '{value}分' },
+        splitLine: { lineStyle: { color: '#F3F4F6', type: 'dashed' } }
+      },
+      yAxis: {
+        type: 'category',
+        inverse: true,
+        data: riskItems.map(function(r) { return r.name; }),
+        axisLabel: { fontSize: 12, color: '#374151', width: 140, overflow: 'truncate' },
+        axisLine: { show: false },
+        axisTick: { show: false }
+      },
+      series: [{
+        type: 'bar',
+        data: riskItems.map(function(r) {
+          return { value: r.value, itemStyle: { color: levelColors[r.level], borderRadius: [0, 4, 4, 0] } };
+        }),
+        barWidth: 18,
+        label: {
+          show: true,
+          position: 'right',
+          fontSize: 11,
+          color: '#6B7280',
+          formatter: function(params) { return riskItems[params.dataIndex].level; }
+        }
+      }]
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+  })();
+})();
+</script>
+
+</body>
+</html>
