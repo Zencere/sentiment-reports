@@ -1,0 +1,2 @@
+# This file tells GitHub Pages to skip Jekyll processing.
+# Without it, directories starting with underscore (like _shared/) are ignored.
