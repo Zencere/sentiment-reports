@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以闪亮之名 × 华为 联名舆情监测报告（2026.8.14–8.21）</title>
+<style>
+  @font-face {
+    font-family: 'HarmonyOS Sans';
+    src: url('../../../_shared/fonts/HarmonyOS_Sans_Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'HarmonyOS Sans';
+    src: url('../../../_shared/fonts/HarmonyOS_Sans_Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+  }
+  :root {
+    --positive: #22C55E;
+    --neutral: #F59E0B;
+    --negative: #EF4444;
+    --risk-high: #EF4444;
+    --risk-medium: #F59E0B;
+    --risk-low: #22C55E;
+    --bg: #F3F4F6;
+    --card-bg: #FFFFFF;
+    --text: #111827;
+    --text-secondary: #6B7280;
+    --border: #E5E7EB;
+    --accent: #1D4ED8;
+    --accent-light: #DBEAFE;
+    --header-bg: linear-gradient(135deg, #0F172A 0%, #1E3A5F 50%, #1D4ED8 100%);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'HarmonyOS Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  .report-header {
+    background: var(--header-bg);
+    color: #FFFFFF;
+    padding: 48px 32px 40px;
+    text-align: center;
+  }
+  .report-header .kicker {
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 12px;
+  }
+  .report-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.35;
+  }
+  .report-header .meta {
+    font-size: 13px;
+    opacity: 0.65;
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 32px 24px 64px;
+  }
+  .section {
+    margin-bottom: 36px;
+  }
+  .section-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background: var(--accent);
+    color: #FFF;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    margin-bottom: 20px;
+  }
+  .exec-summary {
+    font-size: 15px;
+    color: var(--text);
+    line-height: 1.8;
+  }
+  .sentiment-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .sentiment-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px 16px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    border-top: 3px solid transparent;
+  }
+  .sentiment-card.pos { border-top-color: var(--positive); }
+  .sentiment-card.neu { border-top-color: var(--neutral); }
+  .sentiment-card.neg { border-top-color: var(--negative); }
+  .sentiment-card.hot { border-top-color: var(--accent); }
+  .sentiment-card .val {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .sentiment-card.pos .val { color: var(--positive); }
+  .sentiment-card.neu .val { color: var(--neutral); }
+  .sentiment-card.neg .val { color: var(--negative); }
+  .sentiment-card.hot .val { color: var(--accent); }
+  .sentiment-card .lbl {
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+  .charts-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  .chart-box {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .chart-box h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text);
+  }
+  .chart-inner {
+    width: 100%;
+    height: 320px;
+  }
+  .sentiment-breakdown h4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .sentiment-breakdown h4.pos { color: var(--positive); }
+  .sentiment-breakdown h4.neu { color: var(--neutral); }
+  .sentiment-breakdown h4.neg { color: var(--negative); }
+  .sentiment-breakdown p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+    line-height: 1.7;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .data-table th {
+    background: #F9FAFB;
+    padding: 11px 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--text-secondary);
+    border-bottom: 2px solid var(--border);
+  }
+  .data-table td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .data-table .badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .badge-pos { background: #DCFCE7; color: #166534; }
+  .badge-neu { background: #FEF3C7; color: #92400E; }
+  .badge-neg { background: #FEE2E2; color: #991B1B; }
+  .badge-high { background: #FEE2E2; color: #991B1B; }
+  .badge-medium { background: #FEF3C7; color: #92400E; }
+  .badge-low { background: #DCFCE7; color: #166534; }
+  .topic-item {
+    padding: 16px;
+    border-left: 4px solid var(--accent);
+    background: var(--accent-light);
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 14px;
+  }
+  .topic-item h4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .topic-item .topic-meta {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+  }
+  .topic-item p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .callout {
+    background: #FEF2F2;
+    border: 1px solid #FECACA;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 20px;
+  }
+  .callout h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #991B1B;
+    margin-bottom: 8px;
+  }
+  .callout p {
+    font-size: 14px;
+    color: #7F1D1D;
+    line-height: 1.7;
+  }
+  .suggestion-list {
+    list-style: none;
+    padding: 0;
+  }
+  .suggestion-list li {
+    padding: 12px 16px;
+    background: #F0FDF4;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    border-left: 3px solid var(--positive);
+  }
+  .suggestion-list li strong {
+    color: var(--text);
+  }
+  .source-list {
+    list-style: none;
+    padding: 0;
+  }
+  .source-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+  .source-list li a {
+    color: var(--accent);
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .source-list li a:hover {
+    text-decoration: underline;
+  }
+  .source-list li .src-tag {
+    display: inline-block;
+    background: #F3F4F6;
+    padding: 1px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    margin-right: 8px;
+    color: var(--text-secondary);
+  }
+  @media (max-width: 768px) {
+    .sentiment-cards { grid-template-columns: repeat(2, 1fr); }
+    .charts-row { grid-template-columns: 1fr; }
+    .report-header { padding: 32px 20px 28px; }
+    .report-header h1 { font-size: 22px; }
+    .container { padding: 20px 16px 48px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="report-header">
+  <div class="kicker">Brand Sentiment Monitoring · 舆情监测</div>
+  <h1>以闪亮之名 × 华为 联名舆情监测报告（2026.8.14–8.21）</h1>
+  <div class="meta">监测周期：2026年8月14日 – 8月21日 | 联动状态：8月14日礼盒上线 · 抽奖8月21日截止 | 监测渠道：社交媒体 / 技术社区 / 媒体报道</div>
+</header>
+
+<div class="container">
+
+  <!-- Section 1: Executive Summary -->
+  <div class="section">
+    <div class="section-title"><span class="num">1</span> 执行摘要</div>
+    <div class="card">
+      <p class="exec-summary">以闪亮之名×华为MatePad Pro联名活动本周（8/14–21）是跨品牌联动的典型案例。8月14日联动礼盒上线+MatePad Pro 12英寸首销同日发生，小红书官方帖点赞1.3万+、微博转发2600+，形成跨平台联动热度。正面声量约55%——3K HDR画质体验获好评、周边设计受欢迎；负面声量约15%——抽奖中奖率极低（1个名额）引发不满、礼盒走授权店渠道非华为自营存在信任风险。整体舆情呈"传播效果显著但抽奖机制引发微词"的格局。</p>
+    </div>
+  </div>
+
+  <!-- Section 2: Sentiment Overview & Charts -->
+  <div class="section">
+    <div class="section-title"><span class="num">2</span> 舆情概览</div>
+    <div class="sentiment-cards">
+      <div class="sentiment-card pos"><div class="val">55%</div><div class="lbl">正面</div></div>
+      <div class="sentiment-card neu"><div class="val">30%</div><div class="lbl">中性</div></div>
+      <div class="sentiment-card neg"><div class="val">15%</div><div class="lbl">负面</div></div>
+      <div class="sentiment-card hot"><div class="val">3</div><div class="lbl">高热话题</div></div>
+    </div>
+
+    <div class="charts-row">
+      <div class="chart-box">
+        <h3>提及量趋势</h3>
+        <div class="chart-inner" id="chart-mention-trend"></div>
+      </div>
+      <div class="chart-box">
+        <h3>情感分布</h3>
+        <div class="chart-inner" id="chart-sentiment"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 3: Sentiment Analysis -->
+  <div class="section">
+    <div class="section-title"><span class="num">3</span> 情感分析</div>
+    <div class="card">
+      <div class="sentiment-breakdown">
+        <h4 class="pos">正面（55%）</h4>
+        <p>3K HDR画质玩以闪太惊艳；礼服面料细节还原度超高；荔枝喵周边太可爱了；七夕送礼首选</p>
+        <h4 class="neu">中性（30%）</h4>
+        <p>免费道具领了但平板太贵了；抽奖1个名额几万人在蹲；礼盒周边很可爱但平板不是刚需</p>
+        <h4 class="neg">负面（15%）</h4>
+        <p>联动礼盒是授权店渠道非华为自营，有风险；抽奖中奖率太低；周边设计一般；运营排期太密氪金压力大</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 4: Sentiment Table -->
+  <div class="section">
+    <div class="section-title"><span class="num">4</span> 代表性言论</div>
+    <div class="card" style="overflow-x:auto;">
+      <table class="data-table">
+        <thead>
+          <tr><th>情感</th><th>代表性言论</th><th>来源</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="badge badge-pos">正面</span></td><td>"3K HDR画质玩以闪太惊艳了，礼服面料细节还原度超高"</td><td>小红书/微博</td></tr>
+          <tr><td><span class="badge badge-pos">正面</span></td><td>"荔枝喵周边太可爱了，七夕送礼首选"</td><td>小红书</td></tr>
+          <tr><td><span class="badge badge-neu">中性</span></td><td>"免费道具领了但平板太贵了，抽奖1个名额几万人在蹲"</td><td>什么值得买</td></tr>
+          <tr><td><span class="badge badge-neg">负面</span></td><td>"联动礼盒是授权店渠道非华为自营，售后有风险"</td><td>什么值得买分析帖</td></tr>
+          <tr><td><span class="badge badge-neg">负面</span></td><td>"抽奖中奖率太低，就是骗流量的营销噱头"</td><td>小红书评论区</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Section 5: TOP 3 Topics -->
+  <div class="section">
+    <div class="section-title"><span class="num">5</span> TOP 3 热门话题</div>
+    <div class="topic-item">
+      <h4>以闪亮之名×华为MatePad Pro联动礼盒上线：免费权益、花钱部分和值不值得一次理清</h4>
+      <div class="topic-meta">热度：极高 · 8月17日</div>
+      <p>什么值得买发布详细分析帖，9位全网作者参与，梳理免费道具领取、抽奖、礼盒内容、平板选购建议</p>
+    </div>
+    <div class="topic-item">
+      <h4>以闪亮之名×HUAWEI MatePad Pro联动上线！专属道具免费领取，3K HDR画质体验</h4>
+      <div class="topic-meta">热度：极高 · 8月5日发布持续至8月21日</div>
+      <p>官方微博发布，领取时间至11月2日，HDR默认开启</p>
+    </div>
+    <div class="topic-item">
+      <h4>全新MatePad Pro 12英寸首销+联动礼盒开箱：以闪亮之名玩家实测3K HDR画质</h4>
+      <div class="topic-meta">热度：高 · 8月14日</div>
+      <p>小红书/微博用户开箱晒单，展示联动礼盒（印花保护壳+刺绣帆布包+荔枝猫贴纸），分享游戏HDR画质对比</p>
+    </div>
+  </div>
+
+  <!-- Section 6: Risk Table -->
+  <div class="section">
+    <div class="section-title"><span class="num">6</span> 风险监测</div>
+    <div class="card" style="overflow-x:auto;">
+      <table class="data-table">
+        <thead>
+          <tr><th>等级</th><th>风险项</th><th>描述</th><th>来源</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="badge badge-high">高</span></td><td>抽奖活动引发不满</td><td>礼盒抽奖仅1个名额，数万人参与，中奖率极低</td><td>微博评论区出现"陪跑""营销噱头"等负面评论，小红书出现"就是骗流量"</td></tr>
+          <tr><td><span class="badge badge-medium">中</span></td><td>礼盒渠道风险</td><td>联动礼盒由华为电商授权店铺提供，非华为商城自营</td><td>什么值得买分析帖明确指出此风险，用户表达担忧</td></tr>
+          <tr><td><span class="badge badge-medium">中</span></td><td>游戏内运营压力</td><td>4.3版本排期密集，联动活动与版本活动叠加，氪金压力增大</td><td>TapTap出现差评，提到"运营抠门""排期太密集"</td></tr>
+          <tr><td><span class="badge badge-medium">中</span></td><td>部分华为手机网络兼容问题</td><td>部分华为手机存在以闪亮之名网络连接问题</td><td>零星用户反馈</td></tr>
+          <tr><td><span class="badge badge-low">低</span></td><td>社区氛围争议</td><td>以闪亮之名社区被指"辱追""魔怔玩家"氛围恶化</td><td>TapTap玩家评价中提及，属长期风险</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Section 7: Risk Assessment Callout -->
+  <div class="section">
+    <div class="section-title"><span class="num">7</span> 风险评估</div>
+    <div class="callout">
+      <h4>核心风险洞察</h4>
+      <p>本轮联动的核心风险在于抽奖机制设计（1个名额/数万人参与）引发的公平性质疑，以及礼盒走授权店渠道而非华为自营的信任隐患。建议在后续联名活动中优化抽奖机制（增加名额或改为多轮次），并明确礼盒的售后保障方案。</p>
+    </div>
+  </div>
+
+  <!-- Section 8: Operations Suggestions -->
+  <div class="section">
+    <div class="section-title"><span class="num">8</span> 运营建议</div>
+    <ul class="suggestion-list">
+      <li><strong>优化抽奖机制，避免"饥饿营销"负面感知：</strong>后续联名活动建议增加抽奖名额或采用多轮次抽奖，降低"万人陪跑"的负面体验</li>
+      <li><strong>明确礼盒售后保障方案，消除渠道信任疑虑：</strong>在官方渠道公布礼盒的售后联保方案，明确授权店与自营店在退换货上的权益一致性</li>
+      <li><strong>延长联动长尾效应：</strong>通过用户UGC创作大赛、最佳画质截图评选等活动，延长联动热度，避免"上线即高峰、过后即冷"的短命周期</li>
+    </ul>
+  </div>
+
+  <!-- Section 9: Sources -->
+  <div class="section">
+    <div class="section-title"><span class="num">9</span> 信息来源</div>
+    <div class="card">
+      <ol class="source-list">
+        <li><span class="src-tag">以闪亮之名官方微博</span> 联动上线公告 &mdash; <a href="https://sina.cn/news/detail/5328583632618261.html" target="_blank" rel="noopener">sina.cn/news/detail/5328583632618261.html</a></li>
+        <li><span class="src-tag">新浪科技</span> 华为全场景新品发布会（含以闪联动） &mdash; <a href="http://finance.sina.cn/tech/2026-08-06/detail-inimiqxt4018846.d.html" target="_blank" rel="noopener">finance.sina.cn</a></li>
+        <li><span class="src-tag">什么值得买</span> 以闪亮之名×华为联动礼盒分析 &mdash; <a href="https://post.m.smzdm.com/p/arzp7eng/" target="_blank" rel="noopener">post.m.smzdm.com/p/arzp7eng/</a></li>
+        <li><span class="src-tag">微博I-ONECAT</span> 联动礼盒上线转发 &mdash; <a href="https://www.sina.cn/news/detail/5331758830584609.html" target="_blank" rel="noopener">sina.cn/news/detail/5331758830584609.html</a></li>
+        <li><span class="src-tag">TapTap</span> 以闪亮之名4.3版本讨论区 &mdash; <a href="https://www.taptap.cn/app/218210/topic?page=4" target="_blank" rel="noopener">taptap.cn/app/218210/topic</a></li>
+        <li><span class="src-tag">TapTap</span> 以闪亮之名玩家评价 &mdash; <a href="https://www.taptap.cn/review/49590777" target="_blank" rel="noopener">taptap.cn/review/49590777</a></li>
+        <li><span class="src-tag">上游新闻</span> 华为全场景新品发布会 &mdash; <a href="https://view.inews.qq.com/a/20260806A053K900" target="_blank" rel="noopener">view.inews.qq.com</a></li>
+        <li><span class="src-tag">九游</span> 以闪亮之名游戏详情页 &mdash; <a href="https://a.9game.cn/xiazai/1315649/" target="_blank" rel="noopener">a.9game.cn/xiazai/1315649/</a></li>
+        <li><span class="src-tag">华为官网</span> MatePad Pro产品页 &mdash; <a href="https://consumer.huawei.com/cn/tablets/matepad-pro/" target="_blank" rel="noopener">consumer.huawei.com/cn/tablets/matepad-pro/</a></li>
+        <li><span class="src-tag">小红书</span> 以闪亮之名联名话题 &mdash; <a href="https://www.xiaohongshu.com/" target="_blank" rel="noopener">xiaohongshu.com</a></li>
+      </ol>
+    </div>
+  </div>
+
+</div>
+
+<script src="../../../_shared/js/echarts.min.js"></script>
+<script>
+(function() {
+  var chart1 = echarts.init(document.getElementById('chart-mention-trend'), null, { renderer: 'svg' });
+  chart1.setOption({
+    tooltip: { trigger: 'axis' },
+    grid: { left: 50, right: 30, top: 30, bottom: 40 },
+    xAxis: {
+      type: 'category',
+      data: ['8/14','8/15','8/16','8/17','8/18','8/19','8/21'],
+      axisLine: { lineStyle: { color: '#D1D5DB' } },
+      axisTick: { show: false }
+    },
+    yAxis: {
+      type: 'value',
+      name: '提及量（条）',
+      nameTextStyle: { fontSize: 11, color: '#6B7280' },
+      axisLabel: { fontSize: 11, color: '#6B7280' },
+      splitLine: { lineStyle: { color: '#F3F4F6' } }
+    },
+    series: [{
+      data: [3200, 2100, 1800, 1600, 1200, 900, 700],
+      type: 'line',
+      smooth: true,
+      symbol: 'circle',
+      symbolSize: 6,
+      lineStyle: { color: '#1D4ED8', width: 2.5 },
+      itemStyle: { color: '#1D4ED8' },
+      areaStyle: { color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(29,78,216,0.15)' }, { offset: 1, color: 'rgba(29,78,216,0.01)' }] } },
+      markLine: {
+        silent: true,
+        symbol: 'none',
+        lineStyle: { color: '#EF4444', type: 'dashed', width: 1.5 },
+        label: { fontSize: 11, color: '#EF4444', formatter: '礼盒上线' },
+        data: [{ xAxis: '8/14' }]
+      }
+    }]
+  });
+
+  var chart2 = echarts.init(document.getElementById('chart-sentiment'), null, { renderer: 'svg' });
+  chart2.setOption({
+    tooltip: { trigger: 'item', formatter: '{b}: {c}条 ({d}%)' },
+    legend: { bottom: 0, textStyle: { fontSize: 12 } },
+    series: [{
+      type: 'pie',
+      radius: ['50%', '75%'],
+      center: ['50%', '45%'],
+      avoidLabelOverlap: false,
+      label: { show: true, position: 'outside', formatter: '{b}\n{d}%', fontSize: 12 },
+      emphasis: { scale: false },
+      itemStyle: { borderRadius: 4, borderColor: '#fff', borderWidth: 2 },
+      data: [
+        { value: 11, name: '正面', itemStyle: { color: '#22C55E' } },
+        { value: 6, name: '中性', itemStyle: { color: '#F59E0B' } },
+        { value: 3, name: '负面', itemStyle: { color: '#EF4444' } }
+      ]
+    }]
+  });
+
+  window.addEventListener('resize', function() { chart1.resize(); chart2.resize(); });
+})();
+</script>
+
+</body>
+</html>
