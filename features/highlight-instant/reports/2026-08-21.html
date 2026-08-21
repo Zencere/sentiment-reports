@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>华为 高光妙创 网络舆情监测报告（2026.8.14–8.21）</title>
+<style>
+  @font-face {
+    font-family: 'HarmonyOS Sans';
+    src: url('../../../_shared/fonts/HarmonyOS_Sans_Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'HarmonyOS Sans';
+    src: url('../../../_shared/fonts/HarmonyOS_Sans_Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+  }
+  :root {
+    --positive: #22C55E;
+    --neutral: #F59E0B;
+    --negative: #EF4444;
+    --risk-high: #EF4444;
+    --risk-medium: #F59E0B;
+    --risk-low: #22C55E;
+    --bg: #F3F4F6;
+    --card-bg: #FFFFFF;
+    --text: #111827;
+    --text-secondary: #6B7280;
+    --border: #E5E7EB;
+    --accent: #1D4ED8;
+    --accent-light: #DBEAFE;
+    --header-bg: linear-gradient(135deg, #0F172A 0%, #1E3A5F 50%, #1D4ED8 100%);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'HarmonyOS Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  .report-header {
+    background: var(--header-bg);
+    color: #FFFFFF;
+    padding: 48px 32px 40px;
+    text-align: center;
+  }
+  .report-header .kicker {
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 12px;
+  }
+  .report-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.35;
+  }
+  .report-header .meta {
+    font-size: 13px;
+    opacity: 0.65;
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 32px 24px 64px;
+  }
+  .section {
+    margin-bottom: 36px;
+  }
+  .section-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background: var(--accent);
+    color: #FFF;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    margin-bottom: 20px;
+  }
+  .exec-summary {
+    font-size: 15px;
+    color: var(--text);
+    line-height: 1.8;
+  }
+  .sentiment-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .sentiment-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px 16px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    border-top: 3px solid transparent;
+  }
+  .sentiment-card.pos { border-top-color: var(--positive); }
+  .sentiment-card.neu { border-top-color: var(--neutral); }
+  .sentiment-card.neg { border-top-color: var(--negative); }
+  .sentiment-card.hot { border-top-color: var(--accent); }
+  .sentiment-card .val {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .sentiment-card.pos .val { color: var(--positive); }
+  .sentiment-card.neu .val { color: var(--neutral); }
+  .sentiment-card.neg .val { color: var(--negative); }
+  .sentiment-card.hot .val { color: var(--accent); }
+  .sentiment-card .lbl {
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+  .charts-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  .chart-box {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .chart-box h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text);
+  }
+  .chart-inner {
+    width: 100%;
+    height: 320px;
+  }
+  .sentiment-breakdown h4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .sentiment-breakdown h4.pos { color: var(--positive); }
+  .sentiment-breakdown h4.neu { color: var(--neutral); }
+  .sentiment-breakdown h4.neg { color: var(--negative); }
+  .sentiment-breakdown p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+    line-height: 1.7;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .data-table th {
+    background: #F9FAFB;
+    padding: 11px 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--text-secondary);
+    border-bottom: 2px solid var(--border);
+  }
+  .data-table td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .data-table .badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .badge-pos { background: #DCFCE7; color: #166534; }
+  .badge-neu { background: #FEF3C7; color: #92400E; }
+  .badge-neg { background: #FEE2E2; color: #991B1B; }
+  .badge-high { background: #FEE2E2; color: #991B1B; }
+  .badge-medium { background: #FEF3C7; color: #92400E; }
+  .badge-low { background: #DCFCE7; color: #166534; }
+  .topic-item {
+    padding: 16px;
+    border-left: 4px solid var(--accent);
+    background: var(--accent-light);
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 14px;
+  }
+  .topic-item h4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .topic-item .topic-meta {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+  }
+  .topic-item p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .callout {
+    background: #FEF2F2;
+    border: 1px solid #FECACA;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 20px;
+  }
+  .callout h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #991B1B;
+    margin-bottom: 8px;
+  }
+  .callout p {
+    font-size: 14px;
+    color: #7F1D1D;
+    line-height: 1.7;
+  }
+  .suggestion-list {
+    list-style: none;
+    padding: 0;
+  }
+  .suggestion-list li {
+    padding: 12px 16px;
+    background: #F0FDF4;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    border-left: 3px solid var(--positive);
+  }
+  .suggestion-list li strong {
+    color: var(--text);
+  }
+  .source-list {
+    list-style: none;
+    padding: 0;
+  }
+  .source-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+  .source-list li a {
+    color: var(--accent);
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .source-list li a:hover {
+    text-decoration: underline;
+  }
+  .source-list li .src-tag {
+    display: inline-block;
+    background: #F3F4F6;
+    padding: 1px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    margin-right: 8px;
+    color: var(--text-secondary);
+  }
+  @media (max-width: 768px) {
+    .sentiment-cards { grid-template-columns: repeat(2, 1fr); }
+    .charts-row { grid-template-columns: 1fr; }
+    .report-header { padding: 32px 20px 28px; }
+    .report-header h1 { font-size: 22px; }
+    .container { padding: 20px 16px 48px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="report-header">
+  <div class="kicker">Brand Sentiment Monitoring · 舆情监测</div>
+  <h1>华为 高光妙创 网络舆情监测报告（2026.8.14–8.21）</h1>
+  <div class="meta">监测周期：2026年8月14日 – 8月21日 | 功能状态：MateBook Fold首销搭载 · 持续迭代 | 监测渠道：社交媒体 / 技术社区 / 媒体报道</div>
+</header>
+
+<div class="container">
+
+  <!-- Section 1: Executive Summary -->
+  <div class="section">
+    <div class="section-title"><span class="num">1</span> 执行摘要</div>
+    <div class="card">
+      <p class="exec-summary">高光妙创是华为笔记App中的AI内容创作功能，本周主要随MateBook Fold非凡大师首销（8月14日）获得曝光。该功能首次在折叠屏PC上完整落地，HDR增强笔迹、手写分屏（上看下记）体验获得好评，正面声量约58%。但独立讨论热度极低，功能认知度不足，且当前仅支持与nova 16系列手机协同（全景智记功能），其他机型需等HarmonyOS 7.0。整体舆情呈"功能好评但出圈困难"的格局，核心问题在于功能依附于高价硬件（24999元起），难以独立形成讨论。</p>
+    </div>
+  </div>
+
+  <!-- Section 2: Sentiment Overview & Charts -->
+  <div class="section">
+    <div class="section-title"><span class="num">2</span> 舆情概览</div>
+    <div class="sentiment-cards">
+      <div class="sentiment-card pos"><div class="val">58%</div><div class="lbl">正面</div></div>
+      <div class="sentiment-card neu"><div class="val">28%</div><div class="lbl">中性</div></div>
+      <div class="sentiment-card neg"><div class="val">14%</div><div class="lbl">负面</div></div>
+      <div class="sentiment-card hot"><div class="val">3</div><div class="lbl">高热话题</div></div>
+    </div>
+
+    <div class="charts-row">
+      <div class="chart-box">
+        <h3>提及量趋势</h3>
+        <div class="chart-inner" id="chart-mention-trend"></div>
+      </div>
+      <div class="chart-box">
+        <h3>情感分布</h3>
+        <div class="chart-inner" id="chart-sentiment"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 3: Sentiment Analysis -->
+  <div class="section">
+    <div class="section-title"><span class="num">3</span> 情感分析</div>
+    <div class="card">
+      <div class="sentiment-breakdown">
+        <h4 class="pos">正面（58%）</h4>
+        <p>HDR高亮笔刷记重点实用性获好评；手写体验接近纸质；折叠PC终于有了手写交互，补齐大屏创作短板</p>
+        <h4 class="neu">中性（28%）</h4>
+        <p>功能不错但24999元价格门槛太高；需要HarmonyOS 7才能体验部分功能</p>
+        <h4 class="neg">负面（14%）</h4>
+        <p>折痕问题依然存在；专业软件适配不足（PS需虚拟机）；两万元买折叠屏是否值得</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 4: Sentiment Table -->
+  <div class="section">
+    <div class="section-title"><span class="num">4</span> 代表性言论</div>
+    <div class="card" style="overflow-x:auto;">
+      <table class="data-table">
+        <thead>
+          <tr><th>情感</th><th>代表性言论</th><th>来源</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="badge badge-pos">正面</span></td><td>"HDR高亮笔刷记重点太实用了，手写体验接近纸质"</td><td>ZOL/新华网</td></tr>
+          <tr><td><span class="badge badge-pos">正面</span></td><td>"折叠PC终于有了手写交互，补齐大屏创作短板"</td><td>IT之家</td></tr>
+          <tr><td><span class="badge badge-neu">中性</span></td><td>"功能不错但24999元价格门槛太高"</td><td>什么值得买</td></tr>
+          <tr><td><span class="badge badge-neg">负面</span></td><td>"折痕问题依然存在，亮屏状态下可察觉"</td><td>酷安/NGA</td></tr>
+          <tr><td><span class="badge badge-neg">负面</span></td><td>"专业软件适配不足，Adobe需虚拟机运行"</td><td>什么值得买</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Section 5: TOP 3 Topics -->
+  <div class="section">
+    <div class="section-title"><span class="num">5</span> TOP 3 热门话题</div>
+    <div class="topic-item">
+      <h4>华为MateBook Fold非凡大师首销：18英寸手写折叠屏补齐大屏创作交互</h4>
+      <div class="topic-meta">热度：极高 · 8月14日</div>
+      <p>高光妙创功能首次完整落地，支持HDR增强笔迹、手绘Plog，鸿蒙折叠电脑首次支持手写笔</p>
+    </div>
+    <div class="topic-item">
+      <h4>两万元折叠屏笔记本是技术噱头还是真刚需？深度评测</h4>
+      <div class="topic-meta">热度：高 · 持续</div>
+      <p>全面评测手写体验、屏幕素质、性能与生态，讨论高光妙创和天生会画等功能的实际价值</p>
+    </div>
+    <div class="topic-item">
+      <h4>华为笔记"高光妙创"功能实测：HDR笔刷让重点一目了然</h4>
+      <div class="topic-meta">热度：中 · 持续</div>
+      <p>实际体验分享，记笔记时可使用HDR增强效果醒目标记重点</p>
+    </div>
+  </div>
+
+  <!-- Section 6: Risk Table -->
+  <div class="section">
+    <div class="section-title"><span class="num">6</span> 风险监测</div>
+    <div class="card" style="overflow-x:auto;">
+      <table class="data-table">
+        <thead>
+          <tr><th>等级</th><th>风险项</th><th>描述</th><th>来源</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="badge badge-high">高</span></td><td>功能认知度严重不足</td><td>独立搜索"高光妙创"几乎无结果，功能认知完全依附于MateBook Fold</td><td>品牌名搜索量极低，用户无法独立认知此功能</td></tr>
+          <tr><td><span class="badge badge-high">高</span></td><td>价格过高制约功能传播</td><td>24999元起步价在社交媒体引发"智商税"讨论</td><td>微博评论中已有零星负面</td></tr>
+          <tr><td><span class="badge badge-medium">中</span></td><td>功能版本限制</td><td>全景智记功能仅支持与nova 16系列手机协同，其他机型需等HarmonyOS 7.0</td><td>评论区少量提及</td></tr>
+          <tr><td><span class="badge badge-medium">中</span></td><td>专业软件生态适配不足</td><td>Adobe全家桶需通过虚拟机运行（约15%性能损耗）</td><td>酷安/NGA论坛有零星讨论</td></tr>
+          <tr><td><span class="badge badge-low">低</span></td><td>折痕影响书写体验</td><td>折叠屏展开后仍存在可见折痕</td><td>目前讨论量小</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Section 7: Risk Assessment Callout -->
+  <div class="section">
+    <div class="section-title"><span class="num">7</span> 风险评估</div>
+    <div class="callout">
+      <h4>核心风险洞察</h4>
+      <p>高光妙创的最大风险不是功能本身，而是"功能认知度严重不足"。作为华为AI内容创作的核心差异化功能，独立搜索"高光妙创"几乎无结果，所有讨论都依附于MateBook Fold产品。若不能建立独立的功能品牌认知，将长期处于"好功能但无人知晓"的困境。</p>
+    </div>
+  </div>
+
+  <!-- Section 8: Operations Suggestions -->
+  <div class="section">
+    <div class="section-title"><span class="num">8</span> 运营建议</div>
+    <ul class="suggestion-list">
+      <li><strong>建立"高光妙创"独立功能品牌认知：</strong>在华为笔记App中强化功能品牌露出，制作独立的功能演示视频，在社交媒体平台进行独立传播</li>
+      <li><strong>降低功能体验门槛，扩展支持设备范围：</strong>尽快将全景智记等功能扩展至更多华为手机型号，降低用户尝鲜门槛</li>
+      <li><strong>制作"高光妙创"创作者案例系列内容：</strong>邀请笔记博主、学生、教师等用户群体制作使用教程和场景化内容</li>
+    </ul>
+  </div>
+
+  <!-- Section 9: Sources -->
+  <div class="section">
+    <div class="section-title"><span class="num">9</span> 信息来源</div>
+    <div class="card">
+      <ol class="source-list">
+        <li><span class="src-tag">ZOL</span> MateBook Fold非凡大师手写拓展生产力 &mdash; <a href="https://nb.zol.com.cn/1227/12273457.html" target="_blank" rel="noopener">nb.zol.com.cn/1227/12273457.html</a></li>
+        <li><span class="src-tag">新华网</span> 18英寸手写折叠屏补齐大屏创作 &mdash; <a href="http://www.xinhuanet.com/tech/20260805/0822750fd7594258b725d6a6d56644ec/c.html" target="_blank" rel="noopener">xinhuanet.com</a></li>
+        <li><span class="src-tag">IT之家</span> 一支笔+折叠大屏释放生产力 &mdash; <a href="https://m.ithome.com/html/985856.htm" target="_blank" rel="noopener">m.ithome.com/html/985856.htm</a></li>
+        <li><span class="src-tag">腾讯新闻</span> 18英寸巨无霸优雅姿态 &mdash; <a href="http://news.qq.com/rain/a/20260805A0DFSN00" target="_blank" rel="noopener">news.qq.com</a></li>
+        <li><span class="src-tag">新浪科技</span> 折叠电脑手写笔实际体验 &mdash; <a href="https://www.sina.cn/news/article/nimkfvc3084649.html" target="_blank" rel="noopener">sina.cn</a></li>
+        <li><span class="src-tag">华为商城</span> MateBook Fold产品页 &mdash; <a href="https://consumer.huawei.com/cn/harmonyos-computer/matebook-fold-ultimate-design/" target="_blank" rel="noopener">consumer.huawei.com</a></li>
+        <li><span class="src-tag">什么值得买</span> 两万元折叠屏深度评测 &mdash; <a href="https://post.m.smzdm.com/p/a823g8wn/" target="_blank" rel="noopener">post.m.smzdm.com/p/a823g8wn/</a></li>
+        <li><span class="src-tag">什么值得买</span> 2026三款变形笔记本横评 &mdash; <a href="https://post.m.smzdm.com/p/ae69d82k/" target="_blank" rel="noopener">post.m.smzdm.com/p/ae69d82k/</a></li>
+      </ol>
+    </div>
+  </div>
+
+</div>
+
+<script src="../../../_shared/js/echarts.min.js"></script>
+<script>
+(function() {
+  var chart1 = echarts.init(document.getElementById('chart-mention-trend'), null, { renderer: 'svg' });
+  chart1.setOption({
+    tooltip: { trigger: 'axis' },
+    grid: { left: 50, right: 30, top: 30, bottom: 40 },
+    xAxis: {
+      type: 'category',
+      data: ['8/14','8/15','8/16','8/17','8/18','8/19','8/21'],
+      axisLine: { lineStyle: { color: '#D1D5DB' } },
+      axisTick: { show: false }
+    },
+    yAxis: {
+      type: 'value',
+      name: '提及量（条）',
+      nameTextStyle: { fontSize: 11, color: '#6B7280' },
+      axisLabel: { fontSize: 11, color: '#6B7280' },
+      splitLine: { lineStyle: { color: '#F3F4F6' } }
+    },
+    series: [{
+      data: [850, 620, 380, 290, 450, 400, 350],
+      type: 'line',
+      smooth: true,
+      symbol: 'circle',
+      symbolSize: 6,
+      lineStyle: { color: '#1D4ED8', width: 2.5 },
+      itemStyle: { color: '#1D4ED8' },
+      areaStyle: { color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(29,78,216,0.15)' }, { offset: 1, color: 'rgba(29,78,216,0.01)' }] } },
+      markLine: {
+        silent: true,
+        symbol: 'none',
+        lineStyle: { color: '#EF4444', type: 'dashed', width: 1.5 },
+        label: { fontSize: 11, color: '#EF4444', formatter: '首销日' },
+        data: [{ xAxis: '8/14' }]
+      }
+    }]
+  });
+
+  var chart2 = echarts.init(document.getElementById('chart-sentiment'), null, { renderer: 'svg' });
+  chart2.setOption({
+    tooltip: { trigger: 'item', formatter: '{b}: {c}条 ({d}%)' },
+    legend: { bottom: 0, textStyle: { fontSize: 12 } },
+    series: [{
+      type: 'pie',
+      radius: ['50%', '75%'],
+      center: ['50%', '45%'],
+      avoidLabelOverlap: false,
+      label: { show: true, position: 'outside', formatter: '{b}\n{d}%', fontSize: 12 },
+      emphasis: { scale: false },
+      itemStyle: { borderRadius: 4, borderColor: '#fff', borderWidth: 2 },
+      data: [
+        { value: 12, name: '正面', itemStyle: { color: '#22C55E' } },
+        { value: 6, name: '中性', itemStyle: { color: '#F59E0B' } },
+        { value: 3, name: '负面', itemStyle: { color: '#EF4444' } }
+      ]
+    }]
+  });
+
+  window.addEventListener('resize', function() { chart1.resize(); chart2.resize(); });
+})();
+</script>
+
+</body>
+</html>
