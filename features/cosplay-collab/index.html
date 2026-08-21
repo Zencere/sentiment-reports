@@ -68,25 +68,76 @@
   .sent-bar.neu .pct { color: var(--accent3); }
   .sent-bar.neg .pct { color: var(--accent4); }
 
-  .section-head {
-    display: flex; align-items: center; justify-content: space-between;
-    margin-bottom: 20px; padding-bottom: 12px;
-    border-bottom: 1px solid var(--border);
+  /* Timeline */
+  .tl-section { margin-bottom: 36px; }
+  .tl-title {
+    font-size: 20px; font-weight: 700; margin-bottom: 28px;
+    display: flex; align-items: center; gap: 10px;
   }
-  .section-head h2 { font-size: 18px; font-weight: 700; }
-
-  .report-list { display: flex; flex-direction: column; gap: 12px; }
-  .report-card {
+  .tl-title::before {
+    content: ''; display: inline-block; width: 4px; height: 22px;
+    background: var(--feature); border-radius: 2px;
+  }
+  .tl-list {
+    position: relative;
+    padding-left: 32px;
+  }
+  .tl-list::before {
+    content: '';
+    position: absolute;
+    left: 9px; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--feature) 0%, var(--border) 100%);
+    border-radius: 1px;
+  }
+  .tl-item {
+    position: relative;
+    margin-bottom: 28px;
+    padding-bottom: 4px;
+  }
+  .tl-dot {
+    position: absolute;
+    left: -32px; top: 6px;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: var(--feature);
+    border: 3px solid var(--bg);
+    box-shadow: 0 0 0 4px rgba(139,92,246,0.25);
+    z-index: 1;
+  }
+  .tl-date {
+    font-size: 15px; font-weight: 700; color: var(--feature);
+    margin-bottom: 8px;
+  }
+  .tl-card {
     background: var(--card); border: 1px solid var(--border);
-    border-radius: 12px; padding: 20px 24px;
-    text-decoration: none; color: inherit;
-    display: flex; align-items: center; justify-content: space-between;
+    border-radius: 10px; padding: 18px 20px;
     transition: border-color .2s, transform .1s;
   }
-  .report-card:hover { border-color: #475569; transform: translateY(-1px); }
-  .report-card .r-info h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
-  .report-card .r-info .r-meta { font-size: 12px; color: var(--muted); }
-  .report-card .r-arrow { color: var(--accent); font-size: 18px; }
+  .tl-card:hover { border-color: #475569; transform: translateY(-1px); }
+  .tl-card h3 {
+    font-size: 16px; font-weight: 700; margin-bottom: 6px;
+  }
+  .tl-card h3 a { color: var(--text); text-decoration: none; }
+  .tl-card h3 a:hover { color: var(--feature); }
+  .tl-card .tl-summary {
+    font-size: 13px; color: var(--muted); line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  .tl-card .tl-tag {
+    display: inline-block; font-size: 11px; font-weight: 600;
+    padding: 2px 10px; border-radius: 10px;
+    background: rgba(139,92,246,0.15); color: var(--feature);
+  }
+  .tl-item.future .tl-dot {
+    background: transparent;
+    border: 3px solid var(--border);
+    box-shadow: none;
+  }
+  .tl-item.future .tl-card {
+    opacity: 0.5; border-style: dashed;
+  }
+  .tl-item.future .tl-date { color: var(--muted); }
 
   .back-link { display: inline-block; margin-top: 24px; color: var(--muted); font-size: 13px; text-decoration: none; }
   .back-link:hover { color: var(--text); }
@@ -137,18 +188,27 @@
     </div>
   </div>
 
-  <div class="section-head">
-    <h2>舆情报告</h2>
-  </div>
-
-  <div class="report-list">
-    <a class="report-card" href="reports/2026-08-20.html">
-      <div class="r-info">
-        <h3>以闪亮之名 × 华为 舆情报告</h3>
-        <div class="r-meta">2026-08-20 · 8月13日 – 8月20日 · 联动传播效果显著</div>
+  <div class="tl-section">
+    <div class="tl-title">舆情报告时间轴</div>
+    <div class="tl-list">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2026-08-20</div>
+        <div class="tl-card">
+          <h3><a href="reports/2026-08-20.html">以闪亮之名 x 华为 舆情报告</a></h3>
+          <div class="tl-summary">本周品牌联动传播效果显著，游戏社区和女性用户群体反响热烈，以闪亮之名IP与华为硬件的结合获得积极评价。</div>
+          <span class="tl-tag">周报告</span>
+        </div>
       </div>
-      <div class="r-arrow">&rarr;</div>
-    </a>
+      <div class="tl-item future">
+        <div class="tl-dot"></div>
+        <div class="tl-date">即将更新...</div>
+        <div class="tl-card">
+          <h3>下周报告筹备中</h3>
+          <div class="tl-summary">持续监测中，新一期舆情报告将于下周发布。</div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <a class="back-link" href="../../index.html">&larr; 返回首页</a>
