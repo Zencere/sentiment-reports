@@ -3,3 +3,5 @@ beautifulsoup4>=4.11
 snownlp>=0.12.3
 fake-useragent>=1.4
 lxml>=4.9
+jieba>=0.42
+playwright>=1.40
