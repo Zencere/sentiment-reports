@@ -5,24 +5,28 @@
 酷安是中文数码爱好者社区，讨论质量较高，适合产品舆情监控。
 
 技术要点:
+  - V3 X-App-Token 动态签名认证（基于 libauth.so）
   - 请求间隔 >= 2 秒
   - 搜索类型: feed（动态）
   - 返回帖子标题、内容、作者、点赞/评论/转发数
-  - 酷安 API 相对友好，但需合理的 User-Agent
 """
 
 import os
 import sys
+import time
+import uuid
 from typing import Optional
 
 # 兼容包内运行和直接运行
 try:
     from .base import BaseScraper
+    from .coolapk_token import build_headers
 except ImportError:
     _current_dir = os.path.dirname(os.path.abspath(__file__))
     if _current_dir not in sys.path:
         sys.path.insert(0, _current_dir)
     from base import BaseScraper
+    from coolapk_token import build_headers
 
 
 # ---------------------------------------------------------------------------
@@ -30,21 +34,28 @@ except ImportError:
 # ---------------------------------------------------------------------------
 COOLAPK_SEARCH_API = "https://api.coolapk.com/v6/search"
 
-COOLAPK_DEFAULT_HEADERS = {
-    "Accept": "application/json, text/plain, */*",
-    "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
-    "Referer": "https://www.coolapk.com/",
-    "X-Requested-With": "XMLHttpRequest",
-    "X-App-Id": "com.coolapk.market",
-}
-
 
 class CoolapkScraper(BaseScraper):
-    """酷安搜索采集器。"""
+    """酷安搜索采集器（V3 认证）。"""
 
     platform = "coolapk"
     platform_name = "酷安"
     base_url = "https://www.coolapk.com"
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self._device = str(uuid.uuid4())
+        self._cached_headers = None
+        self._cached_ts = 0
+
+    def _get_headers(self) -> dict:
+        """获取带 V3 Token 的请求头（60 秒内缓存复用）。"""
+        now = int(time.time())
+        if self._cached_headers and (now - self._cached_ts) < 60:
+            return self._cached_headers
+        self._cached_headers = build_headers(device=self._device, ts=now)
+        self._cached_ts = now
+        return self._cached_headers
 
     def search(self, keyword: str, max_pages: int = 3, product: str = "") -> list[dict]:
         """
@@ -92,7 +103,7 @@ class CoolapkScraper(BaseScraper):
 
         resp = self._request(
             COOLAPK_SEARCH_API,
-            headers=COOLAPK_DEFAULT_HEADERS,
+            headers=self._get_headers(),
             params=params,
         )
 
@@ -187,7 +198,7 @@ class CoolapkScraper(BaseScraper):
             }
             url = "https://api.coolapk.com/v6/feed/replyList"
             try:
-                resp = self._request(url, headers=COOLAPK_DEFAULT_HEADERS, params=params)
+                resp = self._request(url, headers=self._get_headers(), params=params)
                 data = resp.json()
                 if data.get("status") != 0:
                     break
