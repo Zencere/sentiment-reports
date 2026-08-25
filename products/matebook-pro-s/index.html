@@ -111,15 +111,6 @@
     padding: 2px 10px; border-radius: 10px;
     background: rgba(59,130,246,0.15); color: var(--accent);
   }
-  .tl-item.future .tl-dot {
-    background: transparent;
-    border: 3px solid var(--border);
-    box-shadow: none;
-  }
-  .tl-item.future .tl-card {
-    opacity: 0.5; border-style: dashed;
-  }
-  .tl-item.future .tl-date { color: var(--muted); }
 
   footer { text-align: center; padding: 24px 0; border-top: 1px solid var(--border); color: #64748b; font-size: 12px; margin-top: 40px; }
 </style>
@@ -128,14 +119,14 @@
 <div class="container">
   <div class="breadcrumb">
     <a href="../../index.html">首页</a><span class="sep">></span>
-    <a href="../../index.html">产品监控</a><span class="sep">></span>
+    <a href="../index.html">产品监控</a><span class="sep">></span>
     <span>MateBook Pro S</span>
   </div>
 
   <div class="hero">
     <span class="tag">笔记本</span>
     <h1>MateBook Pro S</h1>
-    <p class="subtitle">798g 极致轻薄本 · 全球最轻14英寸全金属笔记本 · 8月14日首销</p>
+    <p class="subtitle">798g 极致轻薄本 · 全球最轻14英寸全金属笔记本 · 8月5日发布 · 8月14日首销</p>
     <div class="info-grid">
       <div class="info-item"><div class="label">屏幕</div><div class="value">14英寸 OLED 灵盾防窥屏</div></div>
       <div class="info-item"><div class="label">重量</div><div class="value">798g</div></div>
@@ -149,36 +140,73 @@
   <div class="sentiment-section">
     <h2>情绪概览</h2>
     <div class="sentiment-bars">
-      <div class="sentiment-bar pos"><div class="num">55%</div><div class="label">正面</div></div>
-      <div class="sentiment-bar neu"><div class="num">25%</div><div class="label">中性</div></div>
-      <div class="sentiment-bar neg"><div class="num">20%</div><div class="label">负面</div></div>
+      <div class="sentiment-bar pos"><div class="num">45%</div><div class="label">🟢 正面</div></div>
+      <div class="sentiment-bar neu"><div class="num">20%</div><div class="label">🟡 中性</div></div>
+      <div class="sentiment-bar neg"><div class="num">35%</div><div class="label">🔴 负面</div></div>
     </div>
   </div>
 
-<div class="tl-section">
+  <div class="tl-section">
     <div class="tl-title">舆情报告时间轴</div>
     <div class="tl-list">
       <div class="tl-item">
         <div class="tl-dot"></div>
-        <div class="tl-date">2026-08-20</div>
+        <div class="tl-date">2026-08-25</div>
         <div class="tl-card">
-          <h3><a href="reports/2026-08-20.html">周舆情报告</a></h3>
-          <div class="tl-summary">本周该产品在社交媒体引发广泛讨论，用户对798g极致轻薄机身和硬件设计给予高度评价，但软件生态的应用适配问题引发两极分化讨论。</div>
+          <h3><a href="reports/2026-08-25.html">舆情报告</a></h3>
+          <div class="tl-summary">舆情呈"硬件一边倒好评、软件生态两极分化"格局。798g极致轻薄获近乎无争议认可，但续航虚标争议（官方18h vs 实测6h）和网银不兼容/专业软件缺失成为核心负面焦点。B站"还可以再等一代"金句放大观望情绪。</div>
           <span class="tl-tag">周报告</span>
         </div>
       </div>
-      <div class="tl-item future">
+      <div class="tl-item">
         <div class="tl-dot"></div>
-        <div class="tl-date">即将更新...</div>
+        <div class="tl-date">2026-08-24</div>
         <div class="tl-card">
-          <h3>下周报告筹备中</h3>
-          <div class="tl-summary">持续监测中，新一期舆情报告将于下周发布。</div>
+          <h3><a href="reports/2026-08-24.html">舆情报告</a></h3>
+          <div class="tl-summary">续航实测争议持续发酵，多个数码博主发布6小时办公实测视频引发广泛传播。华为官方尚未回应续航标注问题，部分观望用户表示等待软件生态成熟后再入手。</div>
+          <span class="tl-tag">日报告</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2026-08-23</div>
+        <div class="tl-card">
+          <h3><a href="reports/2026-08-23.html">舆情报告</a></h3>
+          <div class="tl-summary">周末讨论以硬件体验分享为主，798g轻薄机身在出差/通勤场景的优势被大量用户验证。网银U盾不兼容问题在技术社区持续讨论，但未形成大规模传播。</div>
+          <span class="tl-tag">日报告</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2026-08-22</div>
+        <div class="tl-card">
+          <h3><a href="reports/2026-08-22.html">舆情报告</a></h3>
+          <div class="tl-summary">专业软件适配问题引发职场用户集中反馈，CAD/PS等生产力工具缺失成为换机决策的主要阻碍。鸿蒙装机量破8000万消息为长期生态信心提供一定支撑。</div>
+          <span class="tl-tag">日报告</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2026-08-21</div>
+        <div class="tl-card">
+          <h3><a href="reports/2026-08-21.html">舆情报告</a></h3>
+          <div class="tl-summary">首销后首批用户体验反馈集中释放，散热表现和屏幕素质获好评，但部分用户反映高负载下风扇噪音偏大。软件生态适配进度成为社区讨论热点。</div>
+          <span class="tl-tag">日报告</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2026-08-20</div>
+        <div class="tl-card">
+          <h3><a href="reports/2026-08-20.html">舆情报告</a></h3>
+          <div class="tl-summary">首销周社交媒体讨论热度攀升，用户对798g极致轻薄机身和硬件设计给予高度评价，但软件生态的应用适配问题开始引发两极分化讨论。</div>
+          <span class="tl-tag">周报告</span>
         </div>
       </div>
     </div>
   </div>
 
-  <footer>Powered by TraeWork · 华为舆情监控中心</footer>
+  <footer>Powered by TraeWork · 华为舆情监控中心 · 最后更新 2026-08-25</footer>
 </div>
 </body>
 </html>
