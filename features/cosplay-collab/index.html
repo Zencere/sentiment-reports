@@ -68,7 +68,6 @@
   .sent-bar.neu .pct { color: var(--accent3); }
   .sent-bar.neg .pct { color: var(--accent4); }
 
-  /* Timeline */
   .tl-section { margin-bottom: 36px; }
   .tl-title {
     font-size: 20px; font-weight: 700; margin-bottom: 28px;
@@ -129,18 +128,11 @@
     padding: 2px 10px; border-radius: 10px;
     background: rgba(139,92,246,0.15); color: var(--feature);
   }
-  .tl-item.future .tl-dot {
-    background: transparent;
-    border: 3px solid var(--border);
-    box-shadow: none;
-  }
-  .tl-item.future .tl-card {
-    opacity: 0.5; border-style: dashed;
-  }
-  .tl-item.future .tl-date { color: var(--muted); }
 
   .back-link { display: inline-block; margin-top: 24px; color: var(--muted); font-size: 13px; text-decoration: none; }
   .back-link:hover { color: var(--text); }
+
+  footer { text-align: center; padding: 24px 0; border-top: 1px solid var(--border); color: #64748b; font-size: 12px; margin-top: 40px; }
 
   @media (max-width: 640px) {
     .feature-hero { padding: 24px 20px; }
@@ -152,8 +144,8 @@
 <body>
 
 <div class="breadcrumb">
-  <a href="../../index.html">首页</a> &rsaquo;
-  <a href="../">特性监控</a> &rsaquo;
+  <a href="../../index.html">首页</a> <span>›</span>
+  <a href="../index.html">特性监控</a> <span>›</span>
   <span>以闪亮之名 × 华为</span>
 </div>
 
@@ -161,11 +153,11 @@
   <div class="feature-hero">
     <span class="tag">品牌联名</span>
     <h1>以闪亮之名 × 华为</h1>
-    <div class="subtitle">品牌联动 · 游戏适配 · 女性向创作</div>
+    <div class="subtitle">品牌联动 · 游戏适配 · 女性向创作 · 3K HDR画质</div>
     <div class="meta-row">
       <span>功能分类：<b>品牌联名</b></span>
       <span>所属产品：<b>MatePad Pro 12英寸 2026款</b></span>
-      <span>监测周期：<b>2026年8月13日 – 8月20日</b></span>
+      <span>监测周期：<b>2026年8月20日 – 8月25日</b></span>
       <span>监测渠道：<b>社交媒体 / 游戏社区 / 电商评论</b></span>
     </div>
   </div>
@@ -175,15 +167,15 @@
     <div class="sentiment-bars">
       <div class="sent-bar pos">
         <div class="pct">55%</div>
-        <div class="label">正面</div>
+        <div class="label">🟢 正面</div>
       </div>
       <div class="sent-bar neu">
-        <div class="pct">25%</div>
-        <div class="label">中性</div>
+        <div class="pct">30%</div>
+        <div class="label">🟡 中性</div>
       </div>
       <div class="sent-bar neg">
-        <div class="pct">20%</div>
-        <div class="label">负面</div>
+        <div class="pct">15%</div>
+        <div class="label">🔴 负面</div>
       </div>
     </div>
   </div>
@@ -193,25 +185,63 @@
     <div class="tl-list">
       <div class="tl-item">
         <div class="tl-dot"></div>
-        <div class="tl-date">2026-08-20</div>
+        <div class="tl-date">2026-08-25</div>
         <div class="tl-card">
-          <h3><a href="reports/2026-08-20.html">以闪亮之名 x 华为 舆情报告</a></h3>
-          <div class="tl-summary">本周品牌联动传播效果显著，游戏社区和女性用户群体反响热烈，以闪亮之名IP与华为硬件的结合获得积极评价。</div>
+          <h3><a href="reports/2026-08-25.html">周舆情报告</a></h3>
+          <div class="tl-summary">联动传播效果显著（小红书1.3万+赞），正面约55%；3K OLED HDR画质体验获游戏玩家和女性向创作者好评，联名限定外观和定制主题吸引大量关注。但礼盒价值感知偏差（定价与内容物不匹配）和抽奖机制仅1个名额引发质疑，部分玩家认为"诚意不足"。游戏在鸿蒙NEXT上的适配稳定性仍有零星闪退反馈。</div>
           <span class="tl-tag">周报告</span>
         </div>
       </div>
-      <div class="tl-item future">
+      <div class="tl-item">
         <div class="tl-dot"></div>
-        <div class="tl-date">即将更新...</div>
+        <div class="tl-date">2026-08-24</div>
         <div class="tl-card">
-          <h3>下周报告筹备中</h3>
-          <div class="tl-summary">持续监测中，新一期舆情报告将于下周发布。</div>
+          <h3><a href="reports/2026-08-24.html">日舆情报告</a></h3>
+          <div class="tl-summary">B站联名游戏实机演示视频播放量破50万，3K HDR画质下服装材质渲染效果获玩家好评，"质感堪比端游"评价增多。联名礼盒开箱视频传播，但"只有1个抽奖名额"的吐槽在微博持续发酵。</div>
+          <span class="tl-tag">日报告</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2026-08-23</div>
+        <div class="tl-card">
+          <h3><a href="reports/2026-08-23.html">日舆情报告</a></h3>
+          <div class="tl-summary">周末玩家社区UGC内容爆发，大量联名穿搭截图和创作内容在小红书、LOFTER传播，女性用户群体互动热烈。但礼盒"饥饿营销"质疑增多，部分玩家认为联名活动门槛过高。</div>
+          <span class="tl-tag">日报告</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2026-08-22</div>
+        <div class="tl-card">
+          <h3><a href="reports/2026-08-22.html">日舆情报告</a></h3>
+          <div class="tl-summary">游戏媒体评测发布，《以闪亮之名》在MatePad Pro上的144Hz高刷+3K HDR组合表现获专业评测肯定。鸿蒙NEXT版游戏偶发闪退和加载慢问题被提及，但整体不影响主流口碑。</div>
+          <span class="tl-tag">日报告</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2026-08-21</div>
+        <div class="tl-card">
+          <h3><a href="reports/2026-08-21.html">日舆情报告</a></h3>
+          <div class="tl-summary">联名活动正式上线首日，游戏内限定服装和华为主题壁纸下载量破纪录，社交媒体话题阅读量破千万。部分非华为玩家抱怨"联名独占"不公平，跨平台体验差异引发讨论。</div>
+          <span class="tl-tag">日报告</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2026-08-20</div>
+        <div class="tl-card">
+          <h3><a href="reports/2026-08-20.html">周舆情报告</a></h3>
+          <div class="tl-summary">以闪亮之名×华为品牌联动传播效果显著，游戏社区和女性用户群体反响热烈，IP与华为硬件的结合获得积极评价。联名预告海报和限定礼盒信息引发期待，但具体活动细节尚未公布导致部分猜测。</div>
+          <span class="tl-tag">周报告</span>
         </div>
       </div>
     </div>
   </div>
 
-  <a class="back-link" href="../../index.html">&larr; 返回首页</a>
+  <footer>Powered by TraeWork · 华为舆情监控中心 · 最后更新 2026-08-25</footer>
+  <a class="back-link" href="../../index.html">← 返回首页</a>
 </div>
 
 </body>
