@@ -1,0 +1,1686 @@
+{
+  "run_metadata": {
+    "run_at": "2026-08-25T19:10:57.023173+08:00",
+    "platforms": [
+      "coolapk"
+    ],
+    "products": [
+      "matebook-pro-s"
+    ],
+    "config": {
+      "max_pages": 3,
+      "min_interval": 1.0
+    }
+  },
+  "products": {
+    "matebook-pro-s": {
+      "product_key": "matebook-pro-s",
+      "product_name": "MateBook Pro S",
+      "scraped_at": "2026-08-25T19:10:57.023173+08:00",
+      "platforms": {
+        "coolapk": {
+          "items": [
+            {
+              "id": "coolapk_5e1c9141a119",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73417116",
+              "author": "暂时就当乐色佬了",
+              "title": "matebook pro用户没有必要换，本身用鸿蒙pc就是追求个轻便和生态，性能没啥特别值得考虑的，pro s的性能也说不上多大变化。轻薄感扔包通勤没有更特别的感受，而且pro最大的问题续航发热，这台",
+              "content": "matebook pro用户没有必要换，本身用鸿蒙pc就是追求个轻便和生态，性能没啥特别值得考虑的，pro s的性能也说不上多大变化。轻薄感扔包通勤没有更特别的感受，而且pro最大的问题续航发热，这台处理器能效提升但电池缩水仍没有好转还是崩。\npro可以等待X90正式迭代后再升级，当然我是更期待迭代后的edge",
+              "publish_time": "2026-08-25T18:41:23+08:00",
+              "metrics": {
+                "likes": 0,
+                "comments": 4,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:10:59.837509+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_3d025dea781f",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73406648",
+              "author": "JKEng",
+              "title": "华为现在的电脑能效确实被限制死了，从一代matebook pro发布会，到matebook14鸿蒙版，到matebook pro s，每次都说续航最长，结果到手一用都在七八个小时的水平。这个mateb",
+              "content": "华为现在的电脑能效确实被限制死了，从一代matebook pro发布会，到matebook14鸿蒙版，到matebook pro s，每次都说续航最长，结果到手一用都在七八个小时的水平。这个matebook pro s用的可是最新制程工艺下的手机芯片啊，还是只有八个小时",
+              "publish_time": "2026-08-25T13:58:00+08:00",
+              "metrics": {
+                "likes": 0,
+                "comments": 2,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:10:59.837509+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_1c5be86413e6",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73405261",
+              "author": "StarShineShine",
+              "title": "#玄戒O3# 小米有兴趣把这个芯片搬到电脑上吗[色]本来性能不弱，cpu 在 30w 跑分 15000，gpu 有 10000+，对照 jkw 的数据已经干掉了 M4[吐舌]\n放笔记本上面性能足够，功",
+              "content": "#玄戒O3# 小米有兴趣把这个芯片搬到电脑上吗[色]本来性能不弱，cpu 在 30w 跑分 15000，gpu 有 10000+，对照 jkw 的数据已经干掉了 M4[吐舌]\n放笔记本上面性能足够，功耗和英特尔 x86 一比也算低的。\n同样用 arm 笔记本的苹果 macbookair 没有好的模具，重量控制不行。华为 matebook Pro s 模具很好性能太差。小米本身就有 xiaomi book Pro 14 的高端模具，再加上O3 的性能不直接起飞了，唯一的问题就是 windows on arm 生态问题[受虐滑稽]不过哪怕转译了性能也还算不错的",
+              "publish_time": "2026-08-24T18:31:34+08:00",
+              "metrics": {
+                "likes": 4,
+                "comments": 7,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:10:59.837509+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_fc9c030269ea",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73404733",
+              "author": "EarlGrey",
+              "title": "入手华为MateBook Pro S已有数日，终于得空整理完整的使用体验。作为从去年鸿蒙PC首次发布就持续关注的用户，从初代观望到如今入手Pro S，一路见证鸿蒙PC生态的演进，也有不少真实感受与优化",
+              "content": "入手华为MateBook Pro S已有数日，终于得空整理完整的使用体验。作为从去年鸿蒙PC首次发布就持续关注的用户，从初代观望到如今入手Pro S，一路见证鸿蒙PC生态的演进，也有不少真实感受与优化建议，在此做完整梳理。\n\n一、选购历程：从初代观望到果断入手\n我接触鸿蒙PC的概念很早，2024年鸿蒙内测0.7版本中，平板端的「自由多窗」功能就已经透出鸿蒙PC的UI雏形，当时我就对这套界面设计非常认可，使用体验很不错但是后来华为可能出于考虑，对2合一产品的让渡，就在5.0版本中把这个功能砍掉了。\n去年初代华为MateBook Pro发布时，我专程到线下体验。980克的重量带来的手感提升非常明显，对比我当时在用的2021款MateBook 14S轻了一大截。但考虑到这是第一代鸿蒙PC产品，系统生态尚不完善，我最终选择了观望。\n期间在14s手搓了鸿蒙ui，效果也非常不错... 查看更多",
+              "publish_time": "2026-08-25T14:45:30+08:00",
+              "metrics": {
+                "likes": 23,
+                "comments": 21,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:10:59.837509+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_23a50b55329e",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73394695",
+              "author": "江春水",
+              "title": "华为多设备使用体验分享\n\n背景\n\n我是第一次使用华为设备，最初只是从华为的耳机 FreeClip 2 开始接触华为生态。在此之前，我使用的是 VIVO、OPPO 和 iQOO 的手机。因为这款耳机实在",
+              "content": "华为多设备使用体验分享\n\n背景\n\n我是第一次使用华为设备，最初只是从华为的耳机 FreeClip 2 开始接触华为生态。在此之前，我使用的是 VIVO、OPPO 和 iQOO 的手机。因为这款耳机实在太好用，恰逢手机过保坏掉，便想试试华为手机看看。\n\n当前设备\n\n- 手机：华为 Pura X Max\n- 耳机：FreeClip 2\n- 笔记本电脑：MateBook Pro S\n- 手表：Watch Fit 5 Pro\n- 鼠标：华为鼠标 3\n- 其他设备：家里有一台 24 年底配置的较高配台式机，一台 MacBook Pro\n\n设备体验（省流版）\n\n1. 手机：Pura X Max\n\n一句话总结：重，硌手；打开后竖屏 UI 可用性小；顶级影音折叠平板；拍照顶级；外屏可用；鸿蒙生态核心设备。\n\n推荐购买：✅ 推荐\n\n推荐配件：官方素皮壳、华为官方无线充、华为耳机、CARE+（强烈推荐... 查看更多",
+              "publish_time": "2026-08-25T13:03:48+08:00",
+              "metrics": {
+                "likes": 24,
+                "comments": 6,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:10:59.837509+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_3f679bfe2acd",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73354826",
+              "author": "EarlGrey",
+              "title": "【点评】华为MateBook Pro S 体验\n入手华为MateBook Pro S已有数日，终于得空整理完整的使用体验。作为从去年鸿蒙PC首次发布就持续关注的用户，从初代观望到如今入手Pro S，一",
+              "content": "【点评】华为MateBook Pro S 体验\n入手华为MateBook Pro S已有数日，终于得空整理完整的使用体验。作为从去年鸿蒙PC首次发布就持续关注的用户，从初代观望到如今入手Pro S，一路见证鸿蒙PC生态的演进，也有不少真实感受与优化建议，在此做完整梳理。\n一、选购历程：从初代观望到果断入手\n我接触鸿蒙PC的概念很早，2024年鸿蒙内测0.7版本中，平板端的「自由多窗」功能就已经透出鸿蒙PC的UI雏形，当时我就对这套界面设计非常认可，使用体验很不错，但是可能是给二合一让路后面5.0系统砍掉了。\n\n去年初代华为MateBook Pro发布时，我专程到线下体验。980克的重量带来的手感提升非常明显，对比我当时在用的2021款MateBook 14S轻了一大截。但考虑到这是第一代鸿蒙PC产品，系统生态尚不完善，我最终选择了观望。\n\n之后为了提前体验鸿蒙PC的使用逻辑... 查看更多",
+              "publish_time": "2026-08-25T01:21:50+08:00",
+              "metrics": {
+                "likes": 0,
+                "comments": 9,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:10:59.837509+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_4dc49587098b",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73331870",
+              "author": "星河潮涌",
+              "title": "鸿蒙PC终于有点让我满意的消息，经过我朋友的一顿教训，触控板（误触）和手势（三指）终于肯开始优化了\n\n起因是我朋友买了Pro S的首发，刚到手半天就给原路退回，原由是生产力不如用MacBook得劲，触",
+              "content": "鸿蒙PC终于有点让我满意的消息，经过我朋友的一顿教训，触控板（误触）和手势（三指）终于肯开始优化了\n\n起因是我朋友买了Pro S的首发，刚到手半天就给原路退回，原由是生产力不如用MacBook得劲，触控板、功耗、使用姿势等等都不尽人意，有些地方甚至不存在于之前发布的Win版MateBook和智选笔记本，更别拿荣耀笔记本来比较，那简直一个天一个地，气的他这几天一直在diss PC部那帮人，也有人来联系他，这么一闹也算是有点回响，承诺会在后续版本迭代改进优化，触控板误触问题预计不久后就OTA修复\n\n鸿蒙PC最严厉的父亲这一块，我给他这个封号实至名归[doge原谅ta]\n\n#鸿蒙7# #华为MateBookProS#",
+              "publish_time": "2026-08-20T12:29:29+08:00",
+              "metrics": {
+                "likes": 29,
+                "comments": 7,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:10:59.837509+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_127fd8e7cc4c",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73311030",
+              "author": "蟹堡王主厨",
+              "title": "酷友们，求推荐笔记本电脑。\n首先是预算，小于等于macbook pro 16英寸最低配[受虐滑稽]\n再说说我的需求，续航要长，我现在使用的是联想Y7000P，脱离电源后电池电量如奶油般化开。工作后发现",
+              "content": "酷友们，求推荐笔记本电脑。\n首先是预算，小于等于macbook pro 16英寸最低配[受虐滑稽]\n再说说我的需求，续航要长，我现在使用的是联想Y7000P，脱离电源后电池电量如奶油般化开。工作后发现有很多会议，需要使用笔记本电脑，但同时会议室电源数量不够，因此需要能够坚持无电源连接投影仪三小时的续航。\n再者是一些企业定制的办公软件，需要可以运行java、python，目前看领导使用果子笔记本电脑都没问题，我使用的联想也没有问题。这些软件对电脑负载不大，主要是各种内部系统填表[受虐滑稽]也不用看CAD\n最后是一些加分项，屏幕大，大就是好，好就是大，好大就是好大。能16就不14[受虐滑稽]。轻薄，重量越轻越好，华子新出的matebook pro s我看着挺喜欢，但是怕纯血鸿蒙PC对工作软件不支持（虽然也有一个领导使用的是纯血鸿蒙笔记本）。\n不需要打游戏... 查看更多",
+              "publish_time": "2026-08-19T13:43:12+08:00",
+              "metrics": {
+                "likes": 5,
+                "comments": 8,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:10:59.837509+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_d76dee84f074",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73297505",
+              "author": "凯越858050",
+              "title": "好奇一个问题[受虐滑稽]\n如果要是论理论核心硬件性能的话\nHUAWEI MateBook Pro S能干翻Apple Studio XDR Display吗？\nHUAWEI MateBook Pro ",
+              "content": "好奇一个问题[受虐滑稽]\n如果要是论理论核心硬件性能的话\nHUAWEI MateBook Pro S能干翻Apple Studio XDR Display吗？\nHUAWEI MateBook Pro S搭载了Kirin XE90芯片\nApple Studio XDR Display搭载了Apple A19 Pro芯片\n我只能说把A19 Pro塞在显示器里用作协同居中摄像头和多扬声器立体声和屏幕的色彩管理，有点太屈才了，其实用个 A15我觉得就够了，可能苹果没有老处理器的库存了，我记得上一代Studio Display用的是A13的芯片，这么想的话一个显示器有12GB的运存和128GB的存储和强大的性能也是挺逆天的。\n还需要补充一个点因为手机的芯片不支持6K的分辨率，所以他们又额外追加了一颗GPU。\n#数码日常# #华为# #鸿蒙7#",
+              "publish_time": "2026-08-21T14:03:42+08:00",
+              "metrics": {
+                "likes": 4,
+                "comments": 8,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:10:59.837509+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_dc712fc548e3",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73281393",
+              "author": "星河潮涌",
+              "title": "HUAWEI MateBook Pro S\n分类壁纸｜植物 (Plant)\n\n注：本动态的主题壁纸未经允许，禁止二次发布传播与衍生创作\n\n#鸿蒙7# #华为主题# #壁纸#",
+              "content": "HUAWEI MateBook Pro S\n分类壁纸｜植物 (Plant)\n\n注：本动态的主题壁纸未经允许，禁止二次发布传播与衍生创作\n\n#鸿蒙7# #华为主题# #壁纸#",
+              "publish_time": "2026-08-17T12:58:01+08:00",
+              "metrics": {
+                "likes": 25,
+                "comments": 4,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:10:59.837509+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_d33d9ed98632",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73276288",
+              "author": "星河潮涌",
+              "title": "HUAWEI MateBook Pro S 典藏版\n推荐｜预置壁纸\n\n名称列表\n墨翎｜Black Plume\n沙翎｜Sand Plume\n\n迅雷链接：\n查看链接\n\n夸克链接：\n查看链接\n\n注：本动态的",
+              "content": "HUAWEI MateBook Pro S 典藏版\n推荐｜预置壁纸\n\n名称列表\n墨翎｜Black Plume\n沙翎｜Sand Plume\n\n迅雷链接：\n查看链接\n\n夸克链接：\n查看链接\n\n注：本动态的主题壁纸未经允许，禁止二次发布传播与衍生创作\n\n#鸿蒙7# #华为主题# #壁纸#",
+              "publish_time": "2026-08-16T18:14:18+08:00",
+              "metrics": {
+                "likes": 22,
+                "comments": 0,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:10:59.837509+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_1ad5f7ecf353",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73273821",
+              "author": "Buffalol",
+              "title": "「短途跨城旅行体验：华为MateBook Pro S标准版」\n这次带着matebook pro s出门，这次专门为奥德赛这部电影跑了趟东莞，住了一晚，然后看了IMAX GT的1.43:1的震撼画幅，电",
+              "content": "「短途跨城旅行体验：华为MateBook Pro S标准版」\n这次带着matebook pro s出门，这次专门为奥德赛这部电影跑了趟东莞，住了一晚，然后看了IMAX GT的1.43:1的震撼画幅，电影太好看了电影院效果太好了[流泪][流泪][流泪]\n这个帖子说一下使用🌸子新出的笔记本体验如何\n1️⃣ 轻，所谓量变引起质变，到了这个重量的轻，是真的让人愿意掏出来的那种。 放双腿上毫无压力，高铁站候车、火车上闲着的时候，拿出来娱乐一下完全不累。而且我发现一个反直觉的事：我掏它的意愿比掏平板更强[受虐滑稽]。平板得双手捧着，大部分候车位没桌子；笔记本往腿上一放就没问题。\n2️⃣ 屏幕夯爆了。 图1是3/4亮度，大中午、采光极好的高铁站，头顶一堆灯光直射——抗反射效果非常棒，观感几乎不受影响。反正我发现屏幕素质好到一定程度，才能让人有意愿在公共场所拿出来使用。\n3️⃣ 发热集中在底部中央... 查看更多",
+              "publish_time": "2026-08-23T20:48:32+08:00",
+              "metrics": {
+                "likes": 31,
+                "comments": 32,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:10:59.837509+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_6e99889a0956",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73269948",
+              "author": "星河潮涌",
+              "title": "HUAWEI MateBook Pro S\n推荐｜预置壁纸\n\n名称列表\n岚雾｜Mist Violet\n晨曦｜Dawn\n云晞｜Dawn Cloud\n暮曜｜Dusk Shine\n尘隅｜Earth Haze",
+              "content": "HUAWEI MateBook Pro S\n推荐｜预置壁纸\n\n名称列表\n岚雾｜Mist Violet\n晨曦｜Dawn\n云晞｜Dawn Cloud\n暮曜｜Dusk Shine\n尘隅｜Earth Haze\n\n迅雷链接：\n查看链接\n\n夸克链接：\n查看链接\n\n注：本动态的主题壁纸未经允许，禁止二次发布传播与衍生创作\n\n#鸿蒙7# #华为主题# #壁纸#",
+              "publish_time": "2026-08-16T18:15:59+08:00",
+              "metrics": {
+                "likes": 26,
+                "comments": 5,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:10:59.837509+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_15e55f634e38",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73241614",
+              "author": "囚牛13",
+              "title": "有没有眼睛对 OLED 敏感的朋友，心水 matebook pro s，OLED 电脑会把眼睛搞到闪光吗，去实体店看了一会，感觉还好没有什么不适应，就怕带回家不行。 #LCD永不为奴#",
+              "content": "有没有眼睛对 OLED 敏感的朋友，心水 matebook pro s，OLED 电脑会把眼睛搞到闪光吗，去实体店看了一会，感觉还好没有什么不适应，就怕带回家不行。 #LCD永不为奴#",
+              "publish_time": "2026-08-16T03:15:38+08:00",
+              "metrics": {
+                "likes": 5,
+                "comments": 6,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:10:59.837509+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_190de85b07d3",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73241057",
+              "author": "freakqu",
+              "title": "现场摸了会儿matebook pro s，质感不如edge，拔草了，edge配上随行键盘足够爽！",
+              "content": "现场摸了会儿matebook pro s，质感不如edge，拔草了，edge配上随行键盘足够爽！",
+              "publish_time": "2026-08-16T01:36:29+08:00",
+              "metrics": {
+                "likes": 0,
+                "comments": 10,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:10:59.837509+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_3dd1b921a4aa",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73237229",
+              "author": "斯密达瓦",
+              "title": "#酷安V16反馈#  matebook pro s被当成手机了[受虐滑稽][doge笑哭][doge笑哭]",
+              "content": "#酷安V16反馈#  matebook pro s被当成手机了[受虐滑稽][doge笑哭][doge笑哭]",
+              "publish_time": "2026-08-14T16:11:20+08:00",
+              "metrics": {
+                "likes": 0,
+                "comments": 0,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:10:59.837509+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_4486baaf2616",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73232698",
+              "author": "度娘音乐执行官",
+              "title": "【讨论】MateBook Pro S人脸识别，是2D‑IR还是3D？\n咨询客服整理得到信息：\n人脸识别解锁依赖芯片+IR红外摄像头，鸿蒙PC目前仅MateBook Pro S支持人脸解锁；其余鸿蒙电脑",
+              "content": "【讨论】MateBook Pro S人脸识别，是2D‑IR还是3D？\n咨询客服整理得到信息：\n人脸识别解锁依赖芯片+IR红外摄像头，鸿蒙PC目前仅MateBook Pro S支持人脸解锁；其余鸿蒙电脑无法靠软件升级、外接摄像头实现该功能。\n该机仅支持人脸解锁，不支持人脸支付。\n官方参数没有明确标注是2D红外还是3D结构光/ToF。\n个人做个合理推测：\n①硬件为IR红外摄像头方案\n②机身极致轻薄，传统3D结构光模组很难塞进如此紧凑机身内\n综合两点，大概率是2D IR人脸识别，并非3D结构光或者3D ToF。\n⚠️仅为基于现有信息的推论，不是实锤。\n有没有方便摸到这个样机的酷友，帮忙确认下实际硬件情况？\n\n#华为鸿蒙PC# #华为MateBookProS#",
+              "publish_time": "2026-08-25T19:04:15+08:00",
+              "metrics": {
+                "likes": 1,
+                "comments": 5,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:10:59.837509+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_403e2475c8d5",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73221053",
+              "author": "Lxy66",
+              "title": "HarmonyOS 7 鸿蒙电脑花粉Beta招募正式开启\n本次尝鲜机型：\nMateBook Fold 非凡大师（麒麟X90 Plus）\nMateBook Pro（麒麟X90 Plus）\nMateBoo",
+              "content": "HarmonyOS 7 鸿蒙电脑花粉Beta招募正式开启\n本次尝鲜机型：\nMateBook Fold 非凡大师（麒麟X90 Plus）\nMateBook Pro（麒麟X90 Plus）\nMateBook Pro S  #鸿蒙7#",
+              "publish_time": "2026-08-14T15:23:25+08:00",
+              "metrics": {
+                "likes": 11,
+                "comments": 14,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:10:59.837509+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_2b171684b0aa",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73219968",
+              "author": "徐多来了",
+              "title": "东莞小伙伴看过来👀\n华为MateBook Pro S 综合优惠\n教育优惠500+店补+国补85折\n全套叠加，价格很香\n线下实体门店，可到店自提#华为PuraXMax# #华为Pura90ProMax#",
+              "content": "东莞小伙伴看过来👀\n华为MateBook Pro S 综合优惠\n教育优惠500+店补+国补85折\n全套叠加，价格很香\n线下实体门店，可到店自提#华为PuraXMax# #华为Pura90ProMax# #华为Mate80ProMax#",
+              "publish_time": "2026-08-13T17:30:48+08:00",
+              "metrics": {
+                "likes": 0,
+                "comments": 0,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:10:59.838519+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_ac4fbb04ee9e",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73204932",
+              "author": "光尘official",
+              "title": "近期万字评测预告\nMatePad Pro Max评测，17号~19号\nMateBook Pro S，月底之前",
+              "content": "近期万字评测预告\nMatePad Pro Max评测，17号~19号\nMateBook Pro S，月底之前",
+              "publish_time": "2026-08-14T17:15:44+08:00",
+              "metrics": {
+                "likes": 43,
+                "comments": 11,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.001040+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_133a45d3d9d9",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73198418",
+              "author": "Plainvoid",
+              "title": "#华为Mate90系列曝光# 华为秋季全场景新品发布会定档9月23日，地址与24年Mate品牌盛典一致，基本敲定为新一代Mate，据数码闲聊站透露9月有两场发布会（P4）前者可能发布新三折叠XT2，后",
+              "content": "#华为Mate90系列曝光# 华为秋季全场景新品发布会定档9月23日，地址与24年Mate品牌盛典一致，基本敲定为新一代Mate，据数码闲聊站透露9月有两场发布会（P4）前者可能发布新三折叠XT2，后9月23日为 Mate90全系、双折叠X8及其他终端产品发布会。博主超维界表示 Haco指可能是华为发布会英文简称，此次Mate90可能搭载华为新推出的“韬定律”半导体解决方案的新麒麟芯片（代号：麒麟 2026） 与第三代红枫，以及现鸿蒙7 未上线的功能闪控窗（P5），新一代双层 OLED，像 Matebook Pro S 的双像素防窥（均为猜测）和其他新功能，预计发布机型 ：Mate90Mate90Pro,Mate90Pro Max,\nMate90 RS Ultimate Design，另外风驰版机型可能正常迭代但会像上一代一样晚一些，总之... 查看更多",
+              "publish_time": "2026-08-13T22:17:51+08:00",
+              "metrics": {
+                "likes": 17,
+                "comments": 9,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.001040+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_a5a8823e74ab",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73173090",
+              "author": "深圳太阳百货体验店",
+              "title": "MateBook Pro S|开箱预售\n非防窥版8月14日首销\n防窥版＆典藏版8月28日首销\n🌸🌸9大权益🌸🌸\n1）首销月赠送价值¥1506元无忧大礼包\n2）鸿蒙有礼权益包（至高超500元）\n3）首销",
+              "content": "MateBook Pro S|开箱预售\n非防窥版8月14日首销\n防窥版＆典藏版8月28日首销\n🌸🌸9大权益🌸🌸\n1）首销月赠送价值¥1506元无忧大礼包\n2）鸿蒙有礼权益包（至高超500元）\n3）首销周1:1赠送华为原装鼠标\n4）教育优惠500元\n5）以旧换新额外补贴10%\n6）国补15%（至高1500元）\n7）信用卡优惠\n8) Care+88折\n9）离境退税9%\n#华为MateBookProS# #华为鸿蒙电脑亮相# #笔记本电脑推荐#",
+              "publish_time": "2026-08-10T22:45:29+08:00",
+              "metrics": {
+                "likes": 1,
+                "comments": 1,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.001040+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_c0cbbe004070",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73163214",
+              "author": "安安验机",
+              "title": "不用只看参数纸面宣传，8月9日余承东亲自上手拆解华为MateBook Pro S，各路行业悬念一一落地：这款仅798g的14英寸全金属鸿蒙旗舰本，把国产工业设计的硬实力彻底摊开在大众面前。\n相较于往年",
+              "content": "不用只看参数纸面宣传，8月9日余承东亲自上手拆解华为MateBook Pro S，各路行业悬念一一落地：这款仅798g的14英寸全金属鸿蒙旗舰本，把国产工业设计的硬实力彻底摊开在大众面前。\n相较于往年轻薄本常规迭代节奏，这次直接从材料、结构、主板、散热全链路重构，实打实是2026下半年最值得期待的旗舰轻薄本！\n\n01 更新节奏回归！华为鸿蒙PC正式进入稳定迭代周期\n\n长期关注华为笔记本的用户都深有体会，前些年受供应链多重因素影响，旗舰PC新品发布节奏浮动较大，想要换新旗舰本常常漫长等待。\n2026年这一局面彻底扭转，从上半年平板新品密集上新，再到如今MateBook Pro S官方拆机预热，华为全线PC产品已经回归稳定更新节奏，旗舰机型有序迭代已成定局。\n 华为敢于提速迭代、放开硬件堆料，底气源自整套自研工业架构体系落地。通俗来讲，华为跳出行业传统设计思维，不靠堆砌常规零部件拉高参数... 查看更多",
+              "publish_time": "2026-08-10T11:01:21+08:00",
+              "metrics": {
+                "likes": 2,
+                "comments": 0,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.001040+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_72199cf6b061",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73157518",
+              "author": "光尘official",
+              "title": "预告有二：\nMatebook Pro S全面评测：\n风起云舒落一叶，一苇渡江轻似燕\n\nMatePad Pro Max全面评测：\n薄如蝉翼轻飞雪，双生影，安能辨我是雌雄\n#鸿蒙6#",
+              "content": "预告有二：\nMatebook Pro S全面评测：\n风起云舒落一叶，一苇渡江轻似燕\n\nMatePad Pro Max全面评测：\n薄如蝉翼轻飞雪，双生影，安能辨我是雌雄\n#鸿蒙6#",
+              "publish_time": "2026-08-12T04:07:22+08:00",
+              "metrics": {
+                "likes": 47,
+                "comments": 13,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.001040+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_cdba3525c1a7",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73155717",
+              "author": "光尘official",
+              "title": "本次上手的是HUAWEI MateBook Pro S 32＋1TB烟云灰典藏防窥版，搭载Kirin XE90高能效桌面Soc\n先来讲讲屏幕\n屏幕本质是力大砖飞设计和钞能力共同作用下的数值和机制兼有的",
+              "content": "本次上手的是HUAWEI MateBook Pro S 32＋1TB烟云灰典藏防窥版，搭载Kirin XE90高能效桌面Soc\n先来讲讲屏幕\n屏幕本质是力大砖飞设计和钞能力共同作用下的数值和机制兼有的超标产物，众所周知，以三星为代表的初代防窥屏幕逻辑可以认为就是关像素\n那关像素会有什么影响？很直接的就是清晰度降低，可视角度本身也成为了防窥的牺牲品\n有没有解决方案呢？当然有我的朋友，无非就是两个方向，一个就是像素做超级多（如3.5K甚至4K）\n另一个就是华为本次这台机器的超标方案，我是一台电脑，我有两套独立互不影响的像素，我（本质）有两块屏幕！\n台下观众欣喜若狂啊，你好勇敢，你说出你有两块屏幕！\n没错，本代ProS搭载了一块非常超标的柔性OLED屏幕，具有两套支持3.1K点对点原生显示的像素电路，可以在不影响本身正向可视清晰度的情况下实现侧向45度角的防窥效果（但是亮度肯定受影响... 查看更多",
+              "publish_time": "2026-08-11T16:18:36+08:00",
+              "metrics": {
+                "likes": 41,
+                "comments": 26,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.001040+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_a551321a43ec",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73152811",
+              "author": "都市光影师",
+              "title": "余承东发布华为 MateBook Pro S 鸿蒙电脑拆机视频：仅重 798g，比一杯奶茶还轻。#鸿蒙6# #鸿蒙7#",
+              "content": "余承东发布华为 MateBook Pro S 鸿蒙电脑拆机视频：仅重 798g，比一杯奶茶还轻。#鸿蒙6# #鸿蒙7#",
+              "publish_time": "2026-08-17T18:20:40+08:00",
+              "metrics": {
+                "likes": 82,
+                "comments": 98,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.001040+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_7888d2af8ded",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73152133",
+              "author": "光尘official",
+              "title": "Matebook Pro S&amp;MatePad Pro 12，想先看哪个？",
+              "content": "Matebook Pro S&amp;MatePad Pro 12，想先看哪个？",
+              "publish_time": "2026-08-09T20:51:21+08:00",
+              "metrics": {
+                "likes": 14,
+                "comments": 25,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.001040+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_ab3b0d918327",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73151549",
+              "author": "竹本青",
+              "title": "【比一杯奶茶还轻，余承东解读华为MateBook Pro S是如何做到798g整机重量】\n\n● 镁锂合金机身：比镁铝合金材料轻25%，真空溅镀镁锂合金工艺\n\n● 三段式主板：根据不同的功能需求，精准划",
+              "content": "【比一杯奶茶还轻，余承东解读华为MateBook Pro S是如何做到798g整机重量】\n\n● 镁锂合金机身：比镁铝合金材料轻25%，真空溅镀镁锂合金工艺\n\n● 三段式主板：根据不同的功能需求，精准划分区域，彻底砍掉冗余部分\n\n● 榫卯一体结构：机身采用榫卯结构，机密卡扣紧紧相连，省掉了螺丝钉\n\n#今日热点# #华为MateBookProS# #鸿蒙6#",
+              "publish_time": "2026-08-20T20:46:36+08:00",
+              "metrics": {
+                "likes": 459,
+                "comments": 754,
+                "shares": 11,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.001040+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_5215af1ee2bd",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73149397",
+              "author": "TIGRECC",
+              "title": "#鸿蒙7# 现场看了看 #MatePadPro12.2# 和 #华为MateBookProS#，感觉两个产品的第一印象都极好。\n不过冷静一下算笔账：\n1. MatePad Pro 12：起配 12+2",
+              "content": "#鸿蒙7# 现场看了看 #MatePadPro12.2# 和 #华为MateBookProS#，感觉两个产品的第一印象都极好。\n不过冷静一下算笔账：\n1. MatePad Pro 12：起配 12+256，5999，假如国补可-500，那就是 5499。（平板的键盘价格还要另算，多少我忘了，七八百？）\n2. MateBook Pro S：起配 16+512，7999，假如国补可-15%，也就是 6799。\n还是挺贵的，但是会让我潜意识觉得电脑更值。",
+              "publish_time": "2026-08-15T20:55:42+08:00",
+              "metrics": {
+                "likes": 5,
+                "comments": 16,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.001040+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_d02f209d366f",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73143547",
+              "author": "woshidahundan",
+              "title": "第一张图是@我要修改用户名才能发动态 测的，华为Matebook pro S的麒麟XE90，geekbench7 单核1431，多核5302\n第二张图是我测的华为matepad edge液冷版，麒麟X",
+              "content": "第一张图是@我要修改用户名才能发动态 测的，华为Matebook pro S的麒麟XE90，geekbench7 单核1431，多核5302\n第二张图是我测的华为matepad edge液冷版，麒麟X90，geekbench7 单核1303，多核8360\n麒麟XE90单核比较强，多核还是弱于麒麟X90",
+              "publish_time": "2026-08-11T10:52:45+08:00",
+              "metrics": {
+                "likes": 4,
+                "comments": 4,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.001040+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_b0371404b139",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73140183",
+              "author": "欧气森林bot",
+              "title": "#鸿蒙7# #鸿蒙6# #鸿蒙NEXT#\n给大家看个笑话：测一下CPU跑分\n（CPU-Z，铠大师虚拟机分配可选最多的核心数，win11onARM 25H2）\nX90Plus 单核501.4 多核344",
+              "content": "#鸿蒙7# #鸿蒙6# #鸿蒙NEXT#\n给大家看个笑话：测一下CPU跑分\n（CPU-Z，铠大师虚拟机分配可选最多的核心数，win11onARM 25H2）\nX90Plus 单核501.4 多核3446.4（新款折叠笔记本）\nX90 40W 单核474.9 多核3366（旧款matebook pro）\nX90 28W 单核470.6 多核3406.4（顶配版MatePad Edge）\nX90A 单核404.7 多核2171.3（低配版MatePad Edge）\nXE90 单核403.1 多核1768.4（MateBook Pro S典藏版）",
+              "publish_time": "2026-08-09T20:18:08+08:00",
+              "metrics": {
+                "likes": 1,
+                "comments": 6,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.001040+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_5be08884bfcb",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73138764",
+              "author": "Buffalol",
+              "title": "去线下店看了Matebook Pro S，很惊艳。\n我估计销量会很不错[受虐滑稽][受虐滑稽][受虐滑稽]\n之前体验过edge，太重了，完全没有搬着走的欲望，续航也短[发怒][发怒][发怒]\nRPO ",
+              "content": "去线下店看了Matebook Pro S，很惊艳。\n我估计销量会很不错[受虐滑稽][受虐滑稽][受虐滑稽]\n之前体验过edge，太重了，完全没有搬着走的欲望，续航也短[发怒][发怒][发怒]\nRPO S的话一只手随便拿，放到床上当个大屏幕使，出差娱乐或者办公都非常方便。\n而且叠加店铺优惠，教育优惠，国补，24G版本能做到7000左右的价格，然后送一堆福利，个人感觉诚意还是有的。\n其实🌸子这几年新形态的产品我也体验过不少了，Pro S是绝对惊艳的，之前matebook Pro虽然只有970g，但是谈不上惊艳，而Matebook Pro S，虽然只轻了170克，但是明显感觉不一样了，而且屏幕观感更好，有抗反射镀膜。\n至于更贵的防窥屏，个人觉得作用有限，打开防窥屏之后，亮度直接降一半，只适合室内使用。\n总之这款产品就是重量厚度惊艳的同时，功能包括键盘、触控板，整机质感没有阉割都... 查看更多",
+              "publish_time": "2026-08-19T07:31:31+08:00",
+              "metrics": {
+                "likes": 73,
+                "comments": 80,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.001040+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_0483b5d03813",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73134252",
+              "author": "暂时就当乐色佬了",
+              "title": "【点评】之前4月的时候由于matepad edge使用体验过于割裂搞了台pro做远程启动器，屏幕还是非常不错，硬件设计也比较在线，黑色有点像之前搞来玩的pixelbook go，有点沾染指纹、塑料感强",
+              "content": "【点评】之前4月的时候由于matepad edge使用体验过于割裂搞了台pro做远程启动器，屏幕还是非常不错，硬件设计也比较在线，黑色有点像之前搞来玩的pixelbook go，有点沾染指纹、塑料感强，但仍旧是个得体漂亮的机器。\n最大的问题还是华为的芯片和系统。\n1. x90架构老了，续航太差，win或者linux的虚拟机一开就起飞；\n2.鸿蒙的生态还不够完善，我对这台机器最基本的需求，ssh和向日葵启动器，一个得容器里，一个只支持远控不支持被控。我是非常难以想象如果只有一台鸿蒙电脑该怎么办的（幸好家里chromeos、linux、win、woa、mac十几台“电脑”[无语]）。\n\n但是鸿蒙系统更新带来最大的思想改观不是这台pro，而是edge，如果这俩之间只能二选一，那我现在都会留edge。\n终端功能完善后的edge不再是风味二合一，而是完整的平板手机生态、完整的鸿蒙电脑生态... 查看更多",
+              "publish_time": "2026-08-08T18:54:26+08:00",
+              "metrics": {
+                "likes": 5,
+                "comments": 1,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.001040+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_983c26e58c7d",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73127621",
+              "author": "趁火打劫xhdh",
+              "title": "我就想为什么华为手机叫air比别人又厚又重，比别人轻薄的matebook pro s反而不给这台机子叫matebook air[受虐滑稽]，毕竟这机子轻薄秒杀🍎，而且处理器xe90和x90plus也是",
+              "content": "我就想为什么华为手机叫air比别人又厚又重，比别人轻薄的matebook pro s反而不给这台机子叫matebook air[受虐滑稽]，毕竟这机子轻薄秒杀🍎，而且处理器xe90和x90plus也是对标苹果的m数字和pro系列（抛开性能差距）。",
+              "publish_time": "2026-08-10T05:53:44+08:00",
+              "metrics": {
+                "likes": 2,
+                "comments": 7,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.001040+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_01f6c84e8f78",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73123736",
+              "author": "牛啤小姐姐",
+              "title": "本周科技圈“涨声”与争议齐飞：余承东预警手机大规模涨价、小米商城调整产品售价、DeepSeek宣布上调API服务价格；另一边，鸿蒙智行“竹知了”事件、小米手环开裂、徐洁云“孩go”言论及新能源汽车试验",
+              "content": "本周科技圈“涨声”与争议齐飞：余承东预警手机大规模涨价、小米商城调整产品售价、DeepSeek宣布上调API服务价格；另一边，鸿蒙智行“竹知了”事件、小米手环开裂、徐洁云“孩go”言论及新能源汽车试验新规同样引发热议。\n\n**周五时间到，搬好小板凳，咱们一起闲聊本周新鲜事～**\n\n# 💫余承东：手机之后可能都要大规模涨价\n\n华为8月5日发布尊界 V800/V680汽车（64.8万元起），并同步推出全新MateBook Fold非凡大师折叠电脑（24999元起）、MateBook Pro S笔记本（7999元起）、MatePad Pro 12英寸（5699元起）、华为WATCH GT7系列（1588元起）、华为nova16 SE（2499元起）等多款新品。\n\n华为终端BG董事长余承东在发布会上表示，内存高昂涨价，手机之后可能都要大规模涨价，否则在原本的价格都是亏损销售。对于发布会口误问题... 查看更多",
+              "publish_time": "2026-08-16T18:09:17+08:00",
+              "metrics": {
+                "likes": 289,
+                "comments": 354,
+                "shares": 2,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.001040+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_a5823dd6fb11",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73115976",
+              "author": "RFading",
+              "title": "MateBook Pro S和MatePad Edge怎么选啊？\n都选择16+512丐版，前者叠加国补和教育优惠6365，后者PDD加上键盘也是6000出头，价格基本一样。\n\n屏幕：几乎同款屏，edg",
+              "content": "MateBook Pro S和MatePad Edge怎么选啊？\n都选择16+512丐版，前者叠加国补和教育优惠6365，后者PDD加上键盘也是6000出头，价格基本一样。\n\n屏幕：几乎同款屏，edge边框更窄；\n\n性能：半斤八两。x90a极限多核性能高15%，但是感觉用处不大；xe90的单核性能、CPU多核能效和GPU能效遥遥领先。两者的GPU极限性能基本一样。\n\n续航：电池几乎一样大，xe90作为手机soc能效肯定更好。（蹲实测中）\n\n模具：pros比edge轻的多，几乎只有后者的一半；接口都是俩c口；edge的键盘手感比pros好一些，比绝大多数笔记本都更好；触控板则是pros更舒服；\n\n功能：pc模式两者几乎对齐，edge的新功能更新稍晚。edge有平板模式（不过我觉得大概率常驻pc模式），可以取下来当娱乐屏和笔记工具... 查看更多",
+              "publish_time": "2026-08-16T01:06:14+08:00",
+              "metrics": {
+                "likes": 6,
+                "comments": 53,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.001040+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_3909da140557",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73113588",
+              "author": "未寥",
+              "title": "一些看法，不一定对（对屏幕这块不太了解[呵呵]）\n\n三星防窥屏\n100%的像素，其中50%是正常像素 50%是防窥像素\n没开防窥模式时，100%像素都开着\n开启防窥模式后，关闭正常像素 开着剩余防窥像",
+              "content": "一些看法，不一定对（对屏幕这块不太了解[呵呵]）\n\n三星防窥屏\n100%的像素，其中50%是正常像素 50%是防窥像素\n没开防窥模式时，100%像素都开着\n开启防窥模式后，关闭正常像素 开着剩余防窥像素，也就是用了50%的像素\n\n华为防窥屏\n100%的像素，其中50%是正常像素 50%是防窥像素\n没开防窥模式时，开着正常像素 关着防窥像素，也就是用了50%的像素\n开启防窥模式后，关闭正常像素 开着防窥像素，也就是用了50%的像素\n\n华为MateBook Pro S的屏幕ppi是264 像素是3120×2080，3120×2080不知道是上面说的“100%的像素”还是“50%的像素”\n感觉上来说应该是“50%的像素”，华为宣传图说的是“一区双像素，两套独立像素\n也就是说，实际MateBook Pro S是两套3120×2080 ppi264的像素用在一个屏幕上？\n如果像素全开... 查看更多",
+              "publish_time": "2026-08-06T23:59:04+08:00",
+              "metrics": {
+                "likes": 1,
+                "comments": 3,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.001040+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_9e95eda8ae29",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73107903",
+              "author": "金蝉蝉挖机",
+              "title": "💻 8.5新发！轻薄本终于不再是“性能花瓶”\n作为常年背着电脑通勤、异地调试、外勤办公的程序员，真心想说一句：往年的轻薄本大多是轻是轻，性能拉胯、续航拉胯，跑个本地服务、开几个IDE窗口就发烫卡顿，完",
+              "content": "💻 8.5新发！轻薄本终于不再是“性能花瓶”\n作为常年背着电脑通勤、异地调试、外勤办公的程序员，真心想说一句：往年的轻薄本大多是轻是轻，性能拉胯、续航拉胯，跑个本地服务、开几个IDE窗口就发烫卡顿，完全扛不住开发需求。\n但华为8月5日刚发布的 MateBook Pro S，直接打破了我对国产轻薄本的固有偏见，妥妥的今年最适配开发者的国产AI PC标杆机型，轻薄、性能、续航、网速直接拉满，没有短板。\n🔥 程序员最吃的三大硬核亮点，全是刚需\n不同于主打颜值、办公的普通轻薄本，这台新机的配置，每一项都精准戳中我们搬砖人的痛点：\n1、798g极致轻量化，通勤无负担\n依托全新榫卯一体化结构+镁锂合金机身工艺，整机仅798g，比大部分平板还要轻。日常背着通勤、出差驻场、上门调试，完全没有传统游戏本、厚重商务本的负重感，随时随地都能打开电脑改代码、调接口。\n2、自研麒麟XE90芯片，轻薄本性能逆袭... 查看更多",
+              "publish_time": "2026-08-06T15:11:02+08:00",
+              "metrics": {
+                "likes": 0,
+                "comments": 0,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.001040+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_a10f3909dc6c",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73103403",
+              "author": "武小文",
+              "title": "matebook pro s的触控板相比较matebook pro是新硬件吗，不知道手写笔这个需要什么条件才能实现，很眼馋啊，有没有机会下放给matebook Pro呢[受虐滑稽][受虐滑稽]。另外貌",
+              "content": "matebook pro s的触控板相比较matebook pro是新硬件吗，不知道手写笔这个需要什么条件才能实现，很眼馋啊，有没有机会下放给matebook Pro呢[受虐滑稽][受虐滑稽]。另外貌似没提到新matebook pro s能不能支持人脸识别啊，看硬件好像和matebook pro一样，不知道后面能不能更新支持\n#华为MateBookPro# #华为MateBookProS#",
+              "publish_time": "2026-08-07T09:27:02+08:00",
+              "metrics": {
+                "likes": 4,
+                "comments": 7,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.001040+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_c472c91c8ec8",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73098127",
+              "author": "伤心萨摩耶",
+              "title": "刚去线下摸了一下Kirin X90 Plus和Kirin XE90的信息，汇总如下：\n\nKirin X90Plus：\n10C20T，4×Linx_3331@2.450GHz SMT ➕ 4×Linx_",
+              "content": "刚去线下摸了一下Kirin X90 Plus和Kirin XE90的信息，汇总如下：\n\nKirin X90Plus：\n10C20T，4×Linx_3331@2.450GHz SMT ➕ 4×Linx_3395 @2.010GHz SMT ➕ 2×Linx_3394@2.050GHz SMT，6CU Maleoon 916@950MHz\n对比Kirin X90：\n10C20T，4×Linx_3331@2.320GHz SMT ➕ 4×Linx_3395 @2.010GHz SMT ➕ 2×Linx_3394@2.050GHz SMT，6CU Maleoon 916@950MHz\n即只有CPU主频提升0.130GHz[受虐滑稽]\n（设备信息X读取Kirin X90 Plus的频率是错误的[受虐滑稽]）\n以上详见图2-图5\n\nKirin XE90：\n9C14T... 查看更多",
+              "publish_time": "2026-08-07T12:59:14+08:00",
+              "metrics": {
+                "likes": 29,
+                "comments": 26,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.463294+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_2dcf05108aa1",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73097584",
+              "author": "acherr",
+              "title": "华为终于在 MateBook Pro S 上推出了防窥屏。现在我想看到防窥屏也出现在手机上[受虐滑稽]#数码日常# #华为鸿蒙# #华为MateBookPro#",
+              "content": "华为终于在 MateBook Pro S 上推出了防窥屏。现在我想看到防窥屏也出现在手机上[受虐滑稽]#数码日常# #华为鸿蒙# #华为MateBookPro#",
+              "publish_time": "2026-08-05T20:38:08+08:00",
+              "metrics": {
+                "likes": 1,
+                "comments": 0,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.464807+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_efc2c3fd7d81",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73097270",
+              "author": "笙兮很烦啊",
+              "title": "在第二时间带来鸿蒙智行暨华为全场景新品发布会新品速览\n一、鸿蒙智行\n1. 尊界 V800 超豪华旗舰MPV（尊界不用多说，还是有钱人多[捂脸]）\n官方售价：尊享版76.6万元、行政版86.6万元、领航",
+              "content": "在第二时间带来鸿蒙智行暨华为全场景新品发布会新品速览\n一、鸿蒙智行\n1. 尊界 V800 超豪华旗舰MPV（尊界不用多说，还是有钱人多[捂脸]）\n官方售价：尊享版76.6万元、行政版86.6万元、领航版101.6万元，9月启动交付\n核心配置：\n车身尺寸：5495×2006×1850mm，轴距3430mm，舱内有效纵深3.9米，风阻系数0.259\n动力系统：1.5T增程方案+65kWh 6C巨鲸电池，CLTC纯电续航340km，综合续航1335km\n智驾系统：全系标配6激光雷达立体矩阵，搭载华为乾崑智驾ADS 5，L3级自动驾驶原生架构\n底盘悬架：800V全主动双腔空气悬架，单轮最大举升力12000N；±12°后轮转向，转弯半径低至5.3米\n座舱体验：四座航空级座椅、后排专属巨幕、双层静谧隔音，全栈鸿蒙智能座舱\n2. 尊界 V680 家用商务MPV\n官方售价：尊享版64.8万元... 查看更多",
+              "publish_time": "2026-08-06T14:55:09+08:00",
+              "metrics": {
+                "likes": 9,
+                "comments": 1,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.464807+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_ded3b832378c",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73097032",
+              "author": "Agoni777",
+              "title": "信息量爆炸💥华为 8.5 发布会新品全梳理！\n\n整车、手机、电脑平板手表一大堆新品扎堆发布，整理好了速看👇\n\n🚗出行板块重头戏\n✨尊界 V800 / V680｜国产高端MPV重磅登场，内饰配置看点十足",
+              "content": "信息量爆炸💥华为 8.5 发布会新品全梳理！\n\n整车、手机、电脑平板手表一大堆新品扎堆发布，整理好了速看👇\n\n🚗出行板块重头戏\n✨尊界 V800 / V680｜国产高端MPV重磅登场，内饰配置看点十足\n✨享界 G9｜硬派SUV开启预售，鸿蒙智行再添新成员\n\n📱手机｜nova 16 SE\n大电池加持，颜值手感兼顾，适合日常刚需用户\n\n💻笔记本全家桶\nMateBook Fold非凡大师2026、MateBook Pro 2026、Pro S\n折叠本、高性能本、超轻薄本一次性更新到位\n\n📺平板｜MatePad Pro 2026\n12.2英寸新版本，办公娱乐两不耽误\n\n⌚️手表｜WATCH GT7系列\n经典长续航系列迎来新一代\n\n🔋自带线全能充移动电源\n拿到2026新国标3C首批认证，外出充电更省心\n\n汽车数码双赛道同步更新，选择实在太多，有没有你的意向款🤔\n\n⚠️划重点... 查看更多",
+              "publish_time": "2026-08-05T19:55:22+08:00",
+              "metrics": {
+                "likes": 1,
+                "comments": 0,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.464807+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_fe517837a6ef",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73096483",
+              "author": "无穷小葩",
+              "title": "想当年，32+1TB 才比 16+512GB 贵500元，现在都能贵5000了……\n\n以 MateBook Pro S 为例，已知典藏版与普通版的区别只有屏幕和存储。\n\n典藏版14999元，采用防窥屏",
+              "content": "想当年，32+1TB 才比 16+512GB 贵500元，现在都能贵5000了……\n\n以 MateBook Pro S 为例，已知典藏版与普通版的区别只有屏幕和存储。\n\n典藏版14999元，采用防窥屏。24+512的防窥版比普通版贵10299-8999=1300元，典藏版还多了599元的 M-Pen 3 手写笔，换算成32+1TB的普通版，相当于14999-1300-599=13100元\n\n那么 32+1TB 比 16+512 贵了 13100-7999=5101元！\n\n反正现在鸿蒙电脑也当不了生产力工具，还是最低配相对性价比高点……\n\n#笔记本电脑# #鸿蒙6#",
+              "publish_time": "2026-08-09T01:20:18+08:00",
+              "metrics": {
+                "likes": 31,
+                "comments": 25,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.464807+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_ccad4defa9de",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73096480",
+              "author": "来世春至霜雪融",
+              "title": "浅浅摸一摸MateBook Pro S\n顺便拿自己的art14，以及另一台样机Matebook Pro对比对比[吃瓜]\n是真的轻！单手托举，另一手打字非常舒服[流泪]\n这玩意儿看不到扬声器开孔在哪儿，",
+              "content": "浅浅摸一摸MateBook Pro S\n顺便拿自己的art14，以及另一台样机Matebook Pro对比对比[吃瓜]\n是真的轻！单手托举，另一手打字非常舒服[流泪]\n这玩意儿看不到扬声器开孔在哪儿，应该是在背面侧边的缝隙里……（？）可能缺少了正面左右的扬声器，整体音质确实不如book Pro。\n可惜了价格有点小贵，不然对于我这种超轻薄本爱好者，真的能杀死比赛[舒服][舒服][舒服] #笔记本电脑#  #华为MateBookPro# #荣耀MagicBookArt142025#",
+              "publish_time": "2026-08-09T19:29:58+08:00",
+              "metrics": {
+                "likes": 40,
+                "comments": 29,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.464807+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_326dfd331f7b",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73094605",
+              "author": "闲来无事看看腿",
+              "title": "『华为 MateBook Pro S 发布：售价 7999 元起』\n\n16GB + 512GB —— 7999 元\n24GB + 512GB —— 8999 元\n24GB + 1TB —— 10499",
+              "content": "『华为 MateBook Pro S 发布：售价 7999 元起』\n\n16GB + 512GB —— 7999 元\n24GB + 512GB —— 8999 元\n24GB + 1TB —— 10499 元\n柔光版 24GB + 512GB —— 9999 元\n防窥版 24GB + 512GB —— 10299 元\n防窥版 24GB + 1TB —— 11799 元\n典藏版 32GB + 1TB —— 14999 元",
+              "publish_time": "2026-08-05T19:34:18+08:00",
+              "metrics": {
+                "likes": 3,
+                "comments": 2,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.464807+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_bdd00c55dea8",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73094571",
+              "author": "那片梧桐那场雨",
+              "title": "〖 华为鸿蒙新品电脑售价公布〗\n\n新品MateBook Pro S\n标准版\n16G+512GB —— 7999元\n24G+512GB —— 8999元\n24G+1TB —— 10499元\n\n柔光版\n2",
+              "content": "〖 华为鸿蒙新品电脑售价公布〗\n\n新品MateBook Pro S\n标准版\n16G+512GB —— 7999元\n24G+512GB —— 8999元\n24G+1TB —— 10499元\n\n柔光版\n24G+512GB —— 9999元\n\n防窥版\n24G+512GB —— 10299元\n24G+1TB —— 11799元\n\n典藏版\n32G+1TB —— 14999元\n\nMateBook Pro 麒麟X90 Plus版\n24G+512GB —— 9999元\n24G+1TB —— 11499元\n24G+1TB 柔光版 —— 12499元\n32G+1TB 柔光版 —— 13999元\n\nMateBook Fold非凡大师 麒麟X90 Plus版\n24G+512GB —— 24999元\n24G+1TB —— 26999元\n32G+2TB —— 29999元\n\n#今日热点# #鸿蒙6#",
+              "publish_time": "2026-08-22T22:14:11+08:00",
+              "metrics": {
+                "likes": 353,
+                "comments": 745,
+                "shares": 2,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.464807+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_1d1b40549bb7",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73094329",
+              "author": "风之夏02",
+              "title": "这次发布会华为同时发布了三款鸿蒙电脑\n\n1、\n华为MateBook Pro S搭载业界首款柔性OLED灵盾防窥屏（14.2 英寸 3.1K 分辨率 120Hz 刷新率 1600nits 高亮度 pOL",
+              "content": "这次发布会华为同时发布了三款鸿蒙电脑\n\n1、\n华为MateBook Pro S搭载业界首款柔性OLED灵盾防窥屏（14.2 英寸 3.1K 分辨率 120Hz 刷新率 1600nits 高亮度 pOLED 触控屏）。\n\n「防窥原理：\n一区双像素（图二、图三）。两套像素点，搞定了100%像素显示，同行是50%。也就是，不打开防窥模式，它和高清屏无异，还提供物理开关+偷窥提醒。」\n\n采用镁锂合金机身，整机仅 798g，厚 11.9mm，配备超薄金刚铝风扇，主打极致移动办公。\n\n此外，该机搭载麒麟 XE90，相比麒麟 X90，单核性能提升 23%、能效提升 25%、NPU 性能提升 40%，可实现整机 20W 性能释放。\n\n其他方面，该机采用了 54Wh 大电池，配备 66W 的 USB-C 适配器，提供双 USB-C 3.2 Gen1（5Gbps，66W）接口，配备前后双摄像头... 查看更多",
+              "publish_time": "2026-08-09T11:38:05+08:00",
+              "metrics": {
+                "likes": 19,
+                "comments": 18,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.464807+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_ac4fbf1a7dff",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73094265",
+              "author": "那片梧桐那场雨",
+              "title": "〖鸿蒙电脑HarmonyOS 7花粉Beta版将于8月中旬开启招募〗\n\n具体机型\nMateBook Fold非凡大师 麒麟X90 Plus版\nMateBook Fold非凡大师 2025\nMateBo",
+              "content": "〖鸿蒙电脑HarmonyOS 7花粉Beta版将于8月中旬开启招募〗\n\n具体机型\nMateBook Fold非凡大师 麒麟X90 Plus版\nMateBook Fold非凡大师 2025\nMateBook Pro 麒麟X90 Plus版\nMateBook Pro 2025\nMateBook Pro S\nMateBook14 鸿蒙版\n\n#今日热点#\n#鸿蒙7# #鸿蒙6#",
+              "publish_time": "2026-08-07T22:36:24+08:00",
+              "metrics": {
+                "likes": 121,
+                "comments": 23,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.464807+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_79039e396a0d",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73094132",
+              "author": "异世界转生的第二世",
+              "title": "【华为MateBook Pro S发布：麒麟芯轻薄本，多版本售价7999元起】\n\n华为全新MateBook Pro S笔记本正式亮相，整机798g、厚度11.9mm，搭载麒麟X E90处理器，配备14",
+              "content": "【华为MateBook Pro S发布：麒麟芯轻薄本，多版本售价7999元起】\n\n华为全新MateBook Pro S笔记本正式亮相，整机798g、厚度11.9mm，搭载麒麟X E90处理器，配备14.2英寸3.1K 120Hz柔性OLED屏，支持远距离互联、66W快充与AI办公助手小艺任务，分四大版本，定价与配置如下：\n『标准版』\n·16GB+512GB：7999元\n·24GB+512GB：8999元\n·24GB+1TB：10499元\n\n『柔光版』\n·24GB+512GB：9999元\n\n『灵盾防窥版』\n·24GB+512GB：10299元\n·24GB+1TB：11799元\n\n『典藏版』\n·32GB+1TB，千鸟纹双面机身：14999元\n\n全系8月5日18:08开启预售；标准版、柔光版、防窥版8月14日开售；典藏版8月28日上市。\n\n#今日热点#",
+              "publish_time": "2026-08-13T19:34:54+08:00",
+              "metrics": {
+                "likes": 35,
+                "comments": 82,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.464807+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_31730bb4e014",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73094111",
+              "author": "竹本青",
+              "title": "【华为MateBook Pro S 轻薄本 正式发布，售价7999元起】\n\n标准版：\n16GB+512GB —— 7999元\n24GB+512GB —— 8999元\n24GB+1TB —— 10499",
+              "content": "【华为MateBook Pro S 轻薄本 正式发布，售价7999元起】\n\n标准版：\n16GB+512GB —— 7999元\n24GB+512GB —— 8999元\n24GB+1TB —— 10499元\n\n柔光板：\n24GB+512GB —— 9999元\n\n防窥版：\n24GB+512GB —— 10299元\n24GB+1TB —— 11799元\n\n典藏版：\n32GB+1TB —— 14999元\n\n#笔记本电脑# #华为MateBookProS#",
+              "publish_time": "2026-08-16T17:51:59+08:00",
+              "metrics": {
+                "likes": 53,
+                "comments": 81,
+                "shares": 1,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.464807+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_a582903454fe",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73094074",
+              "author": "JSCHEN小小狐",
+              "title": "『华为 MateBook Pro S 发布：售价 7999 元起』\n\n16GB + 512GB —— 7999 元\n24GB + 512GB —— 8999 元\n24GB + 1TB —— 10499",
+              "content": "『华为 MateBook Pro S 发布：售价 7999 元起』\n\n16GB + 512GB —— 7999 元\n24GB + 512GB —— 8999 元\n24GB + 1TB —— 10499 元\n柔光版 24GB + 512GB —— 9999 元\n防窥版 24GB + 512GB —— 10299 元\n防窥版 24GB + 1TB —— 11799 元\n典藏版 32GB + 1TB —— 14999 元\n\n◇ 仲夏紫/晨曦黄/烟云灰/丝绒白/羽砂黑\n◇ 镁锂合金 + 镁铝合金机身，玻璃面板\n◇ 厚度 11.9 毫米，机身重量约 798 克\n（柔光版 805g，典藏版 12.2mm / 825g）\n\n◇ 麒麟 XE90 处理器：9C 14T，马良 935\n◇ 超薄金刚铝风扇：整机 20W 性能释放\n◇ 16GB / 24GB / 32GB 板载单通道内存... 查看更多",
+              "publish_time": "2026-08-15T16:44:20+08:00",
+              "metrics": {
+                "likes": 329,
+                "comments": 541,
+                "shares": 4,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.464807+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_1f1fb5cc4fad",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73075101",
+              "author": "异世界转生的第二世",
+              "title": "【8月5日华为全场景发布会新品汇总】\n\n1. HUAWEI MateBook Fold | ULTIMATE DESIGN 非凡大师\n2. HUAWEI MatePad Pro\n3. HUAWEI M",
+              "content": "【8月5日华为全场景发布会新品汇总】\n\n1. HUAWEI MateBook Fold | ULTIMATE DESIGN 非凡大师\n2. HUAWEI MatePad Pro\n3. HUAWEI MateBook Pro S\n4. 华为nova 16 SE\n5. HUAWEI WATCH GT 7 Pro\n6. HUAWEI WATCH GT 7\n\n#今日热点# #鸿蒙7#",
+              "publish_time": "2026-08-06T19:05:38+08:00",
+              "metrics": {
+                "likes": 62,
+                "comments": 28,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.464807+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_99faad444689",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73072092",
+              "author": "lanigiroehT",
+              "title": "今天有粉丝问我黑苹果安装相关问题，但他还没告诉我问题，所以我打算不拖了，把教程出了[撇嘴]（依旧感谢b站先行者）\n\n1.环境：\nWindows10+\n\n2.工具：\npython  查看链接\n\nopen",
+              "content": "今天有粉丝问我黑苹果安装相关问题，但他还没告诉我问题，所以我打算不拖了，把教程出了[撇嘴]（依旧感谢b站先行者）\n\n1.环境：\nWindows10+\n\n2.工具：\npython  查看链接\n\nopencore帮助文档 查看链接\n\nHardware-Sniffer 查看链接\n\nOpCore-Simplify-main（最重要，一定是zip code下载，不要release的图形工具） 查看链接... 查看更多",
+              "publish_time": "2026-08-25T18:39:50+08:00",
+              "metrics": {
+                "likes": 114,
+                "comments": 64,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.464807+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_a859541ccfd1",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73070600",
+              "author": "风之夏02",
+              "title": "MateBook Pro S 最新消息\n除了图片中的卖点外，触控板还支持M-Pen 3悬停位置感知和直接书写，不用买手写板了\n#鸿蒙6# #鸿蒙7# #华为Mate80ProMax#",
+              "content": "MateBook Pro S 最新消息\n除了图片中的卖点外，触控板还支持M-Pen 3悬停位置感知和直接书写，不用买手写板了\n#鸿蒙6# #鸿蒙7# #华为Mate80ProMax#",
+              "publish_time": "2026-08-05T09:21:07+08:00",
+              "metrics": {
+                "likes": 28,
+                "comments": 23,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.464807+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_cbc7ce9d768a",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73055607",
+              "author": "celebrwei",
+              "title": "Xt2再就只能涨内存了，预计涨价幅度为500-2000\n其他硬件进行升级的预测：反正肯定吃不到正代，为9030Pro和9030S，电池6000mah（maybe 4V+），蓝牙5.2改6.0，长焦改成",
+              "content": "Xt2再就只能涨内存了，预计涨价幅度为500-2000\n其他硬件进行升级的预测：反正肯定吃不到正代，为9030Pro和9030S，电池6000mah（maybe 4V+），蓝牙5.2改6.0，长焦改成jn5 or jn1类似物，铰链，OTG玻璃，屏幕折痕应该延续matebook fold,屏幕再不升级1.5K就没天理了\n以上皆神棍言论，看个乐子就行@团子泡泡 @棱角少年哈 @王不见亡",
+              "publish_time": "2026-08-02T23:45:03+08:00",
+              "metrics": {
+                "likes": 2,
+                "comments": 6,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.464807+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_725415938ffb",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73043737",
+              "author": "科技冷酷",
+              "title": "#华为nova16 SE开启预订#\n华为官方官宣，华为 nova16 SE 即日起12:08开启预订，新机将于8月5日正式发布，宣传slogan：巨鲸长续航，红枫准出片。\n结合数码博主信息，新机规格曝",
+              "content": "#华为nova16 SE开启预订#\n华为官方官宣，华为 nova16 SE 即日起12:08开启预订，新机将于8月5日正式发布，宣传slogan：巨鲸长续航，红枫准出片。\n结合数码博主信息，新机规格曝光：\n外观类似荣耀Power2，配备6.84英寸1.5K LTPS OLED直屏，局部峰值亮度8000nits；\n搭载麒麟8020处理器；内置8500mAh超大电池，支持66W快充；\n5000万像素RYYB主摄、红枫影像，支持北斗卫星通讯，塑料中框+侧边指纹解锁。\n另有消息透露：受内存涨价环境影响，原本的畅享90X尊享版调整定位升级为nova16 SE；归入nova产品线，以此支撑2000元档位定价。\n8月5日华为发布会阵容密集，除nova16 SE以外... 查看更多",
+              "publish_time": "2026-08-02T01:34:17+08:00",
+              "metrics": {
+                "likes": 1,
+                "comments": 0,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.464807+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_57c169a0015c",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73033668",
+              "author": "创城显眼包",
+              "title": "轻薄旗舰MateBook Pro S重磅来袭，你冲吗？\n轻薄旗舰MateBook Pro S重磅来袭 开始预约\n#华为MateBookProS# #华为鸿蒙电脑亮相# #轻薄本#",
+              "content": "轻薄旗舰MateBook Pro S重磅来袭，你冲吗？\n轻薄旗舰MateBook Pro S重磅来袭 开始预约\n#华为MateBookProS# #华为鸿蒙电脑亮相# #轻薄本#",
+              "publish_time": "2026-08-01T12:38:14+08:00",
+              "metrics": {
+                "likes": 0,
+                "comments": 0,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.464807+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_4eae0de9d916",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73007922",
+              "author": "风之夏02",
+              "title": "MatebookProS门店体验简测，来自某博主\n机身工艺部分见图1-2，屏幕部分见图3-5，性能部分见图6-9\n\n▶凸起摄像头是啥?\n目前发现的就是可以作为一个后置摄像头调用，类似Surface，支",
+              "content": "MatebookProS门店体验简测，来自某博主\n机身工艺部分见图1-2，屏幕部分见图3-5，性能部分见图6-9\n\n▶凸起摄像头是啥?\n目前发现的就是可以作为一个后置摄像头调用，类似Surface，支持录像1080p和拍照1080P(没错都是16/9)，整体看ISP明显有介入，画质，相机延迟，色调，自动对焦这些都比传统笔电好很多，但是分辨率啥的就别想了，基本上是不太能看清远处的字的\n\n▶屏幕(重点)\n测了下屏幕，依然3120x2080 120Hz触控屏，侧视无彩虹纹，像素排列和2024款没啥区别，依然业界T1水平1.1%全玻璃覆盖抗反射，看到这里我还觉得这玩意是华为找京东方定制的那块柔性OLED老货。\n结果Asteria一测亮度，WOC，全屏982nit，峰值2014nit，这下有点怀疑是Tandem方案了\n闪烁没来得及测，要鸡蛋挑骨头的话就是平整度相比上代略微拉了\n\n▶处理器是什么... 查看更多",
+              "publish_time": "2026-08-04T11:26:06+08:00",
+              "metrics": {
+                "likes": 34,
+                "comments": 41,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:02.464807+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_d47195d48a85",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73422653",
+              "author": "一秋日私语一",
+              "title": "#鸿蒙7# #华为MateBookProS# #数码日常# 感觉目前鸿蒙7的beta版bug还是有点多。我把matebook proS升级到鸿蒙七以后，立马就发现他把我的桌面壁纸给改了。。我本来设置的",
+              "content": "#鸿蒙7# #华为MateBookProS# #数码日常# 感觉目前鸿蒙7的beta版bug还是有点多。我把matebook proS升级到鸿蒙七以后，立马就发现他把我的桌面壁纸给改了。。我本来设置的锁屏壁纸与桌面壁纸不同，结果现在他把我的锁屏壁纸换成我的桌面壁纸了。但是在设置界面二者还是不同的，我重新去调整，也调整不回去。[难过]",
+              "publish_time": "2026-08-25T17:06:49+08:00",
+              "metrics": {
+                "likes": 0,
+                "comments": 0,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:04.006066+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_7bf56cb4f531",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73422400",
+              "author": "TIGRECC",
+              "title": "#笔记本电脑# #数码日常#  为啥这几年的Windows笔记本都在硬上屏幕圆角？上就算了，但是又不能好好把屏幕圆角和边框圆角做好优化调整，搞成图一这种你圆你的我圆我的这种奇怪拧巴又丑陋的样子。\n图一",
+              "content": "#笔记本电脑# #数码日常#  为啥这几年的Windows笔记本都在硬上屏幕圆角？上就算了，但是又不能好好把屏幕圆角和边框圆角做好优化调整，搞成图一这种你圆你的我圆我的这种奇怪拧巴又丑陋的样子。\n图一：某主流Windows笔记本品牌走量机的圆角，真是难看死，也是最多常见的。\n图二：MacBook Pro的圆角。\n图三：Matebook X Pro 2024圆角（这种都算还行的了）。\n图四： #华为MateBookProS# 圆角，感觉是目前非苹果笔记本里看着最顺眼的了。\n图五：荣耀Magicbook Art，也还行，但是给Windows用偏大了。\n图六：Thinkbook X，也是处理不太好弧度，窄是真的窄。",
+              "publish_time": "2026-08-25T18:51:51+08:00",
+              "metrics": {
+                "likes": 1,
+                "comments": 4,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:04.006066+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_7f6704524c98",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73422281",
+              "author": "良梓辰",
+              "title": "刚问了下华为客服，鸿蒙电脑的人脸识别matebook pro不支持，需要芯片和摄像头都支持，软件升级无法支持[不开心]",
+              "content": "刚问了下华为客服，鸿蒙电脑的人脸识别matebook pro不支持，需要芯片和摄像头都支持，软件升级无法支持[不开心]",
+              "publish_time": "2026-08-25T18:00:15+08:00",
+              "metrics": {
+                "likes": 0,
+                "comments": 1,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:04.006066+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_bb6a08cce014",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73416817",
+              "author": "M大鲨鱼",
+              "title": "有人出2020版的华为matebook x吗",
+              "content": "有人出2020版的华为matebook x吗",
+              "publish_time": "2026-08-25T10:43:44+08:00",
+              "metrics": {
+                "likes": 1,
+                "comments": 0,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:04.006066+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_a1786f9151f2",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73416814",
+              "author": "M大鲨鱼",
+              "title": "有人出2020版的华为matebook x吗",
+              "content": "有人出2020版的华为matebook x吗",
+              "publish_time": "2026-08-25T10:43:25+08:00",
+              "metrics": {
+                "likes": 0,
+                "comments": 0,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:04.006066+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_8e2df1ce1419",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73416805",
+              "author": "M大鲨鱼",
+              "title": "有人出2020版的华为matebook x吗",
+              "content": "有人出2020版的华为matebook x吗",
+              "publish_time": "2026-08-25T10:43:09+08:00",
+              "metrics": {
+                "likes": 0,
+                "comments": 0,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:04.006066+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_762cb17da58f",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73394391",
+              "author": "小白BXC1",
+              "title": "【点评】第一次使用酷安对于产品发布评价，那就用来评价这台手上的Matebook Pro吧。\n\n首先，这是我的第三台笔记本电脑设备。在已经有了PC和Mac的情况下，买来想用来体验一下，本身并没有报太高的",
+              "content": "【点评】第一次使用酷安对于产品发布评价，那就用来评价这台手上的Matebook Pro吧。\n\n首先，这是我的第三台笔记本电脑设备。在已经有了PC和Mac的情况下，买来想用来体验一下，本身并没有报太高的预期。\n\n首先从机身质感来说，设计真的非常优秀，机身轻薄便携。屏幕素质也很高，触控板也是T0级的水平，键盘键程优秀，机身一体性很好。从外观质感上以及屏幕上绝对是笔记本领域的T0水平。并且鸿蒙系统真的非常美观流畅，在流畅度上已经吊打Windows和Mac了。\n\n但是在经过半个月的使用后，还是发现了很多不小的问题。\n\n我本人是一名老师。需要使用电脑连接显示器进行投屏工作。目前发现这款笔记本对于我一直在用的苹果官方的USB C转VGA的转接头存在着不兼容的情况，有概率投不上屏幕，需要反复拔插才可以，并且无法使用转接头的供电功能，充电会时断时续，循环往复。\n\n其次就是鸿蒙系统的WPS已经功能性非常全了... 查看更多",
+              "publish_time": "2026-08-24T10:19:38+08:00",
+              "metrics": {
+                "likes": 3,
+                "comments": 2,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:04.006066+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_c626c2794d12",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73380482",
+              "author": "御坂美琴",
+              "title": "我对于现在的鸿蒙真是又爱又恨，可以说手机端的鸿蒙有多好用，平板端的就有多烂。\n平板端不少软件的横屏适配比起安卓底层开了倒车(平行视界支持的软件变少了非常多)/支持小窗/分屏的游戏变少(比如金铲铲)/流",
+              "content": "我对于现在的鸿蒙真是又爱又恨，可以说手机端的鸿蒙有多好用，平板端的就有多烂。\n平板端不少软件的横屏适配比起安卓底层开了倒车(平行视界支持的软件变少了非常多)/支持小窗/分屏的游戏变少(比如金铲铲)/流畅度和续航也没有很大的提升。\n当初我觉得未来可期就更新了，结果现在去年的旗舰平板不给7.0更新/音乐编辑软件/pc模式。只能说是无语到已经懒得喷了。[受虐滑稽][受虐滑稽]\n毫不夸张的说，这个平板是我目前用过最不满意的华为设备，matebook ego这玩意我都没有这么大的意见。只能说我用下来这小一年，已经对鸿蒙平板的生态不报很大期待了，要我说华子真不如停更平板系统全力做pc系统让平板直接用pc系统得了，哎。",
+              "publish_time": "2026-08-25T01:14:07+08:00",
+              "metrics": {
+                "likes": 1,
+                "comments": 9,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:04.006066+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_b98705a57020",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73360257",
+              "author": "超厉害的人搞机小选手",
+              "title": "#武汉换机# 华为matebook E go有人收吗 2022款，准新成色无拆修原装键盘",
+              "content": "#武汉换机# 华为matebook E go有人收吗 2022款，准新成色无拆修原装键盘",
+              "publish_time": "2026-08-21T19:24:07+08:00",
+              "metrics": {
+                "likes": 2,
+                "comments": 0,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:04.006066+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_a0be80abc041",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73333499",
+              "author": "次方努力变强",
+              "title": "咨询求助一下盆友们，我现在用的是华为的matebook14s 2022款，已经有些卡卡的了，想换个14寸的轻薄本有推荐的吗（六七千左右的），鸿蒙本暂不考虑了[捂脸][捂脸]（有空买个edge玩玩得了）",
+              "content": "咨询求助一下盆友们，我现在用的是华为的matebook14s 2022款，已经有些卡卡的了，想换个14寸的轻薄本有推荐的吗（六七千左右的），鸿蒙本暂不考虑了[捂脸][捂脸]（有空买个edge玩玩得了），还是说到2027年再观望一下",
+              "publish_time": "2026-08-20T17:49:22+08:00",
+              "metrics": {
+                "likes": 2,
+                "comments": 40,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:04.006066+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_4feda7611e22",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73333389",
+              "author": "JK醉梦",
+              "title": "京东自营又降价了查看链接\n商品页面点进去直播间可以领600券，叠加国补和教育优惠后，\n24+512到手价6712元\n24+1T到手价7989元\n\n还有新matebook pro也可以领800券，\n叠加",
+              "content": "京东自营又降价了查看链接\n商品页面点进去直播间可以领600券，叠加国补和教育优惠后，\n24+512到手价6712元\n24+1T到手价7989元\n\n还有新matebook pro也可以领800券，\n叠加国补和教育优惠后，\n24+512到手价7998元\n24+1T到手价8699元\n\n还有12期免息哦，四舍五入等于不要钱[受虐滑稽][受虐滑稽]\n\n#华为MateBookPro#\n#华为Mate80ProMax#\n#华为Mate90ProMax#",
+              "publish_time": "2026-08-22T12:37:14+08:00",
+              "metrics": {
+                "likes": 10,
+                "comments": 40,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:04.006066+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_2f845ea08d1c",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73289179",
+              "author": "初夏暮里送春",
+              "title": "电脑小白问问\nmate book2016，看教程一键重装的w10家庭版的系统，指纹用不了显示windows hello抱歉，账户里也添加不了其他用户。指纹驱动在设备管理器里面看，应该是没问题的。\n这种",
+              "content": "电脑小白问问\nmate book2016，看教程一键重装的w10家庭版的系统，指纹用不了显示windows hello抱歉，账户里也添加不了其他用户。指纹驱动在设备管理器里面看，应该是没问题的。\n这种情况，如果想用指纹的话，要怎么办。有大佬给点帮助嘛。\n\n#华为MateBook#",
+              "publish_time": "2026-08-17T18:28:22+08:00",
+              "metrics": {
+                "likes": 0,
+                "comments": 7,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:04.006066+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_fede4661ed1e",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73284824",
+              "author": "鸿蒙侠12138",
+              "title": "Graphcraft，华为平板与电脑上最强大的免费流程图，思维导图，平面图等各种图标绘制工具。大家有需要的可以下载一下，感谢大家~\n下次更新预告（已提审，待审批):\n1.适配手机端（直板、双折叠、三折",
+              "content": "Graphcraft，华为平板与电脑上最强大的免费流程图，思维导图，平面图等各种图标绘制工具。大家有需要的可以下载一下，感谢大家~\n下次更新预告（已提审，待审批):\n1.适配手机端（直板、双折叠、三折叠、阔折叠）\n2.修复[展开/折叠]切换不生效问题\n\n#华为MatePadProMax# #matebook14#",
+              "publish_time": "2026-08-17T09:13:23+08:00",
+              "metrics": {
+                "likes": 5,
+                "comments": 0,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:04.884741+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_30138549cb54",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73262393",
+              "author": "寒小笙",
+              "title": "终于集齐三个系统了，华为鸿蒙版（x90 plus 24G+1TB），华为美国版（Air M4 16+512）[受虐滑稽][受虐滑稽]和华为硕士版（i9+48G+4070）三个系统各有千秋吧，rog平时",
+              "content": "终于集齐三个系统了，华为鸿蒙版（x90 plus 24G+1TB），华为美国版（Air M4 16+512）[受虐滑稽][受虐滑稽]和华为硕士版（i9+48G+4070）三个系统各有千秋吧，rog平时平时就放在家里打打游戏。Mac带去办公也是非常amazing啊，不过接下来准备换成matebook办公试试 ，希望好用 #鸿蒙7# #酷安夜话# #酷安夜话#",
+              "publish_time": "2026-08-16T20:59:24+08:00",
+              "metrics": {
+                "likes": 13,
+                "comments": 25,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:04.884741+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_15050a82fe29",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73259735",
+              "author": "星河潮涌",
+              "title": "HUAWEI MateBook Fold 麒麟X90 Plus\n光影星轨｜预置壁纸\n\n名称列表\n光影星轨1｜LightPainting1\n光影星轨2｜LightPainting2\n光影星轨3｜Ligh",
+              "content": "HUAWEI MateBook Fold 麒麟X90 Plus\n光影星轨｜预置壁纸\n\n名称列表\n光影星轨1｜LightPainting1\n光影星轨2｜LightPainting2\n光影星轨3｜LightPainting3\n光影星轨4｜LightPainting4\n光影星轨5｜LightPainting5\n光影星轨6｜LightPainting6\n\n迅雷链接：\n查看链接\n\n夸克链接：\n查看链接\n\n注：本动态的主题壁纸未经允许，禁止二次发布传播与衍生创作\n\n#鸿蒙7# #华为主题# #壁纸#",
+              "publish_time": "2026-08-16T00:21:24+08:00",
+              "metrics": {
+                "likes": 19,
+                "comments": 3,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:04.884741+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_699400933990",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73256481",
+              "author": "and_TYuan",
+              "title": "上个月中旬刚买了一台matebook pro，32+1t的，花了7499，但是现在对pros特别心动，要不要换呀，毕竟只有798克，有轻微的虚拟机需求，24+够用吗老哥们。pros是不是全方位的升级啊",
+              "content": "上个月中旬刚买了一台matebook pro，32+1t的，花了7499，但是现在对pros特别心动，要不要换呀，毕竟只有798克，有轻微的虚拟机需求，24+够用吗老哥们。pros是不是全方位的升级啊，然后就是新款pro和老款只有处理器的区别吗，有老哥知道吗#华为MateBookProS#",
+              "publish_time": "2026-08-24T12:10:18+08:00",
+              "metrics": {
+                "likes": 2,
+                "comments": 30,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:04.884741+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_3431dafcb404",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73252289",
+              "author": "Bro无话可说",
+              "title": "我悟了\n苹果将来（如果）有触摸屏MacBook那叫创新\n华为MateBook的触摸屏是为了凸显出华为的笔电和平板没区别",
+              "content": "我悟了\n苹果将来（如果）有触摸屏MacBook那叫创新\n华为MateBook的触摸屏是为了凸显出华为的笔电和平板没区别",
+              "publish_time": "2026-08-18T15:43:56+08:00",
+              "metrics": {
+                "likes": 29,
+                "comments": 28,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:04.884741+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_358eb4304c0c",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73248272",
+              "author": "yangwang01",
+              "title": "#华为MateBookPro# #鸿蒙NEXT#\n理工科研究生，在研究matebook能不能代替MacBook当第二台电脑，有没有需求接近的大佬？\n鸿蒙现在有没有VSCode（或类似物）和完整的Pyt",
+              "content": "#华为MateBookPro# #鸿蒙NEXT#\n理工科研究生，在研究matebook能不能代替MacBook当第二台电脑，有没有需求接近的大佬？\n鸿蒙现在有没有VSCode（或类似物）和完整的Python环境（含pip）？有没有类似Anaconda的比较好用的环境管理器？轻度的数据处理和科学计算能不能胜任？\n还有官方的虚拟机有没有linux系统，CPU和io性能怎样？",
+              "publish_time": "2026-08-16T01:27:19+08:00",
+              "metrics": {
+                "likes": 5,
+                "comments": 16,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:04.884741+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_cdebbd369e77",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73225546",
+              "author": "星河潮涌",
+              "title": "HUAWEI MateBook Fold 麒麟 X90 Plus\nHarmonyOS 6｜预置壁纸\n\n名称列表\n光轮HD｜Prisma Loop HD\n星环HD｜Nebula Loop HD\n\n迅雷链",
+              "content": "HUAWEI MateBook Fold 麒麟 X90 Plus\nHarmonyOS 6｜预置壁纸\n\n名称列表\n光轮HD｜Prisma Loop HD\n星环HD｜Nebula Loop HD\n\n迅雷链接：\n查看链接\n\n夸克链接：\n查看链接\n\n注：本动态的主题壁纸未经允许，禁止二次发布传播与衍生创作\n\n#鸿蒙7# #华为主题# #壁纸#",
+              "publish_time": "2026-08-15T22:18:33+08:00",
+              "metrics": {
+                "likes": 25,
+                "comments": 5,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:04.884741+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_e1afd93d2f2d",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73214295",
+              "author": "公子凉薄",
+              "title": "#鸿蒙7# #华为MateBook14鸿蒙版# 华为的codeart agent上线尝鲜了，不过感觉还是ide搭配codebuddy插件好用些，腾子还是有说法的[受虐滑稽]",
+              "content": "#鸿蒙7# #华为MateBook14鸿蒙版# 华为的codeart agent上线尝鲜了，不过感觉还是ide搭配codebuddy插件好用些，腾子还是有说法的[受虐滑稽]",
+              "publish_time": "2026-08-13T17:19:25+08:00",
+              "metrics": {
+                "likes": 1,
+                "comments": 3,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:04.884741+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_2624b59106b9",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73201912",
+              "author": "桃花穗上的落雪",
+              "title": "#数码日常# #鸿蒙7#\n到这里先梳理一下华为的策略\n标准版拉低价，展现出自己很便宜的感觉，然后配置大砍\nPro版给一个很性价比的配置，然后控货，目的是对外宣传，然后半年后再给货\nPro max版是为",
+              "content": "#数码日常# #鸿蒙7#\n到这里先梳理一下华为的策略\n标准版拉低价，展现出自己很便宜的感觉，然后配置大砍\nPro版给一个很性价比的配置，然后控货，目的是对外宣传，然后半年后再给货\nPro max版是为了走量，因此性价比和体验都适中\nRS版是为了高端，展现出品牌设计，科技与体验上限\n那就在这里猜一下，标准版，5999~6499不确定，应该会根据内存版本分9030和9030Pro\nPro版k2026e和k2026，这是按照去年的策略来的，影像应该变化不大，除了三代红枫\nPro max版k2026，1/1.12Ryyb主摄，至于是跟去年一样双长焦镜头还是1/1.28单也不知道，三代红枫肯定是有的\nRs版，预计是雷打不变的8282+1115同轴()，电池最多也就6800~7000mA时，四代昆仑玻璃和玄武昆仑钢化玻璃也少不了\n这一代宣传过程中的特色功能，关于照片的AI肯定少不了... 查看更多",
+              "publish_time": "2026-08-21T11:22:44+08:00",
+              "metrics": {
+                "likes": 7,
+                "comments": 21,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:04.884741+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_049ca634f454",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73199515",
+              "author": "慢慢i丶",
+              "title": "我这个能卖多少呀 售后换的屏幕总成 和电池，屏幕没划痕 【闲鱼】查看链接 HU591 「我在闲鱼发布了【华为matebook13 触摸屏，在售后换的原装屏幕和电池，】」\n点击链接直接打开",
+              "content": "我这个能卖多少呀 售后换的屏幕总成 和电池，屏幕没划痕 【闲鱼】查看链接 HU591 「我在闲鱼发布了【华为matebook13 触摸屏，在售后换的原装屏幕和电池，】」\n点击链接直接打开",
+              "publish_time": "2026-08-12T15:16:11+08:00",
+              "metrics": {
+                "likes": 0,
+                "comments": 0,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:04.884741+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_119e44534bf4",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73196142",
+              "author": "Zhan91hhh",
+              "title": "悦享版国补后4619\n标准版5169\n主要日常就是看剧，已有华为matebook\nt93和t93pro 差别大吗？\n差价500，买哪个版本合适",
+              "content": "悦享版国补后4619\n标准版5169\n主要日常就是看剧，已有华为matebook\nt93和t93pro 差别大吗？\n差价500，买哪个版本合适",
+              "publish_time": "2026-08-13T11:59:23+08:00",
+              "metrics": {
+                "likes": 0,
+                "comments": 7,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:04.884741+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_3f07c15bd215",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73192393",
+              "author": "寒玉之风",
+              "title": "前几天看到所谓鸿蒙电脑生态超过19,000个（图3）。\n我看了一眼，都不知道这张图里的应用是怎么挑选的。有不少优秀应用被埋没了，选上的应用质量也很难说各个出色。\n我按个人的使用体验做出了生态含金量评分",
+              "content": "前几天看到所谓鸿蒙电脑生态超过19,000个（图3）。\n我看了一眼，都不知道这张图里的应用是怎么挑选的。有不少优秀应用被埋没了，选上的应用质量也很难说各个出色。\n我按个人的使用体验做出了生态含金量评分。（图1-2）\n因为我个人工作需求，也只能覆盖其中差不多一半的生态。\n实际上鸿蒙电脑的生态确实还是可以的，是那张图3做得水平不怎么样。。\n供参考#华为鸿蒙PC# #华为MateBook14鸿蒙版#",
+              "publish_time": "2026-08-21T01:57:20+08:00",
+              "metrics": {
+                "likes": 27,
+                "comments": 62,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:04.884741+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_950ea6598a07",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73172889",
+              "author": "深圳太阳百货体验店",
+              "title": "新一代折叠PC | MateBookFold预售锁定8重礼\nMateBook Fold | 预售\n8月14日首销\n🌸🌸8大权益🌸🌸\n1）赠送非凡尊享服务\n2）鸿蒙有礼权益包（至高超500元）\n3)1:",
+              "content": "新一代折叠PC | MateBookFold预售锁定8重礼\nMateBook Fold | 预售\n8月14日首销\n🌸🌸8大权益🌸🌸\n1）赠送非凡尊享服务\n2）鸿蒙有礼权益包（至高超500元）\n3)1:1赠送华为原装鼠标\n4）以旧换新额外补贴10%\n5）国补1500元\n6）信用卡优惠\n7) Care+88折\n8）离境退税9%\n#华为鸿蒙电脑亮相# #笔记本电脑推荐# #华为MateBookFold非凡大师#",
+              "publish_time": "2026-08-10T22:46:12+08:00",
+              "metrics": {
+                "likes": 1,
+                "comments": 1,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:06.205262+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_0ad60a6647a9",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73171654",
+              "author": "黑煤球蛋子",
+              "title": "感觉剪辑真的不太行啊，卡崩了都，根本没法正常用[流泪][流泪][流泪]#华为MateBook14鸿蒙版#",
+              "content": "感觉剪辑真的不太行啊，卡崩了都，根本没法正常用[流泪][流泪][流泪]#华为MateBook14鸿蒙版#",
+              "publish_time": "2026-08-22T17:05:52+08:00",
+              "metrics": {
+                "likes": 2,
+                "comments": 5,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:06.205262+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_7f63238da840",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73150198",
+              "author": "安心的果冻",
+              "title": "01. 为什么要重装？\n手持 HUAWEI MateBook E Go 的朋友，估计都被触摸屏掉驱动折磨过：\n官方放弃维护：华为已不再更新该机型驱动，但内置的华为电脑管家依然在后台强行推送触摸屏驱动更",
+              "content": "01. 为什么要重装？\n手持 HUAWEI MateBook E Go 的朋友，估计都被触摸屏掉驱动折磨过：\n官方放弃维护：华为已不再更新该机型驱动，但内置的华为电脑管家依然在后台强行推送触摸屏驱动更新。\n死循环 BUG：该更新永远无法成功，且每次失败必导致触摸屏驱动直接崩溃（掉驱动）。\n客服心照不宣：我致电客服抓 log 排查，当证据确凿指向“电脑管家搞鬼”时，对方语气瞬间变冷，态度如同早已知情却听之任之。\n万般无奈，唯有自救。干掉华为电脑管家，重装原生纯净系统，是从根源修复触摸屏的唯一解。\n\n02. 适用人群\n系统极度洁癖者：拒绝后台常驻、弹窗与性能浪费，追求 100% 干净系统\n掉驱动受害者：彻底根治电脑管家更新导致触摸屏失灵\n空间回收党：本教程将彻底干掉华为 OneKey 强行占用的隐藏恢复分区\n\n03. ⚠️ 宇宙级风险声明（必读）\nARM 架构重装不同于普通 x86 电脑... 查看更多",
+              "publish_time": "2026-08-10T14:41:39+08:00",
+              "metrics": {
+                "likes": 13,
+                "comments": 5,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:06.205262+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_ce86f4722680",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73146592",
+              "author": "寒玉之风",
+              "title": "matebook14鸿蒙版已更新鸿蒙7.0\n我最关注的AI助手权限方面，说是有强化，但我自己似乎感觉不出来（图2）\n比较有用的是两个：第一个是增加剪切板历史记录功能，第2个是增加AI修图功能（图1）\n",
+              "content": "matebook14鸿蒙版已更新鸿蒙7.0\n我最关注的AI助手权限方面，说是有强化，但我自己似乎感觉不出来（图2）\n比较有用的是两个：第一个是增加剪切板历史记录功能，第2个是增加AI修图功能（图1）\n图3就是剪切板历史的效果。这下应用市场里的第三方剪切板管理软件就没有必要安装了。\n图4是ai修图的页面，我简单体验了一下，跟手机版差不多，也算是提升生产力了。#华为鸿蒙PC# #鸿蒙7# #鸿蒙6#",
+              "publish_time": "2026-08-19T13:03:48+08:00",
+              "metrics": {
+                "likes": 8,
+                "comments": 7,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:06.205262+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_51532b691631",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73144599",
+              "author": "星河潮涌",
+              "title": "HUAWEI MateBook Fold 麒麟 X90 Plus\n慢镜风光｜预置壁纸\n\n名称列表\n\n龙胜稻香｜Longsheng Rice Terraces\n毕棚沟秋天｜Autumn in Bipen",
+              "content": "HUAWEI MateBook Fold 麒麟 X90 Plus\n慢镜风光｜预置壁纸\n\n名称列表\n\n龙胜稻香｜Longsheng Rice Terraces\n毕棚沟秋天｜Autumn in Bipeng Gully\n羊卓雍措秋雪｜Autumn Snow at Yamdrok Lake\n黄山银装｜Silver-Clad Huangshan\n萨普神山清晨｜Morning at Mount Sapu\n纳木措黄昏｜Sunset at Namtso\n里索海HD｜Caspian Sea HD\n雪山日落HD｜Snow Moutain Sunset HD\n纵横天下HD｜Across the world HD\n\n迅雷链接：\n查看链接\n\n夸克链接：... 查看更多",
+              "publish_time": "2026-08-09T13:09:34+08:00",
+              "metrics": {
+                "likes": 25,
+                "comments": 4,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:06.205262+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_5e6b33eda80e",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73137771",
+              "author": "悦动精灵",
+              "title": "#华为Mate80ProMax# #MIUI主题#\n介绍：\n在8月5日的尊界时代旗舰MPV及华为全场景新品发布会上，华为正式推出全新HUAWEI MateBook Fold非凡大师。从折叠屏形态到原生",
+              "content": "#华为Mate80ProMax# #MIUI主题#\n介绍：\n在8月5日的尊界时代旗舰MPV及华为全场景新品发布会上，华为正式推出全新HUAWEI MateBook Fold非凡大师。从折叠屏形态到原生手写交互，从鸿蒙AI到全场景生态，这款产品展现的不仅是一款新电脑，更是华为对未来PC形态的一次探索。随着鸿蒙电脑生态不断成熟，PC产业竞争正在从硬件参数比拼，迈向系统体验、生态能力和智能化水平的综合竞争。HUAWEI MateBook Fold非凡大师的发布上市，也意味着鸿蒙电脑正在从产品创新阶段进一步走向生态成熟阶段，为未来智慧办公和专业生产力带来新的可能。\n\n对于经常移动办公的商务人士和创作者而言，屏幕尺寸与便携性向来是一对难以调和的矛盾。HUAWEI MateBook Fold非凡大师给出的解决方案极具颠覆性：它拥有一块业界领先的18英寸折叠大屏，展开后视野开阔，堪比一台便携显示器... 查看更多",
+              "publish_time": "2026-08-08T19:33:02+08:00",
+              "metrics": {
+                "likes": 6,
+                "comments": 1,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:06.205262+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_68489effcf82",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73124259",
+              "author": "月逝轮回",
+              "title": "淘宝上 24+512G 到手是 7165，我看 MatePadpromax 在 pdd 上 12+256G 也要 4800 了，这个 matebook 是完全可以替代 matepad 吗（上位替代）？",
+              "content": "淘宝上 24+512G 到手是 7165，我看 MatePadpromax 在 pdd 上 12+256G 也要 4800 了，这个 matebook 是完全可以替代 matepad 吗（上位替代）？除了重量，有没有什么其他的什么是 matepad 比 matebook 更加方便或者优秀的地方🤔？ #华为MatePadProMax#",
+              "publish_time": "2026-08-07T20:39:46+08:00",
+              "metrics": {
+                "likes": 3,
+                "comments": 8,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:06.205262+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_33e1cdccd359",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73116272",
+              "author": "MorganW",
+              "title": "#华为#  想问一下修机大佬们，MateBook E 2023 DRR-W76的散热风扇配件和2022款DRC的是不是通用的，我看很多买家都不区分这两个型号的 #笔记本电脑#",
+              "content": "#华为#  想问一下修机大佬们，MateBook E 2023 DRR-W76的散热风扇配件和2022款DRC的是不是通用的，我看很多买家都不区分这两个型号的 #笔记本电脑#",
+              "publish_time": "2026-08-09T09:33:21+08:00",
+              "metrics": {
+                "likes": 1,
+                "comments": 1,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:06.205262+08:00",
+              "product": ""
+            },
+            {
+              "id": "coolapk_2150257c4cc5",
+              "platform": "coolapk",
+              "post_url": "https://www.coolapk.com/feed/73115772",
+              "author": "星河潮涌",
+              "title": "HUAWEI MateBook Fold 麒麟 X90 Plus\n光韵天成｜预置壁纸\n\n名称列表\n\n霓羽栖光｜Blushing Wings\n逐光骏影｜Gallop in Light\n锦鲤焕光｜Koi ",
+              "content": "HUAWEI MateBook Fold 麒麟 X90 Plus\n光韵天成｜预置壁纸\n\n名称列表\n\n霓羽栖光｜Blushing Wings\n逐光骏影｜Gallop in Light\n锦鲤焕光｜Koi Luminance\n岚镜入梦｜Alpine Reflections\n光隙天成｜Canyon at Dawn\n峰隐云间｜Veiled Summit\n\n迅雷链接：\n查看链接\n\n夸克链接：\n查看链接\n\n注：本动态的主题壁纸未经允许，禁止二次发布传播与衍生创作\n\n#鸿蒙7# #华为主题# #壁纸#",
+              "publish_time": "2026-08-08T23:08:19+08:00",
+              "metrics": {
+                "likes": 36,
+                "comments": 4,
+                "shares": 0,
+                "views": 0
+              },
+              "comments": [],
+              "scraped_at": "2026-08-25T19:11:06.205262+08:00",
+              "product": ""
+            }
+          ],
+          "count": 92
+        }
+      },
+      "total_items": 92
+    }
+  }
+}
