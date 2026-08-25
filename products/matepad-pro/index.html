@@ -27,13 +27,11 @@
   }
   .container { max-width: 880px; margin: 0 auto; padding: 32px 24px; }
 
-  /* Breadcrumb */
   .breadcrumb { display: flex; gap: 8px; align-items: center; font-size: 13px; color: var(--muted); margin-bottom: 28px; flex-wrap: wrap; }
   .breadcrumb a { color: var(--accent); text-decoration: none; }
   .breadcrumb a:hover { text-decoration: underline; }
   .breadcrumb .sep { color: #475569; }
 
-  /* Hero */
   .hero { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 32px; margin-bottom: 32px; }
   .hero .tag { display: inline-block; font-size: 11px; font-weight: 600; padding: 3px 12px; border-radius: 12px; background: rgba(59,130,246,0.15); color: var(--accent); margin-bottom: 16px; }
   .hero h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.4px; margin-bottom: 8px; }
@@ -42,7 +40,6 @@
   .hero .info-item .label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
   .hero .info-item .value { font-size: 15px; font-weight: 600; color: var(--text); margin-top: 2px; }
 
-  /* Sentiment */
   .sentiment-section { margin-bottom: 32px; }
   .sentiment-section h2 { font-size: 18px; font-weight: 700; margin-bottom: 16px; }
   .sentiment-bars { display: flex; gap: 12px; flex-wrap: wrap; }
@@ -53,76 +50,21 @@
   .sentiment-bar.neu .num { color: var(--accent3); }
   .sentiment-bar.neg .num { color: var(--accent4); }
 
-  /* Timeline */
   .tl-section { margin-bottom: 32px; }
-  .tl-title {
-    font-size: 20px; font-weight: 700; margin-bottom: 28px;
-    display: flex; align-items: center; gap: 10px;
-  }
-  .tl-title::before {
-    content: ''; display: inline-block; width: 4px; height: 22px;
-    background: var(--accent); border-radius: 2px;
-  }
-  .tl-list {
-    position: relative;
-    padding-left: 32px;
-  }
-  .tl-list::before {
-    content: '';
-    position: absolute;
-    left: 9px; top: 0; bottom: 0;
-    width: 2px;
-    background: linear-gradient(180deg, var(--accent) 0%, var(--border) 100%);
-    border-radius: 1px;
-  }
-  .tl-item {
-    position: relative;
-    margin-bottom: 28px;
-    padding-bottom: 4px;
-  }
-  .tl-dot {
-    position: absolute;
-    left: -32px; top: 6px;
-    width: 20px; height: 20px;
-    border-radius: 50%;
-    background: var(--accent);
-    border: 3px solid var(--bg);
-    box-shadow: 0 0 0 4px rgba(59,130,246,0.25);
-    z-index: 1;
-  }
-  .tl-date {
-    font-size: 15px; font-weight: 700; color: var(--accent);
-    margin-bottom: 8px;
-  }
-  .tl-card {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 10px; padding: 18px 20px;
-    transition: border-color .2s, transform .1s;
-  }
+  .tl-title { font-size: 20px; font-weight: 700; margin-bottom: 28px; display: flex; align-items: center; gap: 10px; }
+  .tl-title::before { content: ''; display: inline-block; width: 4px; height: 22px; background: var(--accent); border-radius: 2px; }
+  .tl-list { position: relative; padding-left: 32px; }
+  .tl-list::before { content: ''; position: absolute; left: 9px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--accent) 0%, var(--border) 100%); border-radius: 1px; }
+  .tl-item { position: relative; margin-bottom: 28px; padding-bottom: 4px; }
+  .tl-dot { position: absolute; left: -32px; top: 6px; width: 20px; height: 20px; border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); box-shadow: 0 0 0 4px rgba(59,130,246,0.25); z-index: 1; }
+  .tl-date { font-size: 15px; font-weight: 700; color: var(--accent); margin-bottom: 8px; }
+  .tl-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; transition: border-color .2s, transform .1s; }
   .tl-card:hover { border-color: #475569; transform: translateY(-1px); }
-  .tl-card h3 {
-    font-size: 16px; font-weight: 700; margin-bottom: 6px;
-  }
+  .tl-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
   .tl-card h3 a { color: var(--text); text-decoration: none; }
   .tl-card h3 a:hover { color: var(--accent); }
-  .tl-card .tl-summary {
-    font-size: 13px; color: var(--muted); line-height: 1.6;
-    margin-bottom: 10px;
-  }
-  .tl-card .tl-tag {
-    display: inline-block; font-size: 11px; font-weight: 600;
-    padding: 2px 10px; border-radius: 10px;
-    background: rgba(59,130,246,0.15); color: var(--accent);
-  }
-  .tl-item.future .tl-dot {
-    background: transparent;
-    border: 3px solid var(--border);
-    box-shadow: none;
-  }
-  .tl-item.future .tl-card {
-    opacity: 0.5; border-style: dashed;
-  }
-  .tl-item.future .tl-date { color: var(--muted); }
+  .tl-card .tl-summary { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 10px; }
+  .tl-card .tl-tag { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 10px; border-radius: 10px; background: rgba(59,130,246,0.15); color: var(--accent); }
 
   footer { text-align: center; padding: 24px 0; border-top: 1px solid var(--border); color: #64748b; font-size: 12px; margin-top: 40px; }
 </style>
@@ -131,7 +73,7 @@
 <div class="container">
   <div class="breadcrumb">
     <a href="../../index.html">首页</a><span class="sep">></span>
-    <a href="../../index.html">产品监控</a><span class="sep">></span>
+    <a href="../index.html">产品监控</a><span class="sep">></span>
     <span>MatePad Pro</span>
   </div>
 
@@ -140,21 +82,21 @@
     <h1>MatePad Pro</h1>
     <p class="subtitle">12英寸 OLED 旗舰平板 · 439g 全球最轻 · 8月14日首销</p>
     <div class="info-grid">
-      <div class="info-item"><div class="label">屏幕</div><div class="value">12英寸 3K OLED 柔光屏</div></div>
+      <div class="info-item"><div class="label">屏幕</div><div class="value">12英寸 3K OLED 柔光屏 144Hz</div></div>
       <div class="info-item"><div class="label">重量</div><div class="value">439g / 4.7mm</div></div>
       <div class="info-item"><div class="label">电池</div><div class="value">10400mAh / 18.5h续航</div></div>
       <div class="info-item"><div class="label">起售价</div><div class="value">5699元起</div></div>
-      <div class="info-item"><div class="label">芯片</div><div class="value">麒麟T93</div></div>
-      <div class="info-item"><div class="label">系统</div><div class="value">HarmonyOS 6.1</div></div>
+      <div class="info-item"><div class="label">芯片</div><div class="value">麒麟T91</div></div>
+      <div class="info-item"><div class="label">系统</div><div class="value">HarmonyOS NEXT</div></div>
     </div>
   </div>
 
   <div class="sentiment-section">
     <h2>情绪概览</h2>
     <div class="sentiment-bars">
-      <div class="sentiment-bar pos"><div class="num">45%</div><div class="label">正面</div></div>
-      <div class="sentiment-bar neu"><div class="num">30%</div><div class="label">中性</div></div>
-      <div class="sentiment-bar neg"><div class="num">25%</div><div class="label">负面</div></div>
+      <div class="sentiment-bar pos"><div class="num">55%</div><div class="label">🟢 正面</div></div>
+      <div class="sentiment-bar neu"><div class="num">25%</div><div class="label">🟡 中性</div></div>
+      <div class="sentiment-bar neg"><div class="num">20%</div><div class="label">🔴 负面</div></div>
     </div>
   </div>
 
@@ -163,25 +105,62 @@
     <div class="tl-list">
       <div class="tl-item">
         <div class="tl-dot"></div>
-        <div class="tl-date">2026-08-20</div>
+        <div class="tl-date">2026-08-25</div>
         <div class="tl-card">
-          <h3><a href="reports/2026-08-20.html">周舆情报告</a></h3>
-          <div class="tl-summary">本周该产品因439g全球最轻机身获媒体广泛报道，但5699元起售价和与MatePad Pro Max的定位区隔引发用户争议。</div>
+          <h3><a href="reports/2026-08-25.html">舆情报告</a></h3>
+          <div class="tl-summary">以439g/4.7mm极致轻薄和18.5小时续航稳居旗舰平板标杆，双层OLED+144Hz屏幕及华为笔记/天生会画等创作生态获广泛好评。主要槽点集中在T91处理器性能和鸿蒙NEXT系统稳定性——第三方应用闪退、手写笔间歇断连影响创作核心体验。</div>
           <span class="tl-tag">周报告</span>
         </div>
       </div>
-      <div class="tl-item future">
+      <div class="tl-item">
         <div class="tl-dot"></div>
-        <div class="tl-date">即将更新...</div>
+        <div class="tl-date">2026-08-24</div>
         <div class="tl-card">
-          <h3>下周报告筹备中</h3>
-          <div class="tl-summary">持续监测中，新一期舆情报告将于下周发布。</div>
+          <h3><a href="reports/2026-08-24.html">舆情报告</a></h3>
+          <div class="tl-summary">创作生态体验分享内容集中涌现，天生会画App配合M-Pencil的压感表现获画师群体高度认可。但部分用户反馈鸿蒙NEXT下WPS等办公App存在兼容性闪退问题。</div>
+          <span class="tl-tag">日报告</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2026-08-23</div>
+        <div class="tl-card">
+          <h3><a href="reports/2026-08-23.html">舆情报告</a></h3>
+          <div class="tl-summary">周末娱乐/影音场景体验成为讨论热点，OLED屏幕色彩表现和四扬声器音质获一致好评。手写笔断连问题有零星反馈但未形成集中投诉。</div>
+          <span class="tl-tag">日报告</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2026-08-22</div>
+        <div class="tl-card">
+          <h3><a href="reports/2026-08-22.html">舆情报告</a></h3>
+          <div class="tl-summary">T91芯片性能争议在技术社区持续，跑分对比显示GPU性能落后竞品同价位平板约20%。但日常使用和创作场景流畅度未受明显影响，普通用户反馈整体良好。</div>
+          <span class="tl-tag">日报告</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2026-08-21</div>
+        <div class="tl-card">
+          <h3><a href="reports/2026-08-21.html">舆情报告</a></h3>
+          <div class="tl-summary">首批用户长测体验陆续发布，439g单手持握长时间使用不累成为最受好评的卖点。系统更新推送后部分用户反映手写笔延迟偶有波动。</div>
+          <span class="tl-tag">日报告</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2026-08-20</div>
+        <div class="tl-card">
+          <h3><a href="reports/2026-08-20.html">舆情报告</a></h3>
+          <div class="tl-summary">首销周439g全球最轻机身获媒体广泛报道，但5699元起售价和与MatePad Pro Max的定位区隔引发用户争议，创作生态完整度成为购买决策关键因素。</div>
+          <span class="tl-tag">周报告</span>
         </div>
       </div>
     </div>
   </div>
 
-  <footer>Powered by TraeWork · 华为舆情监控中心</footer>
+  <footer>Powered by TraeWork · 华为舆情监控中心 · 最后更新 2026-08-25</footer>
 </div>
 </body>
 </html>
