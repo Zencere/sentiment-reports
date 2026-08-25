@@ -27,7 +27,6 @@
     line-height: 1.6;
   }
 
-  /* Breadcrumb */
   .breadcrumb {
     max-width: 1100px; margin: 0 auto; padding: 20px 24px 0;
     font-size: 13px; color: var(--muted);
@@ -38,7 +37,6 @@
 
   .container { max-width: 1100px; margin: 0 auto; padding: 24px 24px 48px; }
 
-  /* Feature hero */
   .feature-hero {
     background: linear-gradient(135deg, rgba(139,92,246,0.12), rgba(59,130,246,0.06));
     border: 1px solid rgba(139, 92, 246, 0.25);
@@ -57,7 +55,6 @@
   .feature-hero .meta-row { display: flex; flex-wrap: wrap; gap: 16px 24px; font-size: 13px; color: var(--muted); }
   .feature-hero .meta-row b { color: var(--text); }
 
-  /* Sentiment overview */
   .sentiment-overview { margin-bottom: 36px; }
   .sentiment-overview h2 { font-size: 18px; font-weight: 700; margin-bottom: 16px; }
   .sentiment-bars { display: flex; gap: 12px; margin-bottom: 20px; }
@@ -71,7 +68,6 @@
   .sent-bar.neu .pct { color: var(--accent3); }
   .sent-bar.neg .pct { color: var(--accent4); }
 
-  /* Timeline */
   .tl-section { margin-bottom: 36px; }
   .tl-title {
     font-size: 20px; font-weight: 700; margin-bottom: 28px;
@@ -132,19 +128,11 @@
     padding: 2px 10px; border-radius: 10px;
     background: rgba(139,92,246,0.15); color: var(--feature);
   }
-  .tl-item.future .tl-dot {
-    background: transparent;
-    border: 3px solid var(--border);
-    box-shadow: none;
-  }
-  .tl-item.future .tl-card {
-    opacity: 0.5; border-style: dashed;
-  }
-  .tl-item.future .tl-date { color: var(--muted); }
 
-  /* Back link */
   .back-link { display: inline-block; margin-top: 24px; color: var(--muted); font-size: 13px; text-decoration: none; }
   .back-link:hover { color: var(--text); }
+
+  footer { text-align: center; padding: 24px 0; border-top: 1px solid var(--border); color: #64748b; font-size: 12px; margin-top: 40px; }
 
   @media (max-width: 640px) {
     .feature-hero { padding: 24px 20px; }
@@ -156,8 +144,8 @@
 <body>
 
 <div class="breadcrumb">
-  <a href="../../index.html">首页</a> &rsaquo;
-  <a href="../">特性监控</a> &rsaquo;
+  <a href="../../index.html">首页</a> <span>›</span>
+  <a href="../index.html">特性监控</a> <span>›</span>
   <span>高光妙创</span>
 </div>
 
@@ -165,11 +153,11 @@
   <div class="feature-hero">
     <span class="tag">AI 功能</span>
     <h1>高光妙创</h1>
-    <div class="subtitle">AI 内容创作 · 笔记增强</div>
+    <div class="subtitle">AI 内容创作 · 笔记增强 · 智能摘要</div>
     <div class="meta-row">
       <span>功能分类：<b>AI 功能</b></span>
-      <span>所属产品：<b>华为笔记 / MatePad Pro</b></span>
-      <span>监测周期：<b>2026年8月13日 – 8月20日</b></span>
+      <span>所属产品：<b>华为笔记 / MatePad Pro 系列</b></span>
+      <span>监测周期：<b>2026年8月20日 – 8月25日</b></span>
       <span>监测渠道：<b>社交媒体 / 技术社区 / 媒体报道</b></span>
     </div>
   </div>
@@ -178,16 +166,16 @@
     <h2>情绪概览</h2>
     <div class="sentiment-bars">
       <div class="sent-bar pos">
-        <div class="pct">40%</div>
-        <div class="label">正面</div>
+        <div class="pct">65%</div>
+        <div class="label">🟢 正面</div>
       </div>
       <div class="sent-bar neu">
-        <div class="pct">35%</div>
-        <div class="label">中性</div>
+        <div class="pct">20%</div>
+        <div class="label">🟡 中性</div>
       </div>
       <div class="sent-bar neg">
-        <div class="pct">25%</div>
-        <div class="label">负面</div>
+        <div class="pct">15%</div>
+        <div class="label">🔴 负面</div>
       </div>
     </div>
   </div>
@@ -197,25 +185,63 @@
     <div class="tl-list">
       <div class="tl-item">
         <div class="tl-dot"></div>
-        <div class="tl-date">2026-08-20</div>
+        <div class="tl-date">2026-08-25</div>
         <div class="tl-card">
-          <h3><a href="reports/2026-08-20.html">高光妙创 舆情报告</a></h3>
-          <div class="tl-summary">本周该AI功能引起技术社区关注，用户对AI辅助创作表现出兴趣，但整体功能认知度仍然不足，传播声量有限。</div>
+          <h3><a href="reports/2026-08-25.html">周舆情报告</a></h3>
+          <div class="tl-summary">科技媒体评测普遍肯定高光妙创的创意趣味性，正面约65%；AI笔记摘要、智能排版功能获创作者和学生群体好评。但独立讨论热度极低，功能认知度不足是核心挑战，多数用户仍将其视为"锦上添花"而非刚需功能。与Notability、GoodNotes等竞品AI功能对比中优势不明显。</div>
           <span class="tl-tag">周报告</span>
         </div>
       </div>
-      <div class="tl-item future">
+      <div class="tl-item">
         <div class="tl-dot"></div>
-        <div class="tl-date">即将更新...</div>
+        <div class="tl-date">2026-08-24</div>
         <div class="tl-card">
-          <h3>下周报告筹备中</h3>
-          <div class="tl-summary">持续监测中，新一期舆情报告将于下周发布。</div>
+          <h3><a href="reports/2026-08-24.html">日舆情报告</a></h3>
+          <div class="tl-summary">AI自动生成思维导图功能获得学生用户群体正面反馈，配合M-Pencil手写笔记使用场景获认可。但功能入口较深、普通用户发现率低的问题被多次提及。</div>
+          <span class="tl-tag">日报告</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2026-08-23</div>
+        <div class="tl-card">
+          <h3><a href="reports/2026-08-23.html">日舆情报告</a></h3>
+          <div class="tl-summary">周末创作者体验分享增多，AI内容润色和排版功能获好评，但独立讨论声量依然有限，相关帖子互动量普遍低于产品硬件话题。功能命名"高光妙创"辨识度不足被吐槽。</div>
+          <span class="tl-tag">日报告</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2026-08-22</div>
+        <div class="tl-card">
+          <h3><a href="reports/2026-08-22.html">日舆情报告</a></h3>
+          <div class="tl-summary">科技媒体深度评测文章发布，AI多模态理解（图文混合笔记智能整理）功能获技术层面肯定。但与iPad OS 18 Intelligence笔记功能的横向对比中，华为AI在英文场景和跨App联动上存在差距。</div>
+          <span class="tl-tag">日报告</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2026-08-21</div>
+        <div class="tl-card">
+          <h3><a href="reports/2026-08-21.html">日舆情报告</a></h3>
+          <div class="tl-summary">首批MatePad Pro用户对高光妙创功能的尝试反馈增多，一键生成精美笔记卡片功能在小红书等平台有少量传播；但功能稳定性偶有bug反馈，AI生成内容偶有"幻觉"现象。</div>
+          <span class="tl-tag">日报告</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2026-08-20</div>
+        <div class="tl-card">
+          <h3><a href="reports/2026-08-20.html">周舆情报告</a></h3>
+          <div class="tl-summary">高光妙创AI功能引起技术社区初步关注，用户对AI辅助创作表现出兴趣，但整体功能认知度仍然不足，传播声量有限，多数讨论集中在科技媒体评测范围内。</div>
+          <span class="tl-tag">周报告</span>
         </div>
       </div>
     </div>
   </div>
 
-  <a class="back-link" href="../../index.html">&larr; 返回首页</a>
+  <footer>Powered by TraeWork · 华为舆情监控中心 · 最后更新 2026-08-25</footer>
+  <a class="back-link" href="../../index.html">← 返回首页</a>
 </div>
 
 </body>
