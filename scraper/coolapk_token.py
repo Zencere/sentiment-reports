@@ -10,7 +10,6 @@ import base64
 import hashlib
 import re
 import time
-import uuid
 import zipfile
 
 import bcrypt
@@ -20,11 +19,23 @@ import bcrypt
 # ---------------------------------------------------------------------------
 STD_B64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
 
-# 默认 APK 信息（从 APK 文件名解析）
+# APK 信息（从 APK 文件名解析）
 APK_PATH = r"C:\Users\25757\Downloads\CoolApk-16.6.1-2608212-coolapk-arm64-sign.apk"
 VERSION_CODE = 2608212
 APP_VERSION = "16.6.1"
 PACKAGE = "com.coolapk.market"
+
+# 酷安设备指纹（固定值，避免每次运行变化触发风控）
+DEFAULT_DEVICE = (
+    "AZmV2N4UzN0UmZ3kDOzEzYgsjMwAjL2IjMwUjMuE0MRFEI7MkMxITM4AjMyAyOp1GZlJFI7kWbvFWaYByO"
+    "gsDI7AyOzYGO3okVq1GWOlEez8WYLlkWKVWbllzX3pUTjFTcjx2aPVFR"
+)
+DDID = "21b52710-79a8-43a9-a9b0-a773b106d08f"
+
+DEFAULT_UA = (
+    "Dalvik/2.1.0 (Linux; U; Android 14; SM-S9080 Build/UP1A.231005.007) "
+    "CoolMarket/16.6.1"
+)
 
 
 def _find_blob(libauth_bytes: bytes) -> bytes:
@@ -61,7 +72,7 @@ def _shift_last_char_minus_5(s: str) -> str:
 
 def generate_token(
     apk_path: str = APK_PATH,
-    device: str = "",
+    device: str = DEFAULT_DEVICE,
     ts: int = 0,
     version_code: int = VERSION_CODE,
     package: str = PACKAGE,
@@ -70,7 +81,7 @@ def generate_token(
 
     Args:
         apk_path: 酷安 APK 文件路径。
-        device: X-App-Device 值（UUID 格式）。
+        device: X-App-Device 值（酷安设备指纹）。
         ts: Unix 时间戳（秒），默认当前时间。
         version_code: 应用版本号。
         package: 应用包名。
@@ -80,8 +91,6 @@ def generate_token(
     """
     if not ts:
         ts = int(time.time())
-    if not device:
-        device = str(uuid.uuid4())
 
     with zipfile.ZipFile(apk_path, "r") as zf:
         libauth = zf.read("lib/arm64-v8a/libauth.so")
@@ -129,39 +138,70 @@ def generate_token(
     return token
 
 
-def build_headers(device: str = "", ts: int = 0) -> dict:
+def generate_token_compatible(
+    device: str = DEFAULT_DEVICE,
+    ts: int = 0,
+    max_ahead: int = 20,
+    **kwargs,
+) -> tuple:
+    """带时间戳前探的 token 生成，规避 Python bcrypt 的 Invalid salt。
+
+    Python bcrypt 对部分由 app 算法生成的盐校验更严格，会抛 Invalid salt。
+    通过向前探测时间戳 ts, ts+1, ... 直到找到可用盐。
+
+    Returns:
+        (token, actual_ts, offset) 三元组。
+    """
+    start_ts = ts or int(time.time())
+    last_err = None
+    for offset in range(max_ahead + 1):
+        cur_ts = start_ts + offset
+        try:
+            token = generate_token(device=device, ts=cur_ts, **kwargs)
+            return token, cur_ts, offset
+        except ValueError as exc:
+            if "Invalid salt" in str(exc):
+                last_err = exc
+                continue
+            raise
+    raise RuntimeError(
+        f"could not generate token in +0..+{max_ahead}s window: {last_err}"
+    )
+
+
+def build_headers(device: str = DEFAULT_DEVICE, ts: int = 0) -> dict:
     """构建完整的酷安 API 请求头。
 
     Args:
-        device: X-App-Device 值，留空则自动生成 UUID。
+        device: X-App-Device 值。
         ts: Unix 时间戳。
 
     Returns:
         包含所有认证头的字典。
     """
-    if not ts:
-        ts = int(time.time())
-    if not device:
-        device = str(uuid.uuid4())
-
-    token = generate_token(device=device, ts=ts)
+    token, actual_ts, _offset = generate_token_compatible(device=device, ts=ts)
 
     return {
+        "User-Agent": DEFAULT_UA,
+        "Connection": "Keep-Alive",
+        "Accept-Encoding": "gzip",
         "Accept": "application/json, text/plain, */*",
         "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
         "Referer": "https://www.coolapk.com/",
         "X-Requested-With": "XMLHttpRequest",
+        "X-Sdk-Int": "35",
+        "X-Sdk-Locale": "zh-CN",
         "X-App-Id": PACKAGE,
+        "X-App-Token": token,
         "X-App-Version": APP_VERSION,
         "X-App-Code": str(VERSION_CODE),
+        "X-Api-Version": "16",
         "X-App-Device": device,
-        "X-App-Token": token,
         "X-Dark-Mode": "0",
         "X-App-Channel": "coolapk",
-        "User-Agent": (
-            "Dalvik/2.1.0 (Linux; U; Android 14; SM-S9080 Build/UP1A.231005.007) "
-            "CoolMarket/16.6.1"
-        ),
+        "X-App-Mode": "universal",
+        "X-App-Supported": str(VERSION_CODE),
+        "Cookie": f"ddid={DDID}",
     }
 
 
@@ -170,29 +210,18 @@ def build_headers(device: str = "", ts: int = 0) -> dict:
 # ---------------------------------------------------------------------------
 if __name__ == "__main__":
     import argparse
+    import json
 
     parser = argparse.ArgumentParser(description="生成酷安 X-App-Token")
     parser.add_argument("--apk", default=APK_PATH, help="酷安 APK 路径")
-    parser.add_argument("--device", default="", help="X-App-Device")
-    parser.add_argument("--ts", type=int, default=int(time.time()), help="时间戳")
+    parser.add_argument("--device", default=DEFAULT_DEVICE, help="X-App-Device")
+    parser.add_argument("--ts", type=int, default=0, help="时间戳")
     parser.add_argument("--version-code", type=int, default=VERSION_CODE)
     parser.add_argument("--package", default=PACKAGE)
     parser.add_argument("--headers", action="store_true", help="输出完整请求头 JSON")
     args = parser.parse_args()
 
-    device = args.device or str(uuid.uuid4())
+    args.ts = args.ts or int(time.time())
 
-    if args.headers:
-        import json
-        headers = build_headers(device=device, ts=args.ts)
-        print(json.dumps(headers, indent=2, ensure_ascii=False))
-    else:
-        token = generate_token(
-            apk_path=args.apk,
-            device=device,
-            ts=args.ts,
-            version_code=args.version_code,
-            package=args.package,
-        )
-        print(f"Device: {device}")
-        print(f"Token:  {token}")
+    headers = build_headers(device=args.device, ts=args.ts)
+    print(json.dumps(headers, indent=2, ensure_ascii=False))
