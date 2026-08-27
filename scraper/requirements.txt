@@ -5,3 +5,4 @@ fake-useragent>=1.4
 lxml>=4.9
 jieba>=0.42
 playwright>=1.40
+bcrypt>=3.2
