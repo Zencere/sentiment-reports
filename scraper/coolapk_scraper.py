@@ -12,21 +12,22 @@
 """
 
 import os
+import re
 import sys
 import time
-import uuid
+import html
 from typing import Optional
 
 # 兼容包内运行和直接运行
 try:
     from .base import BaseScraper
-    from .coolapk_token import build_headers
+    from .coolapk_token import build_headers, DEFAULT_DEVICE
 except ImportError:
     _current_dir = os.path.dirname(os.path.abspath(__file__))
     if _current_dir not in sys.path:
         sys.path.insert(0, _current_dir)
     from base import BaseScraper
-    from coolapk_token import build_headers
+    from coolapk_token import build_headers, DEFAULT_DEVICE
 
 
 # ---------------------------------------------------------------------------
@@ -44,7 +45,8 @@ class CoolapkScraper(BaseScraper):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self._device = str(uuid.uuid4())
+        # 使用固定设备指纹，保持 token 一致性、避免触发风控
+        self._device = DEFAULT_DEVICE
         self._cached_headers = None
         self._cached_ts = 0
 
@@ -108,11 +110,12 @@ class CoolapkScraper(BaseScraper):
         )
 
         data = resp.json()
-        if data.get("status") != 0:
-            self.logger.warning("酷安 API 返回异常: status=%s", data.get("status"))
+        # 酷安 v6 搜索返回 {"data": [feed, ...]}，无顶层 status 字段
+        feed_list = data.get("data") if isinstance(data, dict) else None
+        if not isinstance(feed_list, list):
+            self.logger.warning("酷安 API 返回异常: %s", str(data)[:200])
             return []
 
-        feed_list = data.get("data", [])
         items = []
 
         for feed in feed_list:
@@ -124,42 +127,56 @@ class CoolapkScraper(BaseScraper):
 
     def _parse_feed(self, feed: dict) -> Optional[dict]:
         """解析单条动态。"""
-        raw_id = str(feed.get("id", ""))
+        raw_id = str(feed.get("id") or feed.get("entityId") or "")
         if not raw_id:
             return None
 
-        # 作者信息
-        user_info = feed.get("userAction", {}).get("userInfo", {})
-        author = user_info.get("username", user_info.get("nickname", ""))
+        # 作者信息：顶层 username，兼容嵌套 userInfo
+        author = feed.get("username", "") or ""
+        if not author:
+            user_info = feed.get("userInfo", {}) or {}
+            author = user_info.get("username", "")
 
-        # 标题：酷安动态没有标题，取正文前 100 字
-        message = feed.get("message", "")
-        title = message[:100] if message else ""
+        # 酷安动态无标题字段，取正文前 100 字作为摘要
+        message = feed.get("message", "") or ""
+        if message:
+            # 去掉 HTML 标签后反转义实体（&amp; &lt; &#39; 等）
+            message = html.unescape(re.sub(r"<[^>]+>", "", message).strip())
 
-        # 内容：取 message 或 feedType 对应的内容
+        title = message[:100] if message else html.unescape(feed.get("title", "") or "")
+
+        # 内容优先取 message
         content = message
         if not content:
-            # 试试其他字段
-            content = feed.get("description", "") or feed.get("title", "")
+            content = html.unescape(re.sub(r"<[^>]+>", "", feed.get("description", "") or feed.get("info", "") or "").strip())
 
-        # 发布时间：酷安返回 Unix 时间戳（秒）
-        last_update = feed.get("lastupdate", 0)
+        # 发布时间：酷安返回 Unix 时间戳（秒，字符串）
+        last_update = feed.get("lastupdate", 0) or feed.get("dateline", 0) or 0
         publish_time = ""
         if last_update:
-            from datetime import datetime, timezone, timedelta
-            TZ = timezone(timedelta(hours=8))
-            publish_time = datetime.fromtimestamp(int(last_update), tz=TZ).isoformat()
+            try:
+                from datetime import datetime, timezone, timedelta
+                TZ = timezone(timedelta(hours=8))
+                publish_time = datetime.fromtimestamp(int(last_update), tz=TZ).isoformat()
+            except (ValueError, OSError, OverflowError):
+                publish_time = ""
 
         # 互动数据
         metrics = {
-            "likes": int(feed.get("likenum", 0)),
-            "comments": int(feed.get("replynum", 0)),
-            "shares": int(feed.get("forwardnum", 0)),
-            "views": int(feed.get("viewnum", 0)),
+            "likes": int(feed.get("likenum", 0) or 0),
+            "comments": int(feed.get("replynum", 0) or 0),
+            "shares": int(feed.get("forwardnum", 0) or feed.get("share_num", 0) or 0),
+            "views": int(feed.get("viewnum", 0) or 0),
         }
 
-        # 链接
-        post_url = f"https://www.coolapk.com/feed/{raw_id}"
+        # 链接（url 可能是相对路径 /feed/xxx）
+        url = feed.get("url", "") or feed.get("shareUrl", "") or ""
+        if url.startswith("http"):
+            post_url = url
+        elif url:
+            post_url = "https://www.coolapk.com" + url
+        else:
+            post_url = f"https://www.coolapk.com/feed/{raw_id}"
 
         return self._standardize_item(
             raw_id=raw_id,
