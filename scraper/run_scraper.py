@@ -7,12 +7,13 @@
   3. 支持按产品、按平台、按关键词灵活采集
 
 数据平台:
-  - smzdm:    什么值得买（电商爆料）
-  - zol:      中关村在线（产品点评）
-  - weibo:    微博（公众舆论）
-  - zhihu:    知乎（深度讨论）
-  - bilibili: B站（视频评测）
-  - coolapk:  酷安（数码圈讨论）
+  - smzdm:        什么值得买（电商爆料）
+  - zol:          中关村在线（产品点评）
+  - weibo:        微博（公众舆论）
+  - zhihu:        知乎（深度讨论）
+  - bilibili:     B站（视频评测）
+  - coolapk:      酷安（数码圈讨论）
+  - xiaohongshu:  小红书（种草笔记，需先扫码登录）
 
 用法:
   # 采集所有产品、所有平台
@@ -54,9 +55,11 @@ from sentiment_analyzer import SentimentAnalyzer
 from weibo_scraper import WeiboScraper
 from zhihu_scraper import ZhihuScraper
 from bilibili_scraper import BilibiliScraper
+from coolapk_scraper import CoolapkScraper
 # Playwright 采集器（用于需要浏览器渲染的平台）
 from smzdm_playwright_scraper import SmzdmPlaywrightScraper
 from weibo_playwright_scraper import WeiboPlaywrightScraper
+from xiaohongshu_scraper import XiaohongshuScraper
 from playwright_base import close_browser
 
 # ---------------------------------------------------------------------------
@@ -78,6 +81,8 @@ TZ_BEIJING = timezone(timedelta(hours=8))
 # ---------------------------------------------------------------------------
 SCRAPER_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(SCRAPER_DIR, "..", "data")  # 输出到 sentiment-site/data/
+STATE_DIR = os.path.join(DATA_DIR, "state")
+STATE_FILE = os.path.join(STATE_DIR, "last_run.json")
 
 # ---------------------------------------------------------------------------
 # 产品定义 — 各平台搜索关键词
@@ -99,7 +104,10 @@ PRODUCTS = {
             "MateBook Pro S", "华为MateBook Pro S",
         ],
         "coolapk_keywords": [
-            "MateBook Pro S", "华为MateBook",
+            "MateBook Pro S", "华为MateBook Pro S",
+        ],
+        "xiaohongshu_keywords": [
+            "MateBook Pro S", "华为MateBook Pro S", "MateBook Pro S 体验",
         ],
     },
     "matepad-pro": {
@@ -120,6 +128,9 @@ PRODUCTS = {
         "coolapk_keywords": [
             "MatePad Pro", "华为平板",
         ],
+        "xiaohongshu_keywords": [
+            "MatePad Pro", "华为MatePad Pro", "华为平板 体验",
+        ],
     },
     "matepad-pro-max": {
         "name": "MatePad Pro Max",
@@ -138,6 +149,9 @@ PRODUCTS = {
         ],
         "coolapk_keywords": [
             "MatePad Pro Max", "华为MatePad Pro 13.2",
+        ],
+        "xiaohongshu_keywords": [
+            "MatePad Pro Max", "华为MatePad Pro 13.2", "华为平板 13.2",
         ],
     },
     "matebook-fold": {
@@ -158,19 +172,26 @@ PRODUCTS = {
         "coolapk_keywords": [
             "MateBook Fold", "华为折叠笔记本",
         ],
+        "xiaohongshu_keywords": [
+            "MateBook Fold", "华为MateBook Fold", "华为折叠笔记本",
+        ],
     },
 }
 
 # 平台分组
 PLATFORM_GROUPS = {
     "ecommerce": ["smzdm", "zol"],       # 电商平台
-    "social": ["weibo", "zhihu", "bilibili", "coolapk"],  # 社交平台
-    "all": ["smzdm", "zol", "weibo", "zhihu", "bilibili", "coolapk"],
+    "social": ["weibo", "zhihu", "bilibili", "coolapk", "xiaohongshu"],  # 社交平台
+    "all": ["smzdm", "zol", "weibo", "zhihu", "bilibili", "coolapk", "xiaohongshu"],
 }
 
 # 默认配置
 DEFAULT_MAX_PAGES = 3
 DEFAULT_MIN_INTERVAL = 2.0
+
+# 增量采集专用配置
+DEFAULT_FULL_PAGES = 8   # 首次全量采集时每个平台的翻页数
+WINDOW_BUFFER_DAYS = 1   # 增量时间窗口往前多留的天数，避免漏掉晚收录的帖子
 
 
 # ---------------------------------------------------------------------------
@@ -190,6 +211,97 @@ def save_json(data, filepath: str) -> str:
         json.dump(data, f, ensure_ascii=False, indent=2)
     logger.info("已保存: %s", filepath)
     return filepath
+
+
+# ---------------------------------------------------------------------------
+# 增量采集：状态文件 + 累计主数据
+# ---------------------------------------------------------------------------
+
+def load_state() -> dict:
+    """读取增量采集状态文件（记录每个产品上次采集日期）。"""
+    if not os.path.exists(STATE_FILE):
+        return {}
+    try:
+        with open(STATE_FILE, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+
+def save_state(state: dict) -> None:
+    """写入增量采集状态文件。"""
+    ensure_dir(STATE_DIR)
+    with open(STATE_FILE, "w", encoding="utf-8") as f:
+        json.dump(state, f, ensure_ascii=False, indent=2)
+
+
+def _flatten_platform_items(platforms: dict) -> list[dict]:
+    """把 {平台: {items: [...]}} 拍平成统一的 items 列表。"""
+    out = []
+    for pres in (platforms or {}).values():
+        out.extend(pres.get("items", []))
+    return out
+
+
+def _seed_from_snapshots(product_key: str) -> list[dict]:
+    """用已有日期快照（排除 .bak / _new）播种主数据，保留历史已清洗数据。"""
+    prod_dir = os.path.join(DATA_DIR, "products")
+    if not os.path.isdir(prod_dir):
+        return []
+    snaps = [
+        fn for fn in os.listdir(prod_dir)
+        if fn.startswith(f"{product_key}_") and fn.endswith(".json")
+        and ".bak" not in fn and not fn.endswith("_new.json")
+    ]
+    snaps.sort()
+    if not snaps:
+        return []
+    try:
+        with open(os.path.join(prod_dir, snaps[-1]), encoding="utf-8") as f:
+            d = json.load(f)
+    except Exception:
+        return []
+    return _flatten_platform_items(d.get("platforms", {}))
+
+
+def load_master(product_key: str) -> list[dict]:
+    """读取产品累计主数据（不存在时用最新日期快照播种）。"""
+    master_path = os.path.join(DATA_DIR, "products", f"{product_key}.json")
+    items = []
+    if os.path.exists(master_path):
+        try:
+            with open(master_path, encoding="utf-8") as f:
+                items = json.load(f).get("items", [])
+        except Exception:
+            items = []
+    if not items:
+        items = _seed_from_snapshots(product_key)
+    return items
+
+
+def save_master(product_key: str, items: list[dict]) -> None:
+    """写入产品累计主数据（按 id 去重后）。"""
+    path = os.path.join(DATA_DIR, "products", f"{product_key}.json")
+    save_json({
+        "product_key": product_key,
+        "updated_at": datetime.now(TZ_BEIJING).isoformat(),
+        "count": len(items),
+        "items": items,
+    }, path)
+
+
+def _within_window(item: dict, since_date: str) -> bool:
+    """判断条目发布时间是否落在增量窗口内（含缓冲）。无法解析时间时保留，由 id 去重兜底。"""
+    raw = (item.get("publish_time") or "").strip()
+    if not raw:
+        return True
+    d = raw[:10]
+    try:
+        cutoff = datetime.strptime(since_date, "%Y-%m-%d") - timedelta(days=WINDOW_BUFFER_DAYS)
+        item_date = datetime.strptime(d, "%Y-%m-%d")
+        return item_date >= cutoff
+    except ValueError:
+        return True
 
 
 def resolve_platforms(platform_arg: str) -> list[str]:
@@ -330,14 +442,56 @@ def scrape_product(
         else:
             result["platforms"]["bilibili"] = {"items": [], "count": 0, "note": "no keywords"}
 
-    # ---- 酷安 (API 需认证，当前被阻断) ----
+    # ---- 酷安 ----
     if "coolapk" in platforms:
-        result["platforms"]["coolapk"] = {
-            "items": [],
-            "count": 0,
-            "note": "酷安 API 需要登录认证（请求返回 403/1001，浏览器端 fetch 被 CORS 拦截，搜索页显示'出错了'），待后续研究"
-        }
-        logger.info("[%s] 酷安: 跳过（API 需认证）", product_name)
+        keywords = product_config.get("coolapk_keywords", [])
+        if keywords:
+            logger.info("[%s] 开始采集 酷安...", product_name)
+            try:
+                scraper = CoolapkScraper(min_interval=min_interval)
+                items = scraper.search_multi_keywords(keywords, max_pages=max_pages, product=product_key)
+                result["platforms"]["coolapk"] = {
+                    "items": items,
+                    "count": len(items),
+                }
+                logger.info("[%s] 酷安: %d 条", product_name, len(items))
+            except Exception as exc:
+                logger.error("[%s] 酷安采集失败: %s", product_name, exc)
+                result["platforms"]["coolapk"] = {"items": [], "count": 0, "error": str(exc)}
+        else:
+            result["platforms"]["coolapk"] = {"items": [], "count": 0, "note": "no keywords"}
+
+    # ---- 小红书 (Playwright，需先扫码登录) ----
+    if "xiaohongshu" in platforms:
+        keywords = product_config.get("xiaohongshu_keywords", [])
+        if keywords:
+            logger.info("[%s] 开始采集 小红书 (Playwright)...", product_name)
+            try:
+                scraper = XiaohongshuScraper(headless=True, min_interval=min_interval)
+                scraper._start()
+                if not scraper.is_logged_in():
+                    msg = "小红书未登录，请先运行 python xhs_login.py 完成扫码登录"
+                    scraper.close()
+                    result["platforms"]["xiaohongshu"] = {"items": [], "count": 0, "error": msg}
+                    logger.warning("[%s] %s", product_name, msg)
+                else:
+                    all_items = []
+                    for kw in keywords:
+                        items = scraper.search(
+                            kw, max_pages=max_pages, product=product_key
+                        )
+                        all_items.extend(items)
+                    scraper.close()
+                    result["platforms"]["xiaohongshu"] = {
+                        "items": all_items,
+                        "count": len(all_items),
+                    }
+                    logger.info("[%s] 小红书: %d 条", product_name, len(all_items))
+            except Exception as exc:
+                logger.error("[%s] 小红书采集失败: %s", product_name, exc)
+                result["platforms"]["xiaohongshu"] = {"items": [], "count": 0, "error": str(exc)}
+        else:
+            result["platforms"]["xiaohongshu"] = {"items": [], "count": 0, "note": "no keywords"}
 
     # ---- 汇总 ----
     total = sum(
@@ -429,18 +583,16 @@ def run(
     platforms: list[str] = None,
     max_pages: int = DEFAULT_MAX_PAGES,
     min_interval: float = DEFAULT_MIN_INTERVAL,
+    full: bool = False,
+    since_override: str = None,
 ) -> dict:
     """
-    主运行函数。
+    主运行函数（支持增量采集）。
 
-    Args:
-        products: 产品 key 列表，None 表示全部。
-        platforms: 平台列表，默认全部。
-        max_pages: 每个平台最大翻页数。
-        min_interval: 请求间隔（秒）。
-
-    Returns:
-        完整结果字典。
+    增量逻辑：
+      - 首次（无状态记录 或 指定 --full）：全量采集（更大翻页数），写入累计主数据并记录本次日期。
+      - 之后：仅保留「新增」条目（按唯一 id 去重 + 按发布时间窗口过滤），
+        合并进累计主数据，另存一份 <product>_new.json 供周报只分析新增内容。
     """
     if products is None:
         products = list(PRODUCTS.keys())
@@ -448,6 +600,10 @@ def run(
         platforms = PLATFORM_GROUPS["all"]
 
     date_str = datetime.now(TZ_BEIJING).strftime("%Y%m%d")
+    today = datetime.now(TZ_BEIJING).strftime("%Y-%m-%d")
+    state = load_state()
+    products_state = state.setdefault("products", {})
+
     all_results = {
         "run_metadata": {
             "run_at": datetime.now(TZ_BEIJING).isoformat(),
@@ -471,20 +627,67 @@ def run(
         logger.info("开始采集: %s (%s)", config["name"], product_key)
         logger.info("=" * 60)
 
+        # 判断是否全量：无历史状态记录 或 显式 --full
+        last_date = products_state.get(product_key)
+        is_full = bool(full) or (last_date is None)
+        pages = (DEFAULT_FULL_PAGES if max_pages == DEFAULT_MAX_PAGES else max_pages) if is_full else max_pages
+        since = since_override or (None if is_full else last_date)
+        if is_full:
+            logger.info("[%s] 全量采集模式（翻页: %d）", product_key, pages)
+        else:
+            logger.info("[%s] 增量采集模式（since=%s，翻页: %d）", product_key, since, pages)
+
         try:
             product_result = scrape_product(
                 product_key,
                 config,
                 platforms=platforms,
-                max_pages=max_pages,
+                max_pages=pages,
                 min_interval=min_interval,
             )
             all_results["products"][product_key] = product_result
 
-            # 每个产品单独保存
+            # ---- 先加载累计主数据（含从历史快照播种）----
+            # 必须在保存本次快照之前调用：若今天日期与已清洗的快照同名，
+            # 先保存会用原始抓取结果覆盖已清洗快照，再播种会导致历史清洗成果丢失。
+            existing = load_master(product_key)
+            existing_ids = {it.get("id") for it in existing if it.get("id")}
+
+            # 本次历史快照（完整 dump，便于追溯）
             filename = f"{product_key}_{date_str}.json"
-            filepath = os.path.join(DATA_DIR, "products", filename)
-            save_json(product_result, filepath)
+            save_json(product_result, os.path.join(DATA_DIR, "products", filename))
+
+            # ---- 增量过滤 + 去重合并 ----
+            scraped_items = _flatten_platform_items(product_result["platforms"])
+            new_items = []
+            for it in scraped_items:
+                pid = it.get("id")
+                if not pid or pid in existing_ids:
+                    continue
+                if since and not _within_window(it, since):
+                    continue
+                existing_ids.add(pid)
+                new_items.append(it)
+
+            merged = existing + new_items
+            save_master(product_key, merged)
+
+            # 记录本次采集日期（下一次从这里开始增量）
+            products_state[product_key] = today
+            save_state(state)
+
+            # 新增切片（周报只分析这份）
+            save_json({
+                "product_key": product_key,
+                "product_name": config["name"],
+                "collected_at": datetime.now(TZ_BEIJING).isoformat(),
+                "is_full": is_full,
+                "since": since,
+                "count": len(new_items),
+                "items": new_items,
+            }, os.path.join(DATA_DIR, "products", f"{product_key}_new.json"))
+
+            logger.info("[%s] 本次新增 %d 条，累计 %d 条", product_key, len(new_items), len(merged))
 
         except Exception as exc:
             logger.error("[%s] 采集失败: %s", product_key, exc, exc_info=True)
@@ -548,6 +751,7 @@ def main():
   python run_scraper.py --platform ecommerce               # 仅电商平台
   python run_scraper.py --platform social --max-pages 5    # 社交平台，5页
   python run_scraper.py -p matepad-pro -s weibo -n 5       # 微博搜MatePad Pro，5页
+  python run_scraper.py -s xiaohongshu -n 3                # 小红书（需先 python xhs_login.py 登录）
         """,
     )
 
@@ -562,7 +766,7 @@ def main():
         "-s", "--platform",
         type=str,
         default="all",
-        help="数据平台。支持: all, ecommerce, social, 或逗号分隔的列表 (smzdm,zol,weibo,zhihu,bilibili,coolapk)",
+        help="数据平台。支持: all, ecommerce, social, 或逗号分隔的列表 (smzdm,zol,weibo,zhihu,bilibili,coolapk,xiaohongshu)",
     )
     parser.add_argument(
         "-n", "--max-pages",
@@ -582,6 +786,17 @@ def main():
         default=None,
         help="数据输出目录。默认: sentiment-site/data/",
     )
+    parser.add_argument(
+        "--full",
+        action="store_true",
+        help="强制全量采集（忽略增量状态，重新搜集全部时间段资料）",
+    )
+    parser.add_argument(
+        "--since",
+        type=str,
+        default=None,
+        help="增量起点日期（YYYY-MM-DD）。一般无需指定，自动读取上次采集状态",
+    )
 
     args = parser.parse_args()
 
@@ -596,6 +811,7 @@ def main():
     print(f"平台: {platforms}")
     print(f"产品: {args.product or list(PRODUCTS.keys())}")
     print(f"翻页: {args.max_pages} 页/平台")
+    print(f"模式: {'全量' if args.full else '增量'}")
     print(f"输出: {DATA_DIR}")
     print()
 
@@ -604,6 +820,8 @@ def main():
         platforms=platforms,
         max_pages=args.max_pages,
         min_interval=args.interval,
+        full=args.full,
+        since_override=args.since,
     )
 
 
