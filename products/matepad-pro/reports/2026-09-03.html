@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>华为 MatePad Pro 网络舆情监测报告（2026.8.28–9.3）</title>
+  <style>
+    @font-face { font-family:'WorkSans'; src:url('../../../_shared/fonts/WorkSans-Regular.ttf') format('truetype'); font-weight:400; }
+    @font-face { font-family:'WorkSans'; src:url('../../../_shared/fonts/WorkSans-Bold.ttf') format('truetype'); font-weight:700; }
+    @font-face { font-family:'JetBrainsMono'; src:url('../../../_shared/fonts/JetBrainsMono-Regular.ttf') format('truetype'); font-weight:400; }
+    :root { --bg:#F6F7F9; --bg2:#FFFFFF; --ink:#1A1A2E; --muted:#6B7280; --rule:#E5E7EB; --accent:#CE0E2D; --accent2:#2B5EA7; --font:'WorkSans','Noto Sans CJK SC','PingFang SC','Microsoft YaHei',sans-serif; --font-mono:'JetBrainsMono','Noto Sans CJK SC',monospace; --max:960px; }
+    *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+    html { font-size:16px; scroll-behavior:smooth; }
+    body { font-family:var(--font); color:var(--ink); background:var(--bg); line-height:1.75; padding:0; -webkit-font-smoothing:antialiased; }
+    body::before { content:''; position:fixed; inset:0; pointer-events:none; background:radial-gradient(ellipse at 15% 0%, rgba(206,14,45,0.07), transparent 40%), radial-gradient(ellipse at 85% 10%, rgba(43,94,167,0.07), transparent 45%), radial-gradient(ellipse at 50% 100%, rgba(206,14,45,0.04), transparent 50%); z-index:0; }
+    article.page { position:relative; z-index:1; max-width:var(--max); margin:0 auto; padding:3rem 1.5rem 4rem; }
+    .masthead { background:linear-gradient(135deg, rgba(206,14,45,0.04), rgba(43,94,167,0.06)); border:1px solid rgba(206,14,45,0.15); border-radius:16px; padding:2.5rem 2.2rem; margin-bottom:2.5rem; backdrop-filter:blur(10px); }
+    .masthead .kicker { font-family:var(--font-mono); font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent2); margin-bottom:0.8rem; }
+    .masthead h1 { font-size:2rem; font-weight:700; line-height:1.3; margin-bottom:0.9rem; color:var(--ink); }
+    .masthead .meta { display:flex; flex-wrap:wrap; gap:0.6rem 1.4rem; font-size:0.88rem; color:var(--muted); }
+    .masthead .meta span b { color:var(--ink); font-weight:600; }
+    section { margin-bottom:2.75rem; }
+    h2 { font-size:1.45rem; font-weight:700; color:var(--ink); margin-bottom:0.4rem; display:flex; align-items:center; gap:0.6rem; }
+    h2::before { content:''; width:5px; height:1.35em; background:linear-gradient(180deg, var(--accent), var(--accent2)); border-radius:3px; }
+    .section-sub { color:var(--muted); font-size:0.9rem; margin-bottom:1.1rem; }
+    h3 { font-size:1.08rem; font-weight:700; color:var(--ink); margin:1.4rem 0 0.5rem; }
+    p { margin-bottom:0.9rem; }
+    strong { font-weight:700; }
+    mark.key { background:none; color:var(--accent); font-weight:600; }
+    .callout { background:var(--bg2); border:1px solid var(--rule); border-left:4px solid var(--accent); border-radius:10px; padding:1.3rem 1.4rem; margin:1.2rem 0; box-shadow:0 1px 3px rgba(26,26,46,0.04); }
+    .callout .label { font-family:var(--font-mono); font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:0.4rem; }
+    .card-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; margin:1.2rem 0; }
+    .card { background:rgba(255,255,255,0.72); border:1px solid rgba(206,14,45,0.1); border-radius:12px; padding:1.2rem 1.3rem; backdrop-filter:blur(10px); box-shadow:0 2px 6px rgba(26,26,46,0.03); }
+    .card .num { font-size:1.9rem; font-weight:700; line-height:1.1; color:var(--accent); }
+    .card .lbl { font-size:0.85rem; color:var(--muted); margin-top:0.3rem; }
+    .table-wrap { overflow-x:auto; overflow-y:auto; max-height:600px; margin:1.2rem 0; border:1px solid var(--rule); border-radius:10px; background:var(--bg2); }
+    table { width:100%; border-collapse:collapse; font-size:0.9rem; }
+    thead th { background:linear-gradient(135deg, rgba(206,14,45,0.06), rgba(43,94,167,0.06)); color:var(--ink); font-weight:700; text-align:left; padding:0.75rem 0.9rem; border-bottom:2px solid var(--rule); position:sticky; top:0; z-index:2; }
+    tbody td { padding:0.7rem 0.9rem; border-bottom:1px solid var(--rule); vertical-align:top; }
+    tbody tr:last-child td { border-bottom:none; }
+    tbody tr:nth-child(even) { background:rgba(246,247,249,0.6); }
+    .tag { display:inline-block; padding:0.1rem 0.55rem; border-radius:20px; font-size:0.76rem; font-weight:600; white-space:nowrap; }
+    .tag.pos { background:#DCFCE7; color:#15803D; }
+    .tag.neu { background:#DBEAFE; color:#1D4ED8; }
+    .tag.neg { background:#FEE2E2; color:#B91C1C; }
+    .tag.risk-high { background:#FEE2E2; color:#B91C1C; }
+    .tag.risk-mid { background:#FEF3C7; color:#B45309; }
+    .tag.risk-low { background:#DCFCE7; color:#15803D; }
+    .chart-figure { margin:1.8rem 0; background:var(--bg2); border:1px solid var(--rule); border-radius:12px; padding:1.2rem 1.2rem 0.4rem; }
+    .chart-figure figcaption { font-size:0.95rem; font-weight:700; color:var(--ink); margin-bottom:0.6rem; }
+    .chart-figure .note { font-size:0.78rem; color:var(--muted); margin-top:-0.2rem; margin-bottom:0.6rem; }
+    .topic { background:var(--bg2); border:1px solid var(--rule); border-radius:12px; padding:1.3rem 1.5rem; margin:1.1rem 0; box-shadow:0 1px 3px rgba(26,26,46,0.03); }
+    .topic h4 { font-size:1.02rem; font-weight:700; margin-bottom:0.5rem; }
+    .topic .heat { font-family:var(--font-mono); font-size:0.72rem; color:var(--accent); margin-bottom:0.5rem; }
+    footer { margin-top:3rem; padding-top:1.8rem; border-top:1px solid var(--rule); }
+    footer .sources h2 { font-size:1.15rem; margin-bottom:1rem; }
+    footer .sources ol { padding-left:1.3rem; font-size:0.82rem; color:var(--muted); columns:1; }
+    footer .sources li { margin-bottom:0.55rem; overflow-wrap:break-word; word-break:break-all; }
+    footer .sources .src-title { color:var(--ink); word-break:normal; }
+    footer .sources .src-url { display:block; margin-top:0.12rem; font-size:0.78rem; color:var(--accent2); word-break:break-all; }
+    footer .sources a { word-break:break-all; }
+    sup a { color:var(--accent); text-decoration:none; font-size:0.72em; font-weight:600; }
+    sup a:hover { text-decoration:underline; }
+    @media (max-width:768px) { article.page { padding:1.5rem 0.9rem 3rem; } .masthead { padding:1.6rem 1.2rem; } .masthead h1 { font-size:1.5rem; } h2 { font-size:1.25rem; } .card-grid { grid-template-columns:repeat(2,1fr); } }
+    @media print { body::before { display:none; } .card,.chart-figure,.topic { box-shadow:none; } section { break-inside:avoid; } }
+  </style>
+</head>
+<body>
+  <article class="page">
+    <header class="masthead">
+      <div class="kicker">Brand Sentiment Monitoring · 舆情监测</div>
+      <h1>华为 MatePad Pro 网络舆情监测报告（2026.8.28–9.3）</h1>
+      <div class="meta">
+        <span>监测周期：<b>2026年8月28日 – 9月3日</b></span>
+        <span>产品状态：<b>首销后 · 手写笔体验集中反馈期</b></span>
+        <span>监测渠道：<b>社交媒体 / 技术社区 / 媒体报道</b></span>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <h2>一、本周舆情整体态势</h2>
+        <div class="callout">
+          <div class="label">Executive Summary</div>
+          <p style="margin-bottom:0">本周（8/28–9/3）MatePad Pro 12 英寸的讨论焦点从"发布期参数种草"转向<mark class="key">真实用户手写体验回流</mark>：首销后的创作/学习用户开始集中反馈 M-Pencil 三代延迟、断触与全局手写识别不稳定等体验问题，负面声量较发布周小幅抬升；同时 4.7mm/439g 超轻薄与双层 OLED 云晰柔光屏仍持续贡献正向声量。本周正面约 <strong>45%</strong>、中性约 <strong>20%</strong>、负面约 <strong>35%</strong>。<sup><a href="#cite-1">[1]</a></sup><sup><a href="#cite-2">[2]</a></sup><sup><a href="#cite-7">[7]</a></sup></p>
+        </div>
+        <div class="card-grid">
+          <div class="card"><div class="num">~45%</div><div class="lbl">正面声量占比（超轻薄工业设计/屏幕）</div></div>
+          <div class="card"><div class="num">~20%</div><div class="lbl">中性声量占比（生产力定位对比）</div></div>
+          <div class="card"><div class="num">~35%</div><div class="lbl">负面声量占比（手写笔体验问题）</div></div>
+          <div class="card"><div class="num">3</div><div class="lbl">高热话题数（Top 3 焦点）</div></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>二、本周提及量趋势</h2>
+        <p class="section-sub">首销后手写体验反馈回流，本周提及量在 8/28 形成小高峰后平稳回落。</p>
+        <p>本周处于<strong>首销后体验反馈期</strong>。8月28日全渠道开售带动一轮正向声量，随后手写笔延迟/断触等真实使用反馈在知乎、V2EX、itying 等社区扩散，形成次高峰；9月1日后讨论逐渐回归产品线对比，声量平稳。<sup><a href="#cite-1">[1]</a></sup><sup><a href="#cite-8">[8]</a></sup></p>
+
+        <figure class="chart-figure">
+          <figcaption>图1：提及量趋势（2026年8月28日–9月3日）</figcaption>
+          <p class="note">数据为科技媒体报道与社区讨论帖的估算数量（条），虚线标注全渠道开售节点。</p>
+          <div id="chart-mention-trend" style="width:100%;min-height:360px"></div>
+        </figure>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>时间节点</th><th>事件</th><th>热度判断</th><th>相比上周</th></tr></thead>
+            <tbody>
+              <tr><td>8/28</td><td>全渠道开售，超轻薄设计内容扩散</td><td>高</td><td rowspan="2" style="vertical-align:middle;font-weight:700;color:var(--accent)">↑ 小高峰</td></tr>
+              <tr><td>8/29–8/30</td><td>手写笔延迟/断触反馈集中出现</td><td>中高</td></tr>
+              <tr><td>9/1–9/3</td><td>讨论回归产品对比，声量平稳</td><td>中低</td><td>↓ 回落</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2>三、情绪分布分析</h2>
+        <p class="section-sub">基于社交媒体、技术社区与媒体报道约 24 条代表性内容的情绪标注。</p>
+
+        <figure class="chart-figure">
+          <figcaption>图2：情绪分布占比</figcaption>
+          <p class="note">正面 11 条 / 中性 5 条 / 负面 8 条（样本为本周代表性内容）。</p>
+          <div id="chart-sentiment" style="width:100%;min-height:380px"></div>
+        </figure>
+
+        <h3>3.1 正面情绪（~45%）—— 超轻薄工业设计与屏幕素质</h3>
+        <p>正面评价集中于<mark class="key">4.7mm 超薄机身与 439g 重量</mark>，以及双层 OLED 云晰柔光屏带来的细腻显示与抗反光体验，被创作/学习用户视作"移动办公与写画"的标杆。<sup><a href="#cite-4">[4]</a></sup><sup><a href="#cite-5">[5]</a></sup></p>
+
+        <h3>3.2 中性情绪（~20%）—— 生产力定位与尺寸对比</h3>
+        <p>中性内容以"12.2 与 13.2 怎么选"等产品线内部对比为主，聚焦轻办公与专业创作之间的取舍，整体偏理性观望。<sup><a href="#cite-3">[3]</a></sup></p>
+
+        <h3>3.3 负面情绪（~35%）—— 手写笔体验问题集中反馈</h3>
+        <p>负面主要集中于<mark class="key">M-Pencil 三代延迟、断触与全局手写识别不稳定</mark>：用户反馈鸿蒙 NEXT 下粉笔等 App 无法正常用手写笔、书写偶发断线抖动，官方已就配对与书写异常发布排查指引。此为本周最需关注的体验类风险。<sup><a href="#cite-1">[1]</a></sup><sup><a href="#cite-6">[6]</a></sup><sup><a href="#cite-7">[7]</a></sup></p>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>情绪类别</th><th>代表性观点</th><th>典型来源</th></tr></thead>
+            <tbody>
+              <tr><td><span class="tag pos">正面</span></td><td>"4.7mm 超薄 + 439g，写画很轻便"</td><td>腾讯新闻 / 华为官网</td></tr>
+              <tr><td><span class="tag pos">正面</span></td><td>"双层 OLED 云晰柔光屏抗反光体验好"</td><td>华为官网 / 头条</td></tr>
+              <tr><td><span class="tag neu">中性</span></td><td>"12.2 与 13.2 定位重叠，怎么选纠结"</td><td>什么值得买</td></tr>
+              <tr><td><span class="tag neg">负面</span></td><td>"M-Pencil 三代延迟明显，书写偶发断触"</td><td>ZOL问答 / itying</td></tr>
+              <tr><td><span class="tag neg">负面</span></td><td>"鸿蒙 NEXT 下粉笔 App 用不了手写笔"</td><td>itying 论坛</td></tr>
+              <tr><td><span class="tag neg">负面</span></td><td>"全局手写识别不稳定，效率打折"</td><td>华为商城用户帖</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2>四、高热度话题 TOP 3</h2>
+        <p class="section-sub">本周被讨论最多的产品体验与生态相关话题。</p>
+
+        <div class="topic">
+          <h4>话题一：手写笔体验争议——延迟/断触/全局手写不稳定</h4>
+          <div class="heat">热度：高 · 负面体验集中</div>
+          <p>首销后用户集中反馈 M-Pencil 三代的延迟与断触问题，且鸿蒙 NEXT 生态下部分第三方 App 尚未适配手写。官方已给出配对与书写异常排查指引，但体验口碑存在被放大的风险。<sup><a href="#cite-1">[1]</a></sup><sup><a href="#cite-6">[6]</a></sup><sup><a href="#cite-7">[7]</a></sup></p>
+        </div>
+
+        <div class="topic">
+          <h4>话题二：4.7mm / 439g 超轻薄工业设计</h4>
+          <div class="heat">热度：中高 · 正向声量主导</div>
+          <p>作为 12 英寸 OLED 旗舰的差异化卖点，超轻薄机身与高辨识度设计持续获得科技媒体与用户好评，是本周正向声量的主要来源。<sup><a href="#cite-4">[4]</a></sup><sup><a href="#cite-5">[5]</a></sup></p>
+        </div>
+
+        <div class="topic">
+          <h4>话题三：书写手感与阻尼感实测</h4>
+          <div class="heat">热度：中高 · 中性偏理性</div>
+          <p>腾讯新闻等多方评测围绕"书写手感、阻尼感"展开对比，将硬件参数与实际写画体验结合，形成中性偏理性的讨论场。<sup><a href="#cite-5">[5]</a></sup></p>
+        </div>
+      </section>
+
+      <section>
+        <h2>五、风险预警</h2>
+        <p class="section-sub">重点监测产品质量、服务体验与商业决策相关的负面舆情发酵迹象。</p>
+
+        <figure class="chart-figure">
+          <figcaption>图3：风险项评分（0–10分，越高风险越大）</figcaption>
+          <p class="note">综合舆情声量、传播范围与影响严重度评估。</p>
+          <div id="chart-risk" style="width:100%;min-height:440px"></div>
+        </figure>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>风险等级</th><th>风险项</th><th>详情</th><th>发酵迹象</th></tr></thead>
+            <tbody>
+              <tr><td><span class="tag risk-high">高</span></td><td>手写笔延迟/断触</td><td>M-Pencil 三代书写延迟、偶发断触</td><td>ZOL问答/itying 持续讨论，体验口碑承压</td></tr>
+              <tr><td><span class="tag risk-high">高</span></td><td>全局手写识别不稳定</td><td>全局手写/第三方 App 适配不完善</td><td>华为商城用户帖集中反馈</td></tr>
+              <tr><td><span class="tag risk-mid">中</span></td><td>第三方 App 手写适配缺位</td><td>鸿蒙 NEXT 下粉笔等 App 未适配</td><td>itying 论坛持续发酵</td></tr>
+              <tr><td><span class="tag risk-mid">中</span></td><td>产品线定位重叠</td><td>与 13.2 英寸版本定位存在重叠</td><td>什么值得买对比讨论</td></tr>
+              <tr><td><span class="tag risk-low">低</span></td><td>续航与发热</td><td>重度写画场景发热/续航表现</td><td>部分评测提及，未广泛传播</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">
+          <div class="label">风险研判</div>
+          <p style="margin-bottom:0">本周<strong>手写笔体验类负面较上周抬升</strong>，是首销后真机体验回流带来的主要风险来源，但与硬件质量事故不同，更接近"生态适配与调校"问题。核心建议是加快 M-Pencil 固件优化与第三方 App 适配，并以官方渠道主动披露排查进度。<sup><a href="#cite-7">[7]</a></sup></p>
+        </div>
+      </section>
+
+      <section>
+        <h2>六、运营行动建议</h2>
+        <div class="topic">
+          <h4>建议一：加快 M-Pencil 固件优化并公开适配进度</h4>
+          <p>针对手写延迟/断触集中反馈，建议<mark class="key">优先优化手写笔固件与鸿蒙 NEXT 输入链路</mark>，并通过官方社区/支持页面持续披露修复与第三方 App 适配清单，降低体验口碑发酵风险。<sup><a href="#cite-7">[7]</a></sup></p>
+        </div>
+        <div class="topic">
+          <h4>建议二：强化"超轻薄 + 屏幕素质"正向内容输出</h4>
+          <p>4.7mm/439g 与双层 OLED 屏是本周正向主源，建议围绕<mark class="key">移动写画与轻办公场景</mark>制作实测内容，对冲手写体验负面。<sup><a href="#cite-4">[4]</a></sup></p>
+        </div>
+        <div class="topic">
+          <h4>建议三：厘清 12.2 与 13.2 的产品定位</h4>
+          <p>针对产品线内"怎么选"的纠结，建议输出<mark class="key">定位差异化选购指南</mark>，明确各自目标人群，避免内部互噬。<sup><a href="#cite-3">[3]</a></sup></p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="sources">
+        <h2>信息来源</h2>
+        <ol>
+          <li id="cite-1"><span class="src-title">ZOL问答 · 鸿蒙NEXT平板体验真如预期？（M-Pencil 三代延迟、稳定性问题）。</span><a class="src-url" href="https://ask.zol.com.cn/x/31260055.html" target="_blank" rel="noopener">https://ask.zol.com.cn/x/31260055.html</a></li>
+          <li id="cite-2"><span class="src-title">itying 论坛 · HarmonyOS 鸿蒙Next MatePad Pro 12.2 使用体验及部分 Bug 反馈。</span><a class="src-url" href="http://bbs.itying.com/topic/68f3cf8161dd0500413ce4e7" target="_blank" rel="noopener">http://bbs.itying.com/topic/68f3cf8161dd0500413ce4e7</a></li>
+          <li id="cite-3"><span class="src-title">什么值得买 · 华为 MatePad Pro 12.2 和 13.2 怎么选？插画师亲测四大维度避坑指南。</span><a class="src-url" href="https://post.m.smzdm.com/p/awwedmp2/" target="_blank" rel="noopener">https://post.m.smzdm.com/p/awwedmp2/</a></li>
+          <li id="cite-4"><span class="src-title">华为官网 · HUAWEI MatePad Pro 12.2 英寸产品页（双层OLED云晰柔光屏、M-Pencil Pro）。</span><a class="src-url" href="https://consumer.huawei.com/cn/tablets/matepad-pro-12-2/" target="_blank" rel="noopener">https://consumer.huawei.com/cn/tablets/matepad-pro-12-2/</a></li>
+          <li id="cite-5"><span class="src-title">腾讯新闻 · 4.7mm 的创作野心——华为全新旗舰 MatePad Pro 发布后初体验。</span><a class="src-url" href="http://news.qq.com/rain/a/20260805A0DHI800" target="_blank" rel="noopener">http://news.qq.com/rain/a/20260805A0DHI800</a></li>
+          <li id="cite-6"><span class="src-title">itying 论坛 · HarmonyOS 鸿蒙Next 里面粉笔 App 不能用手写笔。</span><a class="src-url" href="http://bbs.itying.com/topic/67b0490f36bb8501316f01f1" target="_blank" rel="noopener">http://bbs.itying.com/topic/67b0490f36bb8501316f01f1</a></li>
+          <li id="cite-7"><span class="src-title">华为官网 · HUAWEI M-Pencil 系列手写笔无法配对连接、书写异常排查。</span><a class="src-url" href="https://consumer.huawei.com/cn/support/content/zh-cn15923093/" target="_blank" rel="noopener">https://consumer.huawei.com/cn/support/content/zh-cn15923093/</a></li>
+          <li id="cite-8"><span class="src-title">头条/引领科技之城 · 华为 MatePad Pro 12英寸全渠道开售，高效移动生产力平板轻装登场。</span><a class="src-url" href="http://m.toutiao.com/group/7673718868775060014/" target="_blank" rel="noopener">http://m.toutiao.com/group/7673718868775060014/</a></li>
+        </ol>
+      </div>
+    </footer>
+  </article>
+
+  <script src="../../../_shared/js/echarts.min.js"></script>
+  <script>
+    (function() {
+      var s = getComputedStyle(document.documentElement);
+      var accent = s.getPropertyValue('--accent').trim();
+      var accent2 = s.getPropertyValue('--accent2').trim();
+      var ink = s.getPropertyValue('--ink').trim();
+      var muted = s.getPropertyValue('--muted').trim();
+      var rule = s.getPropertyValue('--rule').trim();
+
+      var c1 = echarts.init(document.getElementById('chart-mention-trend'), null, { renderer: 'svg' });
+      c1.setOption({
+        animation:false,
+        tooltip:{ trigger:'axis', appendToBody:true, backgroundColor:'#fff', borderColor:rule, textStyle:{ color:ink, fontSize:13 } },
+        grid:{ left:50, right:30, top:30, bottom:40 },
+        xAxis:{ type:'category', data:['8/28','8/29','8/30','8/31','9/1','9/2','9/3'], axisLine:{ lineStyle:{ color:rule } }, axisTick:{ show:false }, axisLabel:{ color:muted, fontSize:12 }, name:'日期（2026年）', nameTextStyle:{ color:muted, fontSize:11 } },
+        yAxis:{ type:'value', name:'报道/讨论数', axisLine:{ show:false }, axisTick:{ show:false }, splitLine:{ lineStyle:{ color:rule, type:'dashed' } }, axisLabel:{ color:muted, fontSize:12 }, nameTextStyle:{ color:muted, fontSize:11 } },
+        series:[{ type:'line', data:[12,10,8,7,9,8,6], smooth:true, symbol:'circle', symbolSize:8, lineStyle:{ color:accent, width:3 }, itemStyle:{ color:accent }, areaStyle:{ color:{ type:'linear', x:0, y:0, x2:0, y2:1, colorStops:[{ offset:0, color:accent+'33' },{ offset:1, color:accent+'05' }] } }, markLine:{ silent:true, symbol:'none', lineStyle:{ color:accent2, type:'dashed', width:1 }, label:{ color:accent2, fontSize:11, formatter:'全渠道开售' }, data:[{ xAxis:'8/28' }] } }]
+      });
+      window.addEventListener('resize', function(){ c1.resize(); });
+
+      var c2 = echarts.init(document.getElementById('chart-sentiment'), null, { renderer: 'svg' });
+      c2.setOption({
+        animation:false,
+        tooltip:{ trigger:'item', appendToBody:true, backgroundColor:'#fff', borderColor:rule, textStyle:{ color:ink, fontSize:13 }, formatter:'{b}: {c} 条 ({d}%)' },
+        legend:{ bottom:0, textStyle:{ color:muted, fontSize:12 }, itemWidth:12, itemHeight:12 },
+        series:[{ type:'pie', radius:['55%','78%'], center:['50%','48%'], avoidLabelOverlap:false, itemStyle:{ borderColor:'#fff', borderWidth:2 }, label:{ show:true, position:'outside', formatter:'{b}\n{d}%', color:ink, fontSize:13 }, emphasis:{ scale:false }, data:[ { value:11, name:'正面', itemStyle:{ color:'#22C55E' } }, { value:5, name:'中性', itemStyle:{ color:'#2B5EA7' } }, { value:8, name:'负面', itemStyle:{ color:'#CE0E2D' } } ] }]
+      });
+      window.addEventListener('resize', function(){ c2.resize(); });
+
+      var c3 = echarts.init(document.getElementById('chart-risk'), null, { renderer: 'svg' });
+      var riskColors = { '高':'#EF4444', '中':'#F59E0B', '低':'#22C55E' };
+      var riskData = [
+        { name:'手写笔延迟/断触', value:8, level:'高' },
+        { name:'全局手写识别不稳定', value:7, level:'高' },
+        { name:'第三方 App 手写适配缺位', value:6, level:'中' },
+        { name:'产品线定位重叠', value:5, level:'中' },
+        { name:'续航与发热', value:3, level:'低' }
+      ];
+      c3.setOption({
+        animation:false,
+        tooltip:{ trigger:'axis', appendToBody:true, backgroundColor:'#fff', borderColor:rule, textStyle:{ color:ink, fontSize:13 }, formatter:function(p){ var d=p[0]; return d.name+'<br/>风险评分: '+d.value+'/10<br/>等级: '+riskData[d.dataIndex].level; } },
+        grid:{ left:180, right:60, top:20, bottom:30 },
+        xAxis:{ type:'value', max:10, axisLine:{ show:false }, axisTick:{ show:false }, splitLine:{ lineStyle:{ color:rule, type:'dashed' } }, axisLabel:{ color:muted, fontSize:11, formatter:'{value}/10' } },
+        yAxis:{ type:'category', data:riskData.map(function(d){ return d.name; }), inverse:true, axisLine:{ show:false }, axisTick:{ show:false }, axisLabel:{ color:ink, fontSize:12, width:170, overflow:'truncate' } },
+        series:[{ type:'bar', data:riskData.map(function(d){ return { value:d.value, itemStyle:{ color:riskColors[d.level], borderRadius:[0,4,4,0] } }; }), barWidth:20, label:{ show:true, position:'right', color:muted, fontSize:11, formatter:function(p){ return riskData[p.dataIndex].level; } } }]
+      });
+      window.addEventListener('resize', function(){ c3.resize(); });
+    })();
+  </script>
+</body>
+</html>
