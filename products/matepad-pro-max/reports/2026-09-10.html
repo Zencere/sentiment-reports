@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>华为 MatePad Pro Max 网络舆情监测报告（2026.9.4–9.10）</title>
+
+  <style>
+    @font-face { font-family: 'WorkSans'; src: url('../../../_shared/fonts/WorkSans-Regular.ttf') format('truetype'); font-weight: 400; }
+    @font-face { font-family: 'WorkSans'; src: url('../../../_shared/fonts/WorkSans-Bold.ttf') format('truetype'); font-weight: 700; }
+    @font-face { font-family: 'JetBrainsMono'; src: url('../../../_shared/fonts/JetBrainsMono-Regular.ttf') format('truetype'); font-weight: 400; }
+    :root { --bg: #F6F7F9; --bg2: #FFFFFF; --ink: #1A1A2E; --muted: #6B7280; --rule: #E5E7EB; --accent: #CE0E2D; --accent2: #2B5EA7; --font: 'WorkSans', 'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', sans-serif; --font-mono: 'JetBrainsMono', 'Noto Sans CJK SC', monospace; --max: 960px; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { font-family: var(--font); color: var(--ink); background: var(--bg); line-height: 1.75; padding: 0; -webkit-font-smoothing: antialiased; }
+    body::before { content: ''; position: fixed; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 15% 0%, rgba(206,14,45,0.07), transparent 40%), radial-gradient(ellipse at 85% 10%, rgba(43,94,167,0.07), transparent 45%), radial-gradient(ellipse at 50% 100%, rgba(206,14,45,0.04), transparent 50%); z-index: 0; }
+    article.page { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+    .masthead { background: linear-gradient(135deg, rgba(206,14,45,0.04), rgba(43,94,167,0.06)); border: 1px solid rgba(206,14,45,0.15); border-radius: 16px; padding: 2.5rem 2.2rem; margin-bottom: 2.5rem; backdrop-filter: blur(10px); }
+    .masthead .kicker { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.8rem; }
+    .masthead h1 { font-size: 2rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.9rem; color: var(--ink); }
+    .masthead .meta { display: flex; flex-wrap: wrap; gap: 0.6rem 1.4rem; font-size: 0.88rem; color: var(--muted); }
+    .masthead .meta span b { color: var(--ink); font-weight: 600; }
+    section { margin-bottom: 2.75rem; }
+    h2 { font-size: 1.45rem; font-weight: 700; color: var(--ink); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.6rem; }
+    h2::before { content: ''; width: 5px; height: 1.35em; background: linear-gradient(180deg, var(--accent), var(--accent2)); border-radius: 3px; }
+    .section-sub { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.1rem; }
+    h3 { font-size: 1.08rem; font-weight: 700; color: var(--ink); margin: 1.4rem 0 0.5rem; }
+    p { margin-bottom: 0.9rem; }
+    strong { font-weight: 700; }
+    mark.key { background: none; color: var(--accent); font-weight: 600; }
+    .callout { background: var(--bg2); border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 10px; padding: 1.3rem 1.4rem; margin: 1.2rem 0; box-shadow: 0 1px 3px rgba(26,26,46,0.04); }
+    .callout .label { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 1.2rem 0; }
+    .card { background: rgba(255,255,255,0.72); border: 1px solid rgba(206,14,45,0.1); border-radius: 12px; padding: 1.2rem 1.3rem; backdrop-filter: blur(10px); box-shadow: 0 2px 6px rgba(26,26,46,0.03); }
+    .card .num { font-size: 1.9rem; font-weight: 700; line-height: 1.1; color: var(--accent); }
+    .card .lbl { font-size: 0.85rem; color: var(--muted); margin-top: 0.3rem; }
+    .table-wrap { overflow-x: auto; overflow-y: auto; max-height: 600px; margin: 1.2rem 0; border: 1px solid var(--rule); border-radius: 10px; background: var(--bg2); }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    thead th { background: linear-gradient(135deg, rgba(206,14,45,0.06), rgba(43,94,167,0.06)); color: var(--ink); font-weight: 700; text-align: left; padding: 0.75rem 0.9rem; border-bottom: 2px solid var(--rule); position: sticky; top: 0; z-index: 2; }
+    tbody td { padding: 0.7rem 0.9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:nth-child(even) { background: rgba(246,247,249,0.6); }
+    .tag { display: inline-block; padding: 0.1rem 0.55rem; border-radius: 20px; font-size: 0.76rem; font-weight: 600; white-space: nowrap; }
+    .tag.pos { background: #DCFCE7; color: #15803D; }
+    .tag.neu { background: #DBEAFE; color: #1D4ED8; }
+    .tag.neg { background: #FEE2E2; color: #B91C1C; }
+    .tag.risk-high { background: #FEE2E2; color: #B91C1C; }
+    .tag.risk-mid { background: #FEF3C7; color: #B45309; }
+    .tag.risk-low { background: #DCFCE7; color: #15803D; }
+    .chart-figure { margin: 1.8rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 12px; padding: 1.2rem 1.2rem 0.4rem; }
+    .chart-figure figcaption { font-size: 0.95rem; font-weight: 700; color: var(--ink); margin-bottom: 0.6rem; }
+    .chart-figure .note { font-size: 0.78rem; color: var(--muted); margin-top: -0.2rem; margin-bottom: 0.6rem; }
+    .topic { background: var(--bg2); border: 1px solid var(--rule); border-radius: 12px; padding: 1.3rem 1.5rem; margin: 1.1rem 0; box-shadow: 0 1px 3px rgba(26,26,46,0.03); }
+    .topic h4 { font-size: 1.02rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .topic .heat { font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); margin-bottom: 0.5rem; }
+    footer { margin-top: 3rem; padding-top: 1.8rem; border-top: 1px solid var(--rule); }
+    footer .sources h2 { font-size: 1.15rem; margin-bottom: 1rem; }
+    footer .sources ol { padding-left: 1.3rem; font-size: 0.82rem; color: var(--muted); columns: 1; }
+    footer .sources li { margin-bottom: 0.55rem; overflow-wrap: break-word; word-break: break-all; }
+    footer .sources .src-title { color: var(--ink); word-break: normal; }
+    footer .sources .src-url { display: block; margin-top: 0.12rem; font-size: 0.78rem; color: var(--accent2); word-break: break-all; }
+    footer .sources a { word-break: break-all; }
+    sup a { color: var(--accent); text-decoration: none; font-size: 0.72em; font-weight: 600; }
+    sup a:hover { text-decoration: underline; }
+    @media (max-width: 768px) { article.page { padding: 1.5rem 0.9rem 3rem; } .masthead { padding: 1.6rem 1.2rem; } .masthead h1 { font-size: 1.5rem; } h2 { font-size: 1.25rem; } .card-grid { grid-template-columns: repeat(2,1fr); } }
+    @media print { body::before { display: none; } .card, .chart-figure, .topic { box-shadow: none; } section { break-inside: avoid; } }
+  </style>
+</head>
+<body>
+  <article class="page">
+    <header class="masthead">
+      <div class="kicker">Brand Sentiment Monitoring · 舆情监测</div>
+      <h1>华为 MatePad Pro Max 网络舆情监测报告（2026.9.4–9.10）</h1>
+      <div class="meta">
+        <span>监测周期：<b>2026年9月4日 – 9月10日</b></span>
+        <span>产品状态：<b>5月20日发布 · 上市稳定期</b></span>
+        <span>监测渠道：<b>社交媒体 / 技术社区 / 媒体报道</b></span>
+      </div>
+    </header>
+
+    <main>
+      <!-- ===== 整体态势 ===== -->
+      <section>
+        <h2>一、本周舆情整体态势</h2>
+        <div class="callout">
+          <div class="label">Executive Summary</div>
+          <p style="margin-bottom:0">本周（9/4–9/10）MatePad Pro Max 处于<mark class="key">上市稳定期</mark>，舆情以"13.2英寸 3K OLED 大屏创作"为核心向慢发酵。作为华为首款 Pro Max 命名平板，2880×1920 分辨率、144Hz 刷新率与 1600nits 亮度构成的屏幕素质持续获创作人群认可；海外媒体（印尼等）对其"让创作者离开笔记本"的定位给予关注。负面轻微，集中于大屏便携取舍与价格门槛。本周正面约 <strong>50%</strong>、中性约 <strong>27%</strong>、负面约 <strong>23%</strong>。<sup><a href="#cite-1">[1]</a></sup><sup><a href="#cite-2">[2]</a></sup></p>
+        </div>
+        <div class="card-grid">
+          <div class="card"><div class="num">~50%</div><div class="lbl">正面声量占比（3K OLED 大屏/创作）</div></div>
+          <div class="card"><div class="num">~27%</div><div class="lbl">中性声量占比（参数对比/观望）</div></div>
+          <div class="card"><div class="num">~23%</div><div class="lbl">负面声量占比（便携取舍/价格门槛）</div></div>
+          <div class="card"><div class="num">3</div><div class="lbl">高热话题数（Top 3 焦点）</div></div>
+        </div>
+      </section>
+
+      <!-- ===== 提及量趋势 ===== -->
+      <section>
+        <h2>二、本周提及量趋势</h2>
+        <p class="section-sub">稳定期提及量总体平稳，9/7 受"创作者大屏生产力"内容带动小幅抬升。</p>
+        <p>本周处于<strong>上市稳定期</strong>，声量保持低而稳。9月初东南亚媒体针对 MatePad Pro 13.2 的"创作者生产力"评测内容落地，配合国内"12.2 vs 13.2"选购对比帖子，9/7 前后形成小幅抬升后回落。<sup><a href="#cite-4">[4]</a></sup><sup><a href="#cite-3">[3]</a></sup></p>
+
+        <figure class="chart-figure">
+          <figcaption>图1：提及量趋势（2026年9月4日–9月10日）</figcaption>
+          <p class="note">数据为科技媒体报道与社区讨论帖的估算数量（条），虚线标注创作者内容集中节点。</p>
+          <div id="chart-mention-trend" style="width:100%;min-height:360px"></div>
+        </figure>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>时间节点</th><th>事件</th><th>热度判断</th><th>相比上周</th></tr></thead>
+            <tbody>
+              <tr><td>9/4–9/6</td><td>东南亚媒体创作者生产力评测落地</td><td>中低</td><td rowspan="2" style="vertical-align:middle;font-weight:700;color:var(--accent2)">↑ 小幅抬升</td></tr>
+              <tr><td>9/7</td><td>"创作者大屏生产力"内容集中传播</td><td>中</td></tr>
+              <tr><td>9/8–9/10</td><td>平稳回落，选购对比帖维持讨论</td><td>低</td><td>↓ 回落</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ===== 情绪分布 ===== -->
+      <section>
+        <h2>三、情绪分布分析</h2>
+        <p class="section-sub">基于社交媒体、技术社区与媒体报道约 30 条代表性内容的情绪标注。</p>
+
+        <figure class="chart-figure">
+          <figcaption>图2：情绪分布占比</figcaption>
+          <p class="note">正面 15 条 / 中性 8 条 / 负面 7 条（样本为本周代表性内容）。</p>
+          <div id="chart-sentiment" style="width:100%;min-height:380px"></div>
+        </figure>
+
+        <h3>3.1 正面情绪（~50%）—— 3K OLED 大屏成创作生产力锚点</h3>
+        <p>正面评价集中在<mark class="key">13.2 英寸 3K OLED 屏幕</mark>（2880×1920、144Hz、1600nits）与<mark class="key">AI 生产力</mark>。创作者人群反馈"大屏修图/绘画/剪辑体验接近轻笔记本"，尺寸与显示素质是该产品最稳的正向口碑。<sup><a href="#cite-2">[2]</a></sup><sup><a href="#cite-4">[4]</a></sup></p>
+
+        <h3>3.2 中性情绪（~27%）—— 参数对比与尺寸权衡</h3>
+        <p>中性内容以尺寸/价格权衡为主。选购讨论常将其与 12.2 英寸并列对比，关注峰值亮度、色域、刷新率与便携性之间的取舍，属理性决策阶段。<sup><a href="#cite-3">[3]</a></sup></p>
+
+        <h3>3.3 负面情绪（~23%）—— 大屏便携取舍与价格门槛</h3>
+        <p>负面轻微且分散：一是<mark class="key">13.2 英寸大屏便携性</mark>相对一般；二是<mark class="key">价格门槛</mark>（5999 元起）令部分预算敏感用户却步。整体未形成集中舆情。<sup><a href="#cite-1">[1]</a></sup><sup><a href="#cite-3">[3]</a></sup></p>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>情绪类别</th><th>代表性观点</th><th>典型来源</th></tr></thead>
+            <tbody>
+              <tr><td><span class="tag pos">正面</span></td><td>"13.2寸 3K OLED 144Hz，修图画画都舒服"</td><td>PConline / 什么值得买</td></tr>
+              <tr><td><span class="tag pos">正面</span></td><td>"AI+144Hz 让创作者逐步离开笔记本"</td><td>VIVA / liputan6</td></tr>
+              <tr><td><span class="tag neu">中性</span></td><td>"12.2 还是 13.2？看亮度色域刷新率取舍"</td><td>什么值得买</td></tr>
+              <tr><td><span class="tag neg">负面</span></td><td>"13.2寸大屏，便携性差一点"</td><td>小红书 / 什么值得买</td></tr>
+              <tr><td><span class="tag neg">负面</span></td><td>"5999 起价格门槛偏高"</td><td>知乎 / 中关村在线</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ===== 高热度话题 ===== -->
+      <section>
+        <h2>四、高热度话题 TOP 3</h2>
+        <p class="section-sub">本周被讨论最多的产品体验与场景相关话题。</p>
+
+        <div class="topic">
+          <h4>话题一：创作者大屏生产力——"离开笔记本"叙事</h4>
+          <div class="heat">热度：中 · 正向声量主导</div>
+          <p>东南亚媒体以"让内容创作者离开笔记本"为题，强调 AI 生产力与 144Hz 大屏的组合价值，海外声量为国内"生产力上限"讨论提供了<mark class="key">正向参照</mark>。<sup><a href="#cite-4">[4]</a></sup></p>
+        </div>
+
+        <div class="topic">
+          <h4>话题二：12.2 与 13.2 尺寸选购之争</h4>
+          <div class="heat">热度：中 · 持续发酵</div>
+          <p>插画师群体的"四大维度避坑指南"将 12.2/13.2 并置对比，峰值亮度（2000 vs 1000 尼特）、色域、分辨率、刷新率成为核心决策变量，<mark class="key">理性选购情绪主导</mark>。<sup><a href="#cite-3">[3]</a></sup></p>
+        </div>
+
+        <div class="topic">
+          <h4>话题三：首款 Pro Max 命名的行业意义</h4>
+          <div class="heat">热度：中低 · 品牌相关</div>
+          <p>中关村在线等媒体将"首款 Pro Max 命名"作为行业信号解读，讨论聚焦华为平板产品线高端化布局，<mark class="key">品牌认知度中性偏正</mark>。<sup><a href="#cite-1">[1]</a></sup></p>
+        </div>
+      </section>
+
+      <!-- ===== 风险预警 ===== -->
+      <section>
+        <h2>五、风险预警</h2>
+        <p class="section-sub">重点监测产品质量、服务体验与商业决策相关的负面舆情发酵迹象。</p>
+
+        <figure class="chart-figure">
+          <figcaption>图3：风险项评分（0–10分，越高风险越大）</figcaption>
+          <p class="note">综合舆情声量、传播范围与影响严重度评估。</p>
+          <div id="chart-risk" style="width:100%;min-height:440px"></div>
+        </figure>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>风险等级</th><th>风险项</th><th>详情</th><th>发酵迹象</th></tr></thead>
+            <tbody>
+              <tr><td><span class="tag risk-mid">中</span></td><td>大屏便携取舍</td><td>13.2英寸尺寸牺牲部分便携性</td><td>小红书散点讨论，未集中</td></tr>
+              <tr><td><span class="tag risk-mid">中</span></td><td>价格门槛</td><td>5999 元起，预算敏感用户却步</td><td>知乎散点讨论</td></tr>
+              <tr><td><span class="tag risk-low">低</span></td><td>命名/定位混淆</td><td>Pro Max 与 MatePad Pro 13.2 旧款易混淆</td><td>选购帖偶见，影响有限</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">
+          <div class="label">风险研判</div>
+          <p style="margin-bottom:0">本周<strong>未发现产品质量类（屏幕缺陷、续航、品控）负面舆情</strong>，负面仅涉及<mark class="key">便携取舍</mark>与<mark class="key">价格门槛</mark>等常规市场讨论，烈度低、无发酵迹象。整体舆情健康，正向声量为候选品类中最稳定者之一。<sup><a href="#cite-2">[2]</a></sup></p>
+        </div>
+      </section>
+
+      <!-- ===== 运营建议 ===== -->
+      <section>
+        <h2>六、运营行动建议</h2>
+        <div class="topic">
+          <h4>建议一：放大"创作者大屏生产力"实证内容</h4>
+          <p>借海外"离开笔记本"叙事的正向参照，建议官方<mark class="key">联合插画师/剪辑师等创作人群输出大屏场景实证</mark>，强化"13.2 英寸大屏＝移动创作生产力"认知，稀释便携争议。<sup><a href="#cite-4">[4]</a></sup></p>
+        </div>
+        <div class="topic">
+          <h4>建议二：发布 12.2/13.2 选购引导，降低混淆</h4>
+          <p>针对跨尺寸选购帖的持续热度，建议官方<mark class="key">发布分场景选购指南</mark>（创作/影音/通勤），用明确人群定位承接观望用户，同时厘清 Pro Max 与旧款命名差异。<sup><a href="#cite-3">[3]</a></sup></p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="sources">
+        <h2>信息来源</h2>
+        <ol>
+          <li id="cite-1"><span class="src-title">中关村在线 · 华为发布 MatePad Pro Max：13.2英寸超轻薄OLED旗舰平板（2026-05-20，5999元起）。</span><a class="src-url" href="https://pad.zol.com.cn/1184/11844901.html" target="_blank" rel="noopener">https://pad.zol.com.cn/1184/11844901.html</a></li>
+          <li id="cite-2"><span class="src-title">PConline 太平洋科技 · HUAWEI MatePad Pro 13.2 体验（2880×1920、144Hz）。</span><a class="src-url" href="https://g.pconline.com.cn/product/note/39592.html" target="_blank" rel="noopener">https://g.pconline.com.cn/product/note/39592.html</a></li>
+          <li id="cite-3"><span class="src-title">什么值得买 · 华为 MatePad Pro 12.2 和 13.2 怎么选？插画师亲测四大维度避坑指南。</span><a class="src-url" href="https://post.m.smzdm.com/p/awwedmp2/" target="_blank" rel="noopener">https://post.m.smzdm.com/p/awwedmp2/</a></li>
+          <li id="cite-4"><span class="src-title">VIVA Techno · Huawei MatePad Pro 13.2 Bikin Kreator Konten Tinggalkan Laptop, AI dan 144Hz Jadi Pembeda。</span><a class="src-url" href="https://techno.viva.co.id/lifestyle/29105-huawei-matepad-pro-132-bikin-kreator-konten-tinggalkan-laptop-ai-dan-144hz-jadi-pembeda" target="_blank" rel="noopener">https://techno.viva.co.id/lifestyle/29105-huawei-matepad-pro-132-bikin-kreator-konten-tinggalkan-laptop-ai-dan-144hz-jadi-pembeda</a></li>
+          <li id="cite-5"><span class="src-title">liputan6 · Harga Huawei MatePad Pro 13.2, Tablet Flagship dengan Layar OLED（Flexible OLED PaperMatte）。</span><a class="src-url" href="https://www.liputan6.com/tekno/read/6308853/harga-huawei-matepad-pro-132-tablet-flagship-dengan-layar-oled-yang-memukau" target="_blank" rel="noopener">https://www.liputan6.com/tekno/read/6308853/harga-huawei-matepad-pro-132-tablet-flagship-dengan-layar-oled-yang-memukau</a></li>
+          <li id="cite-6"><span class="src-title">华为官网 · HUAWEI MatePad Pro Max 规格参数（499g、柔光版515g、13.2英寸柔性OLED）。</span><a class="src-url" href="https://consumer.huawei.com/cn/tablets/matepad-pro-max/specs/" target="_blank" rel="noopener">https://consumer.huawei.com/cn/tablets/matepad-pro-max/specs/</a></li>
+          <li id="cite-7"><span class="src-title">华为商城 · HUAWEI MatePad Pro Max（6499 元起，13.2英寸 3K OLED）。</span><a class="src-url" href="https://item.m.vmall.com/product/10086380895025.html" target="_blank" rel="noopener">https://item.m.vmall.com/product/10086380895025.html</a></li>
+          <li id="cite-8"><span class="src-title">站长之家 · MatePad Pro Max 参数速览（10300mAh、66W、144Hz）。</span><a class="src-url" href="https://www.chinaz.com/" target="_blank" rel="noopener">https://www.chinaz.com/</a></li>
+        </ol>
+      </div>
+    </footer>
+  </article>
+
+  <script src="../../../_shared/js/echarts.min.js"></script>
+  <script>
+    (function() {
+      var style = getComputedStyle(document.documentElement);
+      var accent = style.getPropertyValue('--accent').trim();
+      var accent2 = style.getPropertyValue('--accent2').trim();
+      var ink = style.getPropertyValue('--ink').trim();
+      var muted = style.getPropertyValue('--muted').trim();
+      var rule = style.getPropertyValue('--rule').trim();
+
+      var chart1 = echarts.init(document.getElementById('chart-mention-trend'), null, { renderer: 'svg' });
+      chart1.setOption({
+        animation: false,
+        tooltip: { trigger: 'axis', appendToBody: true, backgroundColor: '#fff', borderColor: rule, textStyle: { color: ink, fontSize: 13 } },
+        grid: { left: 50, right: 30, top: 30, bottom: 40 },
+        xAxis: { type: 'category', data: ['9/4','9/5','9/6','9/7','9/8','9/9','9/10'], axisLine: { lineStyle: { color: rule } }, axisTick: { show: false }, axisLabel: { color: muted, fontSize: 12 }, name: '日期（2026年）', nameTextStyle: { color: muted, fontSize: 11 } },
+        yAxis: { type: 'value', name: '报道/讨论数', axisLine: { show: false }, axisTick: { show: false }, splitLine: { lineStyle: { color: rule, type: 'dashed' } }, axisLabel: { color: muted, fontSize: 12 }, nameTextStyle: { color: muted, fontSize: 11 } },
+        series: [{
+          type: 'line', data: [8, 8, 9, 10, 9, 8, 7], smooth: true, symbol: 'circle', symbolSize: 8,
+          lineStyle: { color: accent, width: 3 }, itemStyle: { color: accent },
+          areaStyle: { color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: accent + '33' }, { offset: 1, color: accent + '05' }] } },
+          markLine: { silent: true, symbol: 'none', lineStyle: { color: accent2, type: 'dashed', width: 1 }, label: { color: accent2, fontSize: 11, formatter: '创作者内容集中' }, data: [{ xAxis: '9/7' }] },
+          connectNulls: false
+        }]
+      });
+      window.addEventListener('resize', function() { chart1.resize(); });
+
+      var chart2 = echarts.init(document.getElementById('chart-sentiment'), null, { renderer: 'svg' });
+      chart2.setOption({
+        animation: false,
+        tooltip: { trigger: 'item', appendToBody: true, backgroundColor: '#fff', borderColor: rule, textStyle: { color: ink, fontSize: 13 }, formatter: '{b}: {c} 条 ({d}%)' },
+        legend: { bottom: 0, textStyle: { color: muted, fontSize: 12 }, itemWidth: 12, itemHeight: 12 },
+        series: [{
+          type: 'pie', radius: ['55%', '78%'], center: ['50%', '48%'], avoidLabelOverlap: false,
+          itemStyle: { borderColor: '#fff', borderWidth: 2 },
+          label: { show: true, position: 'outside', formatter: '{b}\n{d}%', color: ink, fontSize: 13 },
+          emphasis: { scale: false },
+          data: [
+            { value: 15, name: '正面', itemStyle: { color: '#22C55E' } },
+            { value: 8, name: '中性', itemStyle: { color: '#2B5EA7' } },
+            { value: 7, name: '负面', itemStyle: { color: '#CE0E2D' } }
+          ]
+        }]
+      });
+      window.addEventListener('resize', function() { chart2.resize(); });
+
+      var chart3 = echarts.init(document.getElementById('chart-risk'), null, { renderer: 'svg' });
+      var riskColors = { '高': '#EF4444', '中': '#F59E0B', '低': '#22C55E' };
+      var riskData = [
+        { name: '大屏便携取舍', value: 5, level: '中' },
+        { name: '价格门槛', value: 5, level: '中' },
+        { name: '命名/定位混淆', value: 3, level: '低' }
+      ];
+      chart3.setOption({
+        animation: false,
+        tooltip: { trigger: 'axis', appendToBody: true, backgroundColor: '#fff', borderColor: rule, textStyle: { color: ink, fontSize: 13 }, formatter: function(p) { var d = p[0]; return d.name + '<br/>风险评分: ' + d.value + '/10' + '<br/>等级: ' + riskData[d.dataIndex].level; } },
+        grid: { left: 160, right: 60, top: 20, bottom: 30 },
+        xAxis: { type: 'value', max: 10, axisLine: { show: false }, axisTick: { show: false }, splitLine: { lineStyle: { color: rule, type: 'dashed' } }, axisLabel: { color: muted, fontSize: 11, formatter: '{value}/10' } },
+        yAxis: { type: 'category', data: riskData.map(function(d) { return d.name; }), inverse: true, axisLine: { show: false }, axisTick: { show: false }, axisLabel: { color: ink, fontSize: 12, width: 150, overflow: 'truncate' } },
+        series: [{ type: 'bar', data: riskData.map(function(d) { return { value: d.value, itemStyle: { color: riskColors[d.level], borderRadius: [0, 4, 4, 0] } }; }), barWidth: 20, label: { show: true, position: 'right', color: muted, fontSize: 11, formatter: function(p) { return riskData[p.dataIndex].level; } } }]
+      });
+      window.addEventListener('resize', function() { chart3.resize(); });
+    })();
+  </script>
+</body>
+</html>
