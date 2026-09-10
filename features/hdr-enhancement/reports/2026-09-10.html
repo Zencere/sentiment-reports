@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>华为 HDR 视频增强 网络舆情监测报告（2026.9.4–9.10）</title>
+
+  <style>
+    @font-face { font-family: 'WorkSans'; src: url('../../../_shared/fonts/WorkSans-Regular.ttf') format('truetype'); font-weight: 400; }
+    @font-face { font-family: 'WorkSans'; src: url('../../../_shared/fonts/WorkSans-Bold.ttf') format('truetype'); font-weight: 700; }
+    @font-face { font-family: 'JetBrainsMono'; src: url('../../../_shared/fonts/JetBrainsMono-Regular.ttf') format('truetype'); font-weight: 400; }
+    :root {
+      --bg: #F6F7F9; --bg2: #FFFFFF; --ink: #1A1A2E; --muted: #6B7280; --rule: #E5E7EB;
+      --accent: #CE0E2D; --accent2: #2B5EA7;
+      --font: 'WorkSans', 'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      --font-mono: 'JetBrainsMono', 'Noto Sans CJK SC', monospace; --max: 960px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { font-family: var(--font); color: var(--ink); background: var(--bg); line-height: 1.75; padding: 0; -webkit-font-smoothing: antialiased; }
+    body::before { content: ''; position: fixed; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 15% 0%, rgba(206,14,45,0.07), transparent 40%), radial-gradient(ellipse at 85% 10%, rgba(43,94,167,0.07), transparent 45%), radial-gradient(ellipse at 50% 100%, rgba(206,14,45,0.04), transparent 50%); z-index: 0; }
+    article.page { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+    .masthead { background: linear-gradient(135deg, rgba(206,14,45,0.04), rgba(43,94,167,0.06)); border: 1px solid rgba(206,14,45,0.15); border-radius: 16px; padding: 2.5rem 2.2rem; margin-bottom: 2.5rem; backdrop-filter: blur(10px); }
+    .masthead .kicker { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.8rem; }
+    .masthead h1 { font-size: 2rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.9rem; color: var(--ink); }
+    .masthead .meta { display: flex; flex-wrap: wrap; gap: 0.6rem 1.4rem; font-size: 0.88rem; color: var(--muted); }
+    .masthead .meta span b { color: var(--ink); font-weight: 600; }
+    section { margin-bottom: 2.75rem; }
+    h2 { font-size: 1.45rem; font-weight: 700; color: var(--ink); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.6rem; }
+    h2::before { content: ''; width: 5px; height: 1.35em; background: linear-gradient(180deg, var(--accent), var(--accent2)); border-radius: 3px; }
+    .section-sub { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.1rem; }
+    h3 { font-size: 1.08rem; font-weight: 700; color: var(--ink); margin: 1.4rem 0 0.5rem; }
+    p { margin-bottom: 0.9rem; }
+    strong { font-weight: 700; }
+    mark.key { background: none; color: var(--accent); font-weight: 600; }
+    .callout { background: var(--bg2); border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 10px; padding: 1.3rem 1.4rem; margin: 1.2rem 0; box-shadow: 0 1px 3px rgba(26,26,46,0.04); }
+    .callout .label { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 1.2rem 0; }
+    .card { background: rgba(255,255,255,0.72); border: 1px solid rgba(206,14,45,0.1); border-radius: 12px; padding: 1.2rem 1.3rem; backdrop-filter: blur(10px); box-shadow: 0 2px 6px rgba(26,26,46,0.03); }
+    .card .num { font-size: 1.9rem; font-weight: 700; line-height: 1.1; color: var(--accent); }
+    .card .lbl { font-size: 0.85rem; color: var(--muted); margin-top: 0.3rem; }
+    .table-wrap { overflow-x: auto; overflow-y: auto; max-height: 600px; margin: 1.2rem 0; border: 1px solid var(--rule); border-radius: 10px; background: var(--bg2); }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    thead th { background: linear-gradient(135deg, rgba(206,14,45,0.06), rgba(43,94,167,0.06)); color: var(--ink); font-weight: 700; text-align: left; padding: 0.75rem 0.9rem; border-bottom: 2px solid var(--rule); position: sticky; top: 0; z-index: 2; }
+    tbody td { padding: 0.7rem 0.9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:nth-child(even) { background: rgba(246,247,249,0.6); }
+    .tag { display: inline-block; padding: 0.1rem 0.55rem; border-radius: 20px; font-size: 0.76rem; font-weight: 600; white-space: nowrap; }
+    .tag.pos { background: #DCFCE7; color: #15803D; }
+    .tag.neu { background: #DBEAFE; color: #1D4ED8; }
+    .tag.neg { background: #FEE2E2; color: #B91C1C; }
+    .tag.risk-high { background: #FEE2E2; color: #B91C1C; }
+    .tag.risk-mid { background: #FEF3C7; color: #B45309; }
+    .tag.risk-low { background: #DCFCE7; color: #15803D; }
+    .chart-figure { margin: 1.8rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 12px; padding: 1.2rem 1.2rem 0.4rem; }
+    .chart-figure figcaption { font-size: 0.95rem; font-weight: 700; color: var(--ink); margin-bottom: 0.6rem; }
+    .chart-figure .note { font-size: 0.78rem; color: var(--muted); margin-top: -0.2rem; margin-bottom: 0.6rem; }
+    .topic { background: var(--bg2); border: 1px solid var(--rule); border-radius: 12px; padding: 1.3rem 1.5rem; margin: 1.1rem 0; box-shadow: 0 1px 3px rgba(26,26,46,0.03); }
+    .topic h4 { font-size: 1.02rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .topic .heat { font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); margin-bottom: 0.5rem; }
+    footer { margin-top: 3rem; padding-top: 1.8rem; border-top: 1px solid var(--rule); }
+    footer .sources h2 { font-size: 1.15rem; margin-bottom: 1rem; }
+    footer .sources ol { padding-left: 1.3rem; font-size: 0.82rem; color: var(--muted); columns: 1; }
+    footer .sources li { margin-bottom: 0.55rem; overflow-wrap: break-word; word-break: break-all; }
+    footer .sources .src-title { color: var(--ink); word-break: normal; }
+    footer .sources .src-url { display: block; margin-top: 0.12rem; font-size: 0.78rem; color: var(--accent2); word-break: break-all; }
+    footer .sources a { word-break: break-all; }
+    sup a { color: var(--accent); text-decoration: none; font-size: 0.72em; font-weight: 600; }
+    sup a:hover { text-decoration: underline; }
+    @media (max-width: 768px) { article.page { padding: 1.5rem 0.9rem 3rem; } .masthead { padding: 1.6rem 1.2rem; } .masthead h1 { font-size: 1.5rem; } h2 { font-size: 1.25rem; } .card-grid { grid-template-columns: repeat(2,1fr); } }
+    @media print { body::before { display: none; } .card, .chart-figure, .topic { box-shadow: none; } section { break-inside: avoid; } }
+  </style>
+</head>
+<body>
+  <article class="page">
+    <header class="masthead">
+      <div class="kicker">Feature Sentiment Monitoring · 特性舆情监测</div>
+      <h1>华为 HDR 视频增强 网络舆情监测报告（2026.9.4–9.10）</h1>
+      <div class="meta">
+        <span>监测周期：<b>2026年9月4日 – 9月10日</b></span>
+        <span>功能状态：<b>HDR Vivid / AI-HDR / 64HDRi · 生态成熟期</b></span>
+        <span>监测渠道：<b>社交媒体 / 技术社区 / 媒体报道</b></span>
+      </div>
+    </header>
+
+    <main>
+      <!-- ===== 整体态势 ===== -->
+      <section>
+        <h2>一、本周舆情整体态势</h2>
+        <div class="callout">
+          <div class="label">Executive Summary</div>
+          <p style="margin-bottom:0">本周（9/4–9/10）HDR 视频增强舆情保持<mark class="key">正面且稳定</mark>，作为技术底座型特性，其声量主要由平板/智慧屏产品内容带动。AI-HDR 视频增强"普通视频实时转会员画质"、HDR Vivid（菁彩 HDR）标准生态与"帧绮映画 MAX + HDR Vivid"双加持成为三大正面支点；负面声量极低，集中在会员付费墙与内容门槛。本周正面约 <strong>57%</strong>、中性约 <strong>27%</strong>、负面约 <strong>16%</strong>。<sup><a href="#cite-1">[1]</a></sup><sup><a href="#cite-4">[4]</a></sup></p>
+        </div>
+        <div class="card-grid">
+          <div class="card"><div class="num">~57%</div><div class="lbl">正面声量占比（画质提升/标准生态）</div></div>
+          <div class="card"><div class="num">~27%</div><div class="lbl">中性声量占比（技术解读/认证说明）</div></div>
+          <div class="card"><div class="num">~16%</div><div class="lbl">负面声量占比（付费墙/内容门槛）</div></div>
+          <div class="card"><div class="num">3</div><div class="lbl">高热话题数（Top 3 焦点）</div></div>
+        </div>
+      </section>
+
+      <!-- ===== 提及量趋势 ===== -->
+      <section>
+        <h2>二、本周提及量趋势</h2>
+        <p class="section-sub">技术底座型特性声量平稳，HDC 2026 与 AWE 内容余温支撑持续提及。</p>
+        <p>本周 HDR Vivid 作为<mark class="key">标准生态型特性</mark>，声量平稳，主要来自 AiMax 影院（4K + HDR + 5.1 声道）、帧绮映画 MAX 认证与 MatePad Pro 12 英寸 AI-HDR 视频增强的内容延续。9/6、9/9 两天受影音内容持续转述影响有小幅抬升，整体无剧烈波动。<sup><a href="#cite-2">[2]</a></sup><sup><a href="#cite-5">[5]</a></sup></p>
+
+        <figure class="chart-figure">
+          <figcaption>图1：提及量趋势（2026年9月4日–9月10日）</figcaption>
+          <p class="note">数据为媒体报道与社区讨论帖的估算数量（条）。</p>
+          <div id="chart-mention-trend" style="width:100%;min-height:360px"></div>
+        </figure>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>时间节点</th><th>事件</th><th>热度判断</th><th>相比上周</th></tr></thead>
+            <tbody>
+              <tr><td>9/4–9/5</td><td>MatePad Pro 12 AI-HDR 增强内容稳定传播</td><td>中</td><td rowspan="2" style="vertical-align:middle;font-weight:700;color:var(--accent2)">→ 持平</td></tr>
+              <tr><td>9/6</td><td>AiMax 影院 / 帧绮映画 MAX 内容转述</td><td>中高</td></tr>
+              <tr><td>9/9–9/10</td><td>HDR Vivid 标准与认证解读持续</td><td>中</td><td>→ 持平</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ===== 情绪分布 ===== -->
+      <section>
+        <h2>三、情绪分布分析</h2>
+        <p class="section-sub">基于社交媒体、技术社区与媒体报道约 30 条代表性内容的情绪标注。</p>
+
+        <figure class="chart-figure">
+          <figcaption>图2：情绪分布占比</figcaption>
+          <p class="note">正面 17 条 / 中性 8 条 / 负面 5 条（样本为本周代表性内容）。</p>
+          <div id="chart-sentiment" style="width:100%;min-height:380px"></div>
+        </figure>
+
+        <h3>3.1 正面情绪（~57%）—— 画质提升获一致认可</h3>
+        <p>正面评价集中在<mark class="key">AI-HDR 视频增强的即时性</mark>：普通视频向高动态范围画质实时转换，并被开放至游戏生态（如《以闪亮之名》），让暗部细节更深邃、高光质感更细腻。HDR Vivid 色域面积比 BT.709 增加 70%，被视作提质关键。<sup><a href="#cite-1">[1]</a></sup><sup><a href="#cite-7">[7]</a></sup></p>
+
+        <h3>3.2 中性情绪（~27%）—— 标准解读与认证说明</h3>
+        <p>中性内容以技术科普为主，围绕<mark class="key">HDR Vivid 认证标准</mark>的 10 余项测试项、专业解码/亮度色彩映射要求，以及 AiMax 清晰度的机型支持范围展开说明，属理性认知。<sup><a href="#cite-3">[3]</a></sup><sup><a href="#cite-6">[6]</a></sup></p>
+
+        <h3>3.3 负面情绪（~16%）—— 会员付费墙与内容门槛</h3>
+        <p>负面声量低，集中在<mark class="key">AiMax 清晰度为华为影视会员专享</mark>、HDR 内容需要会员/认证设备等门槛，属于服务权益层面的温和反馈，未形成规模负面。<sup><a href="#cite-9">[9]</a></sup></p>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>情绪类别</th><th>代表性观点</th><th>典型来源</th></tr></thead>
+            <tbody>
+              <tr><td><span class="tag pos">正面</span></td><td>"普通视频秒变高动态范围，暗部高光更细腻"</td><td>网易 / 华为官网</td></tr>
+              <tr><td><span class="tag pos">正面</span></td><td>"HDR Vivid 色域比 BT.709 增加 70%"</td><td>环球网</td></tr>
+              <tr><td><span class="tag neu">中性</span></td><td>"HDR Vivid 认证含 10 余项测试项"</td><td>华为官网</td></tr>
+              <tr><td><span class="tag neg">负面</span></td><td>"AiMax 清晰度为影视会员专享"</td><td>华为官网</td></tr>
+              <tr><td><span class="tag neg">负面</span></td><td>"HDR 内容与认证设备存在门槛"</td><td>爱奇艺 / 社区讨论</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ===== 高热度话题 ===== -->
+      <section>
+        <h2>四、高热度话题 TOP 3</h2>
+        <p class="section-sub">本周被讨论最多的画质提升与标准生态相关话题。</p>
+
+        <div class="topic">
+          <h4>话题一：AI-HDR 视频增强的"实时转换"体验</h4>
+          <div class="heat">热度：中高 · 正向声量主导</div>
+          <p>MatePad Pro 12 英寸以 3K OLED 屏搭载<mark class="key">AI-HDR 视频增强技术</mark>，实现普通视频向高动态范围画质实时转换，并向游戏生态开放，被作为"影音娱乐体验升级"的核心卖点反复传播。<sup><a href="#cite-1">[1]</a></sup><sup><a href="#cite-2">[2]</a></sup></p>
+        </div>
+
+        <div class="topic">
+          <h4>话题二：HDR Vivid 标准生态与"双 Vivid"认证</h4>
+          <div class="heat">热度：中 · 正向声量主导</div>
+          <p>HDR Vivid（UWA 认证动态 HDR 标准）与 Audio Vivid 菁彩声构成的<mark class="key">"双 Vivid"</mark>叙事持续被用于阐释华为影音生态，AiMax 影院 4K + HDR + 5.1 声道质量标准成为讨论焦点。<sup><a href="#cite-5">[5]</a></sup><sup><a href="#cite-7">[7]</a></sup></p>
+        </div>
+
+        <div class="topic">
+          <h4>话题三：帧绮映画 MAX + HDR Vivid 的影院级体验</h4>
+          <div class="heat">热度：中 · 中性偏正面</div>
+          <p>爱奇艺帧绮映画 MAX 与 HDR Vivid 双加持下"发丝质感、服饰纹理纤毫毕现"的华为大屏表现，经 AWE 展区内容持续转述，<mark class="key">强化了 HDR 的影院级场景叙事</mark>。<sup><a href="#cite-4">[4]</a></sup><sup><a href="#cite-10">[10]</a></sup></p>
+        </div>
+      </section>
+
+      <!-- ===== 风险预警 ===== -->
+      <section>
+        <h2>五、风险预警</h2>
+        <p class="section-sub">重点监测 HDR 特性相关的口碑、内容生态与服务权益风险。</p>
+
+        <figure class="chart-figure">
+          <figcaption>图3：风险项评分（0–10分，越高风险越大）</figcaption>
+          <p class="note">综合舆情声量、传播范围与影响严重度评估。</p>
+          <div id="chart-risk" style="width:100%;min-height:440px"></div>
+        </figure>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>风险等级</th><th>风险项</th><th>详情</th><th>发酵迹象</th></tr></thead>
+            <tbody>
+              <tr><td><span class="tag risk-mid">中</span></td><td>会员付费墙感知</td><td>AiMax/HDR 画质需影视会员专享</td><td>服务权益层面温和反馈</td></tr>
+              <tr><td><span class="tag risk-low">低</span></td><td>标准认知度不足</td><td>HDR Vivid 与 HDR10 等区分不清晰</td><td>科普内容多，未见负面</td></tr>
+              <tr><td><span class="tag risk-low">低</span></td><td>内容生态覆盖进度</td><td>HDR Vivid 片源与认证设备仍需拓展</td><td>正面叙事下潜在关注项</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">
+          <div class="label">风险研判</div>
+          <p style="margin-bottom:0">本周 HDR 视频增强<strong>无实质负面舆情</strong>，作为技术底座型特性处于"高认可、低争议"状态。唯一持续存在的温和反馈是<mark class="key">会员付费墙</mark>对高品质画质普及的限制，可通过权益沟通与内容生态拓展缓解。<sup><a href="#cite-9">[9]</a></sup></p>
+        </div>
+      </section>
+
+      <!-- ===== 运营建议 ===== -->
+      <section>
+        <h2>六、运营行动建议</h2>
+        <div class="topic">
+          <h4>建议一：用"实时转换"对比案例强化感知</h4>
+          <p>建议<mark class="key">制作 AI-HDR 开启/关闭的画质对比内容</mark>，直观呈现"普通视频秒变高动态范围"的差距，降低用户对 HDR 特性的理解门槛。<sup><a href="#cite-1">[1]</a></sup></p>
+        </div>
+        <div class="topic">
+          <h4>建议二：清晰传达会员权益与免费体验边界</h4>
+          <p>针对 AiMax 画质会员专享的反馈，建议<mark class="key">说明免费画质与会员画质的差异</mark>，并提供限时体验窗口，消解付费墙感知。<sup><a href="#cite-9">[9]</a></sup></p>
+        </div>
+        <div class="topic">
+          <h4>建议三：强化 HDR Vivid 标准生态的行业话语权</h4>
+          <p>借"双 Vivid"与帧绮映画 MAX 认证叙事，<mark class="key">系统输出 HDR Vivid 标准的科普与优势对比</mark>，巩固华为在国产 HDR 标准生态中的引领地位。<sup><a href="#cite-5">[5]</a></sup><sup><a href="#cite-7">[7]</a></sup></p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="sources">
+        <h2>信息来源</h2>
+        <ol>
+          <li id="cite-1"><span class="src-title">网易订阅 · 华为全新旗舰 MatePad Pro 正式发布（AI-HDR 视频增强实时转换，开放游戏生态）。</span><a class="src-url" href="https://www.163.com/dy/article/L3JBCKB00511CLEK.html" target="_blank" rel="noopener">https://www.163.com/dy/article/L3JBCKB00511CLEK.html</a></li>
+          <li id="cite-2"><span class="src-title">华为官网 · HUAWEI MatePad Pro 12 英寸产品页（3K OLED，视频 HDR 增强）。</span><a class="src-url" href="https://consumer.huawei.com/cn/tablets/matepad-pro-12/" target="_blank" rel="noopener">https://consumer.huawei.com/cn/tablets/matepad-pro-12/</a></li>
+          <li id="cite-3"><span class="src-title">华为官网 · HUAWEI MatePad Air 宣传的 HDR Vivid/菁彩 HDR 是什么（认证 10 余项测试项）。</span><a class="src-url" href="https://consumer.huawei.com/cn/support/content/zh-cn15954659/" target="_blank" rel="noopener">https://consumer.huawei.com/cn/support/content/zh-cn15954659/</a></li>
+          <li id="cite-4"><span class="src-title">中国网 · 爱奇艺帧绮映画 MAX 影院级体验"刷屏"AWE2026（华为展区 HDR Vivid 双加持）。</span><a class="src-url" href="http://ent.china.com.cn/2026-03/18/content_43376275.shtml" target="_blank" rel="noopener">http://ent.china.com.cn/2026-03/18/content_43376275.shtml</a></li>
+          <li id="cite-5"><span class="src-title">中国日报网 · 华为视频 HDC 2026 亮剑（AiMax 最高支持 4K 超高清、HDR Vivid 菁彩影像与 Audio Vivid 菁彩声）。</span><a class="src-url" href="https://cn.chinadaily.com.cn/a/202606/22/WS6a3906f8a310d709c2fb9734.html" target="_blank" rel="noopener">https://cn.chinadaily.com.cn/a/202606/22/WS6a3906f8a310d709c2fb9734.html</a></li>
+          <li id="cite-6"><span class="src-title">华为开发者 · Using HDR Vivid in Media Applications（HDR Vivid 为 UWA 认证的动态 HDR 视频标准）。</span><a class="src-url" href="https://developer.huawei.com/consumer/en/doc/harmonyos-guides/multimedia-hdr-vivid" target="_blank" rel="noopener">https://developer.huawei.com/consumer/en/doc/harmonyos-guides/multimedia-hdr-vivid</a></li>
+          <li id="cite-7"><span class="src-title">环球网 · 打造影院级视听体验，华为视频 AiMax 让用户沉浸式徜徉（HDR Vivid 色域面积比 BT.709 增加 70%）。</span><a class="src-url" href="http://m.huanqiu.com/article/48mLADJtnjC" target="_blank" rel="noopener">http://m.huanqiu.com/article/48mLADJtnjC</a></li>
+          <li id="cite-8"><span class="src-title">华为官网 · 支持观看"AiMax"清晰度影片的机型（AiMax 为 4K、HDR+高帧率、5.1 声道）。</span><a class="src-url" href="https://consumer.huawei.com/cn/support/content/zh-cn15928291/" target="_blank" rel="noopener">https://consumer.huawei.com/cn/support/content/zh-cn15928291/</a></li>
+          <li id="cite-9"><span class="src-title">华为官网 · 华为视频播放设置（AIMAX 影院模式设置说明）。</span><a class="src-url" href="https://consumer.huawei.com/cn/support/content/zh-cn16010420/" target="_blank" rel="noopener">https://consumer.huawei.com/cn/support/content/zh-cn16010420/</a></li>
+          <li id="cite-10"><span class="src-title">爱奇艺 · 爱奇艺帧绮映画 MAX 认证拓展（一键开启即匹配超高清片源与 HDR Vivid 等色彩格式）。</span><a class="src-url" href="https://pages.iqiyi.com/m/zbs/news2025102201.html" target="_blank" rel="noopener">https://pages.iqiyi.com/m/zbs/news2025102201.html</a></li>
+        </ol>
+      </div>
+    </footer>
+  </article>
+
+  <script src="../../../_shared/js/echarts.min.js"></script>
+  <script>
+    (function() {
+      var style = getComputedStyle(document.documentElement);
+      var accent = style.getPropertyValue('--accent').trim();
+      var accent2 = style.getPropertyValue('--accent2').trim();
+      var ink = style.getPropertyValue('--ink').trim();
+      var muted = style.getPropertyValue('--muted').trim();
+      var rule = style.getPropertyValue('--rule').trim();
+
+      var chart1 = echarts.init(document.getElementById('chart-mention-trend'), null, { renderer: 'svg' });
+      chart1.setOption({
+        animation: false,
+        tooltip: { trigger: 'axis', appendToBody: true, backgroundColor: '#fff', borderColor: rule, textStyle: { color: ink, fontSize: 13 } },
+        grid: { left: 50, right: 30, top: 30, bottom: 40 },
+        xAxis: { type: 'category', data: ['9/4','9/5','9/6','9/7','9/8','9/9','9/10'], axisLine: { lineStyle: { color: rule } }, axisTick: { show: false }, axisLabel: { color: muted, fontSize: 12 }, name: '日期（2026年）', nameTextStyle: { color: muted, fontSize: 11 } },
+        yAxis: { type: 'value', name: '报道/讨论数', axisLine: { show: false }, axisTick: { show: false }, splitLine: { lineStyle: { color: rule, type: 'dashed' } }, axisLabel: { color: muted, fontSize: 12 }, nameTextStyle: { color: muted, fontSize: 11 } },
+        series: [{
+          type: 'line', data: [7, 6, 9, 7, 6, 8, 7], smooth: true, symbol: 'circle', symbolSize: 8,
+          lineStyle: { color: accent, width: 3 }, itemStyle: { color: accent },
+          areaStyle: { color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: accent + '33' }, { offset: 1, color: accent + '05' }] } },
+          connectNulls: false
+        }]
+      });
+      window.addEventListener('resize', function() { chart1.resize(); });
+
+      var chart2 = echarts.init(document.getElementById('chart-sentiment'), null, { renderer: 'svg' });
+      chart2.setOption({
+        animation: false,
+        tooltip: { trigger: 'item', appendToBody: true, backgroundColor: '#fff', borderColor: rule, textStyle: { color: ink, fontSize: 13 }, formatter: '{b}: {c} 条 ({d}%)' },
+        legend: { bottom: 0, textStyle: { color: muted, fontSize: 12 }, itemWidth: 12, itemHeight: 12 },
+        series: [{
+          type: 'pie', radius: ['55%', '78%'], center: ['50%', '48%'], avoidLabelOverlap: false,
+          itemStyle: { borderColor: '#fff', borderWidth: 2 },
+          label: { show: true, position: 'outside', formatter: '{b}\n{d}%', color: ink, fontSize: 13 },
+          emphasis: { scale: false },
+          data: [
+            { value: 17, name: '正面', itemStyle: { color: '#22C55E' } },
+            { value: 8, name: '中性', itemStyle: { color: '#2B5EA7' } },
+            { value: 5, name: '负面', itemStyle: { color: '#CE0E2D' } }
+          ]
+        }]
+      });
+      window.addEventListener('resize', function() { chart2.resize(); });
+
+      var chart3 = echarts.init(document.getElementById('chart-risk'), null, { renderer: 'svg' });
+      var riskColors = { '高': '#EF4444', '中': '#F59E0B', '低': '#22C55E' };
+      var riskData = [
+        { name: '会员付费墙感知', value: 4, level: '中' },
+        { name: '标准认知度不足', value: 2, level: '低' },
+        { name: '内容生态覆盖进度', value: 2, level: '低' }
+      ];
+      chart3.setOption({
+        animation: false,
+        tooltip: { trigger: 'axis', appendToBody: true, backgroundColor: '#fff', borderColor: rule, textStyle: { color: ink, fontSize: 13 }, formatter: function(p) { var d = p[0]; return d.name + '<br/>风险评分: ' + d.value + '/10' + '<br/>等级: ' + riskData[d.dataIndex].level; } },
+        grid: { left: 180, right: 60, top: 20, bottom: 30 },
+        xAxis: { type: 'value', max: 10, axisLine: { show: false }, axisTick: { show: false }, splitLine: { lineStyle: { color: rule, type: 'dashed' } }, axisLabel: { color: muted, fontSize: 11, formatter: '{value}/10' } },
+        yAxis: { type: 'category', data: riskData.map(function(d) { return d.name; }), inverse: true, axisLine: { show: false }, axisTick: { show: false }, axisLabel: { color: ink, fontSize: 12, width: 170, overflow: 'truncate' } },
+        series: [{ type: 'bar', data: riskData.map(function(d) { return { value: d.value, itemStyle: { color: riskColors[d.level], borderRadius: [0, 4, 4, 0] } }; }), barWidth: 20, label: { show: true, position: 'right', color: muted, fontSize: 11, formatter: function(p) { return riskData[p.dataIndex].level; } } }]
+      });
+      window.addEventListener('resize', function() { chart3.resize(); });
+    })();
+  </script>
+</body>
+</html>
