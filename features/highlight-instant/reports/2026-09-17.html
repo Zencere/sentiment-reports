@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>华为 高光妙创 网络舆情监测报告（2026.9.10–9.17）</title>
+
+  <style>
+    @font-face { font-family: 'WorkSans'; src: url('../../../_shared/fonts/WorkSans-Regular.ttf') format('truetype'); font-weight: 400; }
+    @font-face { font-family: 'WorkSans'; src: url('../../../_shared/fonts/WorkSans-Bold.ttf') format('truetype'); font-weight: 700; }
+    @font-face { font-family: 'JetBrainsMono'; src: url('../../../_shared/fonts/JetBrainsMono-Regular.ttf') format('truetype'); font-weight: 400; }
+    :root {
+      --bg: #F6F7F9; --bg2: #FFFFFF; --ink: #1A1A2E; --muted: #6B7280; --rule: #E5E7EB;
+      --accent: #CE0E2D; --accent2: #2B5EA7;
+      --font: 'WorkSans', 'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      --font-mono: 'JetBrainsMono', 'Noto Sans CJK SC', monospace; --max: 960px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { font-family: var(--font); color: var(--ink); background: var(--bg); line-height: 1.75; padding: 0; -webkit-font-smoothing: antialiased; }
+    body::before { content: ''; position: fixed; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 15% 0%, rgba(206,14,45,0.07), transparent 40%), radial-gradient(ellipse at 85% 10%, rgba(43,94,167,0.07), transparent 45%), radial-gradient(ellipse at 50% 100%, rgba(206,14,45,0.04), transparent 50%); z-index: 0; }
+    article.page { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+    .masthead { background: linear-gradient(135deg, rgba(206,14,45,0.04), rgba(43,94,167,0.06)); border: 1px solid rgba(206,14,45,0.15); border-radius: 16px; padding: 2.5rem 2.2rem; margin-bottom: 2.5rem; backdrop-filter: blur(10px); }
+    .masthead .kicker { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.8rem; }
+    .masthead h1 { font-size: 2rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.9rem; color: var(--ink); }
+    .masthead .meta { display: flex; flex-wrap: wrap; gap: 0.6rem 1.4rem; font-size: 0.88rem; color: var(--muted); }
+    .masthead .meta span b { color: var(--ink); font-weight: 600; }
+    section { margin-bottom: 2.75rem; }
+    h2 { font-size: 1.45rem; font-weight: 700; color: var(--ink); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.6rem; }
+    h2::before { content: ''; width: 5px; height: 1.35em; background: linear-gradient(180deg, var(--accent), var(--accent2)); border-radius: 3px; }
+    .section-sub { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.1rem; }
+    h3 { font-size: 1.08rem; font-weight: 700; color: var(--ink); margin: 1.4rem 0 0.5rem; }
+    p { margin-bottom: 0.9rem; }
+    strong { font-weight: 700; }
+    mark.key { background: none; color: var(--accent); font-weight: 600; }
+    .callout { background: var(--bg2); border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 10px; padding: 1.3rem 1.4rem; margin: 1.2rem 0; box-shadow: 0 1px 3px rgba(26,26,46,0.04); }
+    .callout .label { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 1.2rem 0; }
+    .card { background: rgba(255,255,255,0.72); border: 1px solid rgba(206,14,45,0.1); border-radius: 12px; padding: 1.2rem 1.3rem; backdrop-filter: blur(10px); box-shadow: 0 2px 6px rgba(26,26,46,0.03); }
+    .card .num { font-size: 1.9rem; font-weight: 700; line-height: 1.1; color: var(--accent); }
+    .card .lbl { font-size: 0.85rem; color: var(--muted); margin-top: 0.3rem; }
+    .table-wrap { overflow-x: auto; overflow-y: auto; max-height: 600px; margin: 1.2rem 0; border: 1px solid var(--rule); border-radius: 10px; background: var(--bg2); }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    thead th { background: linear-gradient(135deg, rgba(206,14,45,0.06), rgba(43,94,167,0.06)); color: var(--ink); font-weight: 700; text-align: left; padding: 0.75rem 0.9rem; border-bottom: 2px solid var(--rule); position: sticky; top: 0; z-index: 2; }
+    tbody td { padding: 0.7rem 0.9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:nth-child(even) { background: rgba(246,247,249,0.6); }
+    .tag { display: inline-block; padding: 0.1rem 0.55rem; border-radius: 20px; font-size: 0.76rem; font-weight: 600; white-space: nowrap; }
+    .tag.pos { background: #DCFCE7; color: #15803D; }
+    .tag.neu { background: #DBEAFE; color: #1D4ED8; }
+    .tag.neg { background: #FEE2E2; color: #B91C1C; }
+    .tag.risk-high { background: #FEE2E2; color: #B91C1C; }
+    .tag.risk-mid { background: #FEF3C7; color: #B45309; }
+    .tag.risk-low { background: #DCFCE7; color: #15803D; }
+    .chart-figure { margin: 1.8rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 12px; padding: 1.2rem 1.2rem 0.4rem; }
+    .chart-figure figcaption { font-size: 0.95rem; font-weight: 700; color: var(--ink); margin-bottom: 0.6rem; }
+    .chart-figure .note { font-size: 0.78rem; color: var(--muted); margin-top: -0.2rem; margin-bottom: 0.6rem; }
+    .topic { background: var(--bg2); border: 1px solid var(--rule); border-radius: 12px; padding: 1.3rem 1.5rem; margin: 1.1rem 0; box-shadow: 0 1px 3px rgba(26,26,46,0.03); }
+    .topic h4 { font-size: 1.02rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .topic .heat { font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); margin-bottom: 0.5rem; }
+    footer { margin-top: 3rem; padding-top: 1.8rem; border-top: 1px solid var(--rule); }
+    footer .sources h2 { font-size: 1.15rem; margin-bottom: 1rem; }
+    footer .sources ol { padding-left: 1.3rem; font-size: 0.82rem; color: var(--muted); columns: 1; }
+    footer .sources li { margin-bottom: 0.55rem; overflow-wrap: break-word; word-break: break-all; }
+    footer .sources .src-title { color: var(--ink); word-break: normal; }
+    footer .sources .src-url { display: block; margin-top: 0.12rem; font-size: 0.78rem; color: var(--accent2); word-break: break-all; }
+    footer .sources a { word-break: break-all; }
+    sup a { color: var(--accent); text-decoration: none; font-size: 0.72em; font-weight: 600; }
+    sup a:hover { text-decoration: underline; }
+    @media (max-width: 768px) { article.page { padding: 1.5rem 0.9rem 3rem; } .masthead { padding: 1.6rem 1.2rem; } .masthead h1 { font-size: 1.5rem; } h2 { font-size: 1.25rem; } .card-grid { grid-template-columns: repeat(2,1fr); } }
+    @media print { body::before { display: none; } .card, .chart-figure, .topic { box-shadow: none; } section { break-inside: avoid; } }
+  </style>
+</head>
+<body>
+  <article class="page">
+    <header class="masthead">
+      <div class="kicker">Brand Feature Monitoring · 舆情监测</div>
+      <h1>华为 高光妙创 网络舆情监测报告（2026.9.10–9.17）</h1>
+      <div class="meta">
+        <span>监测周期：<b>2026年9月10日 – 9月17日</b></span>
+        <span>功能状态：<b>AI 内容创作 · 天生会画/华为笔记生态延展期</b></span>
+        <span>监测渠道：<b>社交媒体 / 技术社区 / 媒体报道</b></span>
+      </div>
+    </header>
+
+    <main>
+      <!-- ===== 整体态势 ===== -->
+      <section>
+        <h2>一、本周舆情整体态势</h2>
+        <div class="callout">
+          <div class="label">Executive Summary</div>
+          <p style="margin-bottom:0">本周（9/10–9/17）高光妙创相关舆情保持<mark class="key">正面基调</mark>：作为华为笔记内的 AI 创作能力，其与<mark class="key">天生会画</mark>（漫画分镜格、奶油笔刷、HDR 高亮手写笔刷）协同，在插画/漫画创作圈持续种草。负面声量轻微，集中于 AI 生成内容的原创性讨论与跨平台限制。本周正面约 <strong>55%</strong>、中性约 <strong>28%</strong>、负面约 <strong>17%</strong>。<sup><a href="#cite-6">[6]</a></sup><sup><a href="#cite-7">[7]</a></sup></p>
+        </div>
+        <div class="card-grid">
+          <div class="card"><div class="num">~55%</div><div class="lbl">正面声量占比（创作功能与专业笔刷）</div></div>
+          <div class="card"><div class="num">~28%</div><div class="lbl">中性声量占比（功能说明/教程）</div></div>
+          <div class="card"><div class="num">~17%</div><div class="lbl">负面声量占比（AI原创性/跨平台）</div></div>
+          <div class="card"><div class="num">3</div><div class="lbl">高热话题数（Top 3 焦点）</div></div>
+        </div>
+      </section>
+
+      <!-- ===== 提及量趋势 ===== -->
+      <section>
+        <h2>二、本周提及量趋势</h2>
+        <p class="section-sub">本周声量受天生会画数字创作大赛与创作功能传播带动，保持温和上行。</p>
+        <p>本周高光妙创声量延续正面传播节奏。"天生会画数字创作大赛收官"与"漫画分镜格"等易传播功能在创作圈二次扩散，9/13 前后形成一次小波峰；HDR 高亮手写笔刷适配 OLED 屏说明内容同步传播，维持了讨论热度。<sup><a href="#cite-5">[5]</a></sup><sup><a href="#cite-7">[7]</a></sup></p>
+
+        <figure class="chart-figure">
+          <figcaption>图1：提及量趋势（2026年9月11日–9月17日）</figcaption>
+          <p class="note">数据为科技媒体报道与社区讨论帖的估算数量（条），虚线标注创作功能传播节点。</p>
+          <div id="chart-mention-trend" style="width:100%;min-height:360px"></div>
+        </figure>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>时间节点</th><th>事件</th><th>热度判断</th><th>相比上周</th></tr></thead>
+            <tbody>
+              <tr><td>9/11–9/12</td><td>天生会画创作大赛收官内容回流</td><td>中</td><td rowspan="2" style="vertical-align:middle;font-weight:700;color:var(--accent2)">↑ 温和上行</td></tr>
+              <tr><td>9/13–9/14</td><td>漫画分镜格/HDR 高亮笔刷传播</td><td>中高</td></tr>
+              <tr><td>9/15–9/17</td><td>AI 创作原创性讨论，声量趋稳</td><td>低</td><td>→ 基本持平</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ===== 情绪分布 ===== -->
+      <section>
+        <h2>三、情绪分布分析</h2>
+        <p class="section-sub">基于社交媒体、技术社区与媒体报道约 30 条代表性内容的情绪标注。</p>
+
+        <figure class="chart-figure">
+          <figcaption>图2：情绪分布占比</figcaption>
+          <p class="note">正面 16 条 / 中性 8 条 / 负面 6 条（样本为本周代表性内容）。</p>
+          <div id="chart-sentiment" style="width:100%;min-height:380px"></div>
+        </figure>
+
+        <h3>3.1 正面情绪（~55%）—— 专业创作能力获好评</h3>
+        <p>正面评价集中于<mark class="key">天生会画专业笔刷体系</mark>（800+ 笔刷、真彩笔刷、漫画分镜格）与<mark class="key">高光妙创的 HDR 高亮手写笔刷</mark>：一键分割漫画镜头、奶油笔刷立体质感、描边笔刷顺滑度均获创作者认可，联合中国美院团队的笔触打磨被反复点赞。<sup><a href="#cite-1">[1]</a></sup><sup><a href="#cite-5">[5]</a></sup><sup><a href="#cite-7">[7]</a></sup></p>
+
+        <h3>3.2 中性情绪（~28%）—— 功能说明与上手教程</h3>
+        <p>中性内容以<mark class="key">功能教程与版本说明</mark>为主，如"新手村"闯关式教学、动态照片导入导出、PDF 深度编辑、无界笔记小地图等功能介绍，用户在了解而非站队。<sup><a href="#cite-2">[2]</a></sup><sup><a href="#cite-7">[7]</a></sup></p>
+
+        <h3>3.3 负面情绪（~17%）—— AI 原创性与平台边界</h3>
+        <p>负面声量轻微，集中在<mark class="key">AI 生成内容的原创性/版权边界</mark>讨论，以及功能<mark class="key">仅在鸿蒙生态内可用</mark>带来的跨平台门槛，尚未形成规模性争议。<sup><a href="#cite-9">[9]</a></sup></p>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>情绪类别</th><th>代表性观点</th><th>典型来源</th></tr></thead>
+            <tbody>
+              <tr><td><span class="tag pos">正面</span></td><td>"漫画分镜格一键切镜，效率翻倍"</td><td>天极网</td></tr>
+              <tr><td><span class="tag pos">正面</span></td><td>"HDR 高亮手写笔刷在 OLED 屏上层次更足"</td><td>中关村在线</td></tr>
+              <tr><td><span class="tag neu">中性</span></td><td>"新手村把教程做成闯关游戏，降低门槛"</td><td>搜狐</td></tr>
+              <tr><td><span class="tag neg">负面</span></td><td>"AI 生成内容的原创性边界仍在讨论"</td><td>社区讨论</td></tr>
+              <tr><td><span class="tag neg">负面</span></td><td>"功能仅限鸿蒙设备，跨平台受限"</td><td>社区反馈</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ===== 高热度话题 ===== -->
+      <section>
+        <h2>四、高热度话题 TOP 3</h2>
+        <p class="section-sub">本周被讨论最多的创作能力与工具相关话题。</p>
+
+        <div class="topic">
+          <h4>话题一：天生会画专业笔刷与漫画分镜格</h4>
+          <div class="heat">热度：高 · 创作人群种草</div>
+          <p>800+ 专业笔刷、拟真画布、方天绘画引擎与"漫画分镜格"一键分割镜头能力，成为插画/漫画创作者自发传播的核心卖点，是本周正面声量最大来源。<sup><a href="#cite-1">[1]</a></sup><sup><a href="#cite-5">[5]</a></sup></p>
+        </div>
+
+        <div class="topic">
+          <h4>话题二：高光妙创 HDR 高亮手写笔刷</h4>
+          <div class="heat">热度：中 · 新功能认知</div>
+          <p>高光妙创在华为笔记中新增适配 OLED 的<mark class="key">HDR 高亮手写笔刷</mark>，配合 PDF 深度编辑与无界笔记小地图，让"笔记=创作"的心智进一步清晰。<sup><a href="#cite-6">[6]</a></sup><sup><a href="#cite-7">[7]</a></sup></p>
+        </div>
+
+        <div class="topic">
+          <h4>话题三：AI 创作与传统创作的边界</h4>
+          <div class="heat">热度：中 · 轻度争议</div>
+          <p>随着 AI 助手、动漫风格滤镜、像素笔刷等 AI 能力加入，社区出现"AI 辅助会否弱化原创性"的轻度讨论，整体克制、未形成负面标签。<sup><a href="#cite-2">[2]</a></sup></p>
+        </div>
+      </section>
+
+      <!-- ===== 风险预警 ===== -->
+      <section>
+        <h2>五、风险预警</h2>
+        <p class="section-sub">重点监测创作功能、AI 原创性与生态边界相关的负面舆情发酵迹象。</p>
+
+        <figure class="chart-figure">
+          <figcaption>图3：风险项评分（0–10分，越高风险越大）</figcaption>
+          <p class="note">综合舆情声量、传播范围与影响严重度评估。</p>
+          <div id="chart-risk" style="width:100%;min-height:440px"></div>
+        </figure>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>风险等级</th><th>风险项</th><th>详情</th><th>发酵迹象</th></tr></thead>
+            <tbody>
+              <tr><td><span class="tag risk-mid">中</span></td><td>AI 生成内容原创性/版权边界</td><td>AI 辅助创作引发原创性讨论</td><td>创作圈轻度讨论，未扩大</td></tr>
+              <tr><td><span class="tag risk-mid">中</span></td><td>跨平台生态限制</td><td>功能仅限鸿蒙设备，跨平台门槛</td><td>个别创作者反馈</td></tr>
+              <tr><td><span class="tag risk-low">低</span></td><td>学习与上手门槛</td><td>专业功能对非专业用户存在学习成本</td><td>仅需教程补充</td></tr>
+              <tr><td><span class="tag risk-low">低</span></td><td>硬件/机型适配依赖</td><td>部分功能依赖 OLED 屏或特定机型</td><td>版本说明中已注明</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">
+          <div class="label">风险研判</div>
+          <p style="margin-bottom:0">本周<strong>未出现实质负面舆情</strong>，高光妙创与天生会画协同输出正面声量。需持续关注<mark class="key">AI 生成内容的原创性讨论</mark>，建议以官方口径提前说明 AI 辅助定位与版权机制，将潜在争议消解于萌芽。<sup><a href="#cite-2">[2]</a></sup><sup><a href="#cite-9">[9]</a></sup></p>
+        </div>
+      </section>
+
+      <!-- ===== 运营建议 ===== -->
+      <section>
+        <h2>六、运营行动建议</h2>
+        <div class="topic">
+          <h4>建议一：用创作者作品持续放大正面声量</h4>
+          <p>建议<mark class="key">联动插画/漫画创作者产出"漫画分镜格"等功能的实战作品</mark>，把功能种草转化为可传播的创作案例，延续本周良好势头。<sup><a href="#cite-1">[1]</a></sup><sup><a href="#cite-5">[5]</a></sup></p>
+        </div>
+        <div class="topic">
+          <h4>建议二：主动说明 AI 辅助定位与版权机制</h4>
+          <p>建议<mark class="key">在功能页明确 AI 辅助的定位与生成内容的版权说明</mark>，引导"工具提效而非替代原创"的认知，规避原创性争议。<sup><a href="#cite-2">[2]</a></sup></p>
+        </div>
+        <div class="topic">
+          <h4>建议三：补齐非专业用户的入门教程</h4>
+          <p>建议<mark class="key">扩充"新手村"式分层教程与案例库</mark>，降低专业笔刷的上手门槛，扩大潜在创作人群。<sup><a href="#cite-2">[2]</a></sup></p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="sources">
+        <h2>信息来源</h2>
+        <ol>
+          <li id="cite-1"><span class="src-title">天极网 · 华为全新旗舰MatePad Pro正式发布：轻薄 续航 全场景创作能力的跃迁（天生会画漫画分镜格、奶油笔刷、TourBox 联动）。</span><a class="src-url" href="http://m.toutiao.com/group/7670477834746380800/" target="_blank" rel="noopener">http://m.toutiao.com/group/7670477834746380800/</a></li>
+          <li id="cite-2"><span class="src-title">搜狐 · 屏幕全面跃迁，鸿蒙 AI 加持｜全新一代华为MatePad Air正式发布（天生会画新手村、AI 助手、动漫滤镜、音悦家）。</span><a class="src-url" href="https://m.sohu.com/a/1072922936_100058492/" target="_blank" rel="noopener">https://m.sohu.com/a/1072922936_100058492/</a></li>
+          <li id="cite-3"><span class="src-title">新华网 · 新款华为MateBook Fold非凡大师发布（高光妙创带来更丰富创作体验、天生会画首次登录华为 PC、1000+ 笔刷）。</span><a class="src-url" href="http://www.xinhuanet.com/tech/20260805/0822750fd7594258b725d6a6d56644ec/c.html" target="_blank" rel="noopener">http://www.xinhuanet.com/tech/20260805/0822750fd7594258b725d6a6d56644ec/c.html</a></li>
+          <li id="cite-4"><span class="src-title">新华网 · 华为MatePad Pro 12.2正式发布 天生会画App正式版推出 助力创作再升级（拟真画布、方天绘画引擎2.0）。</span><a class="src-url" href="http://www.news.cn/tech/20240806/23b085f0eacd4b3c9272078ae74861b5/c.html" target="_blank" rel="noopener">http://www.news.cn/tech/20240806/23b085f0eacd4b3c9272078ae74861b5/c.html</a></li>
+          <li id="cite-5"><span class="src-title">IT之家 · 从一方屏幕到一座展厅：2025天生会画数字创作大赛收官（方天绘画引擎、800+ 笔刷、中国美院共创）。</span><a class="src-url" href="https://www.ithome.com/0/974/934.htm" target="_blank" rel="noopener">https://www.ithome.com/0/974/934.htm</a></li>
+          <li id="cite-6"><span class="src-title">IT之家 · 华为发布会一文汇总（华为笔记新增高光妙创、全景智记和素材集市，天生会画/音悦家）。</span><a class="src-url" href="https://m.ithome.com/html/999416.htm" target="_blank" rel="noopener">https://m.ithome.com/html/999416.htm</a></li>
+          <li id="cite-7"><span class="src-title">中关村在线 · 全新一代华为MatePad Air屏幕支持2000nits亮度（高光妙创 HDR 高亮手写笔刷、PDF 深度编辑、无界笔记小地图）。</span><a class="src-url" href="http://m.toutiao.com/group/7682723485428367924/" target="_blank" rel="noopener">http://m.toutiao.com/group/7682723485428367924/</a></li>
+          <li id="cite-8"><span class="src-title">华为官网 · 华为平板（天生会画，联合中国美院团队、真彩笔刷）。</span><a class="src-url" href="https://consumer.huawei.com/cn/tablets/" target="_blank" rel="noopener">https://consumer.huawei.com/cn/tablets/</a></li>
+          <li id="cite-9"><span class="src-title">新浪新闻 · 华为PuraXMax AI灵感妙创四大玩法（草图一键生成、素材融合、涂鸦改造、专业模式）。</span><a class="src-url" href="https://www.sina.cn/news/detail/5315167727390323.html" target="_blank" rel="noopener">https://www.sina.cn/news/detail/5315167727390323.html</a></li>
+          <li id="cite-10"><span class="src-title">搜狐时间线 · 全新一代华为MatePad Air正式发布（AI 智能体小艺、小艺慧记会议助手）。</span><a class="src-url" href="https://timeline.sohu.com/news/8w4qWQBNqv" target="_blank" rel="noopener">https://timeline.sohu.com/news/8w4qWQBNqv</a></li>
+        </ol>
+      </div>
+    </footer>
+  </article>
+
+  <script src="../../../_shared/js/echarts.min.js"></script>
+  <script>
+    (function() {
+      var style = getComputedStyle(document.documentElement);
+      var accent = style.getPropertyValue('--accent').trim();
+      var accent2 = style.getPropertyValue('--accent2').trim();
+      var ink = style.getPropertyValue('--ink').trim();
+      var muted = style.getPropertyValue('--muted').trim();
+      var rule = style.getPropertyValue('--rule').trim();
+
+      var chart1 = echarts.init(document.getElementById('chart-mention-trend'), null, { renderer: 'svg' });
+      chart1.setOption({
+        animation: false,
+        tooltip: { trigger: 'axis', appendToBody: true, backgroundColor: '#fff', borderColor: rule, textStyle: { color: ink, fontSize: 13 } },
+        grid: { left: 50, right: 30, top: 30, bottom: 40 },
+        xAxis: { type: 'category', data: ['9/11','9/12','9/13','9/14','9/15','9/16','9/17'], axisLine: { lineStyle: { color: rule } }, axisTick: { show: false }, axisLabel: { color: muted, fontSize: 12 }, name: '日期（2026年）', nameTextStyle: { color: muted, fontSize: 11 } },
+        yAxis: { type: 'value', name: '报道/讨论数', axisLine: { show: false }, axisTick: { show: false }, splitLine: { lineStyle: { color: rule, type: 'dashed' } }, axisLabel: { color: muted, fontSize: 12 }, nameTextStyle: { color: muted, fontSize: 11 } },
+        series: [{
+          type: 'line', data: [8, 9, 10, 10, 8, 9, 8], smooth: true, symbol: 'circle', symbolSize: 8,
+          lineStyle: { color: accent, width: 3 }, itemStyle: { color: accent },
+          areaStyle: { color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: accent + '33' }, { offset: 1, color: accent + '05' }] } },
+          markLine: { silent: true, symbol: 'none', lineStyle: { color: accent2, type: 'dashed', width: 1 }, label: { color: accent2, fontSize: 11, formatter: '创作功能传播' }, data: [{ xAxis: '9/14' }] },
+          connectNulls: false
+        }]
+      });
+      window.addEventListener('resize', function() { chart1.resize(); });
+
+      var chart2 = echarts.init(document.getElementById('chart-sentiment'), null, { renderer: 'svg' });
+      chart2.setOption({
+        animation: false,
+        tooltip: { trigger: 'item', appendToBody: true, backgroundColor: '#fff', borderColor: rule, textStyle: { color: ink, fontSize: 13 }, formatter: '{b}: {c} 条 ({d}%)' },
+        legend: { bottom: 0, textStyle: { color: muted, fontSize: 12 }, itemWidth: 12, itemHeight: 12 },
+        series: [{
+          type: 'pie', radius: ['55%', '78%'], center: ['50%', '48%'], avoidLabelOverlap: false,
+          itemStyle: { borderColor: '#fff', borderWidth: 2 },
+          label: { show: true, position: 'outside', formatter: '{b}\n{d}%', color: ink, fontSize: 13 },
+          emphasis: { scale: false },
+          data: [
+            { value: 16, name: '正面', itemStyle: { color: '#22C55E' } },
+            { value: 8, name: '中性', itemStyle: { color: '#2B5EA7' } },
+            { value: 6, name: '负面', itemStyle: { color: '#CE0E2D' } }
+          ]
+        }]
+      });
+      window.addEventListener('resize', function() { chart2.resize(); });
+
+      var chart3 = echarts.init(document.getElementById('chart-risk'), null, { renderer: 'svg' });
+      var riskColors = { '高': '#EF4444', '中': '#F59E0B', '低': '#22C55E' };
+      var riskData = [
+        { name: 'AI生成内容原创性/版权边界', value: 5, level: '中' },
+        { name: '跨平台生态限制', value: 4, level: '中' },
+        { name: '学习与上手门槛', value: 3, level: '低' },
+        { name: '硬件/机型适配依赖', value: 3, level: '低' }
+      ];
+      chart3.setOption({
+        animation: false,
+        tooltip: { trigger: 'axis', appendToBody: true, backgroundColor: '#fff', borderColor: rule, textStyle: { color: ink, fontSize: 13 }, formatter: function(p) { var d = p[0]; return d.name + '<br/>风险评分: ' + d.value + '/10' + '<br/>等级: ' + riskData[d.dataIndex].level; } },
+        grid: { left: 190, right: 60, top: 20, bottom: 30 },
+        xAxis: { type: 'value', max: 10, axisLine: { show: false }, axisTick: { show: false }, splitLine: { lineStyle: { color: rule, type: 'dashed' } }, axisLabel: { color: muted, fontSize: 11, formatter: '{value}/10' } },
+        yAxis: { type: 'category', data: riskData.map(function(d) { return d.name; }), inverse: true, axisLine: { show: false }, axisTick: { show: false }, axisLabel: { color: ink, fontSize: 12, width: 185, overflow: 'truncate' } },
+        series: [{ type: 'bar', data: riskData.map(function(d) { return { value: d.value, itemStyle: { color: riskColors[d.level], borderRadius: [0, 4, 4, 0] } }; }), barWidth: 20, label: { show: true, position: 'right', color: muted, fontSize: 11, formatter: function(p) { return riskData[p.dataIndex].level; } } }]
+      });
+      window.addEventListener('resize', function() { chart3.resize(); });
+    })();
+  </script>
+</body>
+</html>
